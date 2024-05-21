@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BondMachine</title>
+	<meta name="keywords" content="bondmachine">
+	<meta name="description" content="BM">
+  <link rel="stylesheet" href="combo.css">
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link href="https://vjs.zencdn.net/7.17.0/video-js.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<style>
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 50%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 25%;
+    left: 0;
+    background-color: #2e2e2e;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 100;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+
+<div id="mySidenav" class="sidenav">
+<!--  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+  <a href="/">Home</a>
+  <a href="/news">News</a>
+  <a href="/docs">Docs</a>
+  <a href="/ug">User Guide</a>
+  <a href="/diy">Do It Yourself</a>
+  <a href="/examples">Examples</a>
+  <a href="/media">Media</a>
+</div>
+
+<div id="main">
+
+    <nav><ul>
+	<li><span style="cursor:pointer" onclick="switchNav()"><img src="img/logob.png" width="32px"></img></span>&nbsp;&nbsp;&nbsp;<span style="cursor:pointer" onclick="window.location.href='http://bondmachine.fisica.unipg.it'"><img src="img/home.png" width="32px"></img></span>&nbsp;&nbsp;&nbsp;<span style="color:#66cdaa;cursor:pointer" onclick="window.location.href='/ug/#packages'">Packages</span></li>
+      
+        
+	
+          <li class="p-package"><a href="#package">bmqsim</a></li>
+	
+      
+    </ul></nav>
+
+
+    
+      
+      
+      <div id="package" class="section p-package">
+        
+        <div class="container ">
+          <h1>bmqsim</h1>
+
+<p><img src="bmqsim.png" alt="bmqsim" /></p>
+
+<p>bmqsim is part of BondMachine project. It is a library and a CLI tool to produce HDL code and test benches to simulate a quantum computer on FPGA using the BondMachine architecture framework. It also provides a sotfware simulator to be used in a CPU.
+The installation of bmqsim is part of the standard installation of BondMachine framework. Please refer to the <a href="http://bondmachine.fisica.unipg.it/docs/#quickstart">BondMachine quick start</a> for the instructions.</p>
+
+<h2>Usage</h2>
+
+<p>To use the bmqsim CLI tool, you have to choose two things: the backend and the quantum algorithm to simulate.
+The backend creates target hardware architecture of a specific type and its flavor (the subtype as for example the <code>only real numbers</code> or the <code>complex numbers</code> flavor) if applicable.
+The quantum algorithm is a file containing the quantum circuit to simulate. Let’s begin the latter.</p>
+
+<h2>Quantum algorithm</h2>
+
+<h2>Backend</h2>
+
+<p>Once you have the quantum algorithm, you can choose the backend to use. The backend creates the target hardware architecture of a specific type and flavor. 
+The subsequent tables show the available backend and architectures types, their flavors and the relevant command line options:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Architecture type (backend)</th>
+      <th>Command line option</th>
+      <th>Description</th>
+      <th>Flavors</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Software</code></td>
+      <td><code>--software-simulation</code></td>
+      <td>Software simulator</td>
+      <td><code>None</code></td>
+    </tr>
+    <tr>
+      <td><code>MatrixSeqHardcoded</code></td>
+      <td><code>--build-matrix-seq-hardcoded</code></td>
+      <td>Sequence of matrices hardcoded in the FPGA</td>
+      <td><code>seq_hardcoded_real</code>, <code>seq_hardcoded_complex</code></td>
+    </tr>
+    <tr>
+      <td><code>MatrixSeq</code></td>
+      <td><code>--build-matrix-seq</code></td>
+      <td>Sequence of matrices in the FPGA</td>
+      <td><em>Not yet implemented</em></td>
+    </tr>
+    <tr>
+      <td><code>FullHardwareHardcoded</code></td>
+      <td><code>--build-full-hardware-hardcoded</code></td>
+      <td>Full hardware with hardcoded matrices</td>
+      <td><em>Not yet implemented</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Each architecture type is associated to a different set of command line options and activates a different simulator backend. Some of the options are common to all the backends, while others are specific to a single backend. The following sections describe the options for each backend and the common options.</p>
+
+<h3>Common options</h3>
+
+<h3>Software simulator</h3>
+
+<h3>Hardcoded sequence of matrices</h3>
+
+<h3>Sequence of matrices</h3>
+
+<h3>Full hardware with hardcoded matrices</h3>
+
+<h2>Other options</h2>
+
+<p>Alongside these main options, there are other options that does not depend on the backend chosen. These options are listed in the following table:</p>
+
+<p>| Option | Description |
+| — | — |</p>
+
+<h2>Examples</h2>
+
+        </div>
+      </div>
+      
+    
+
+
+    <div id="footer" class="section text-white">
+      <div class="container">
+        
+        
+<p><a href="http://bondmachine.fisica.unipg.it/">BondMachine</a>
+—
+<a href="http://www.fisgeo.unipg.it">Department of Physics and Geology</a>
+—
+<a href="http://www.unipg.it">University of Perugia</a></p>
+
+
+      </div>
+    </div>
+  </div>
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-85770689-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="site.js"></script>
+<script>
+
+opened = false;
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "200px";
+    opened = true;
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    opened = false;
+}
+
+function switchNav() {
+    if (opened) {
+	closeNav();
+    } else {
+	openNav();
+    }
+}
+</script>
+
+</html>

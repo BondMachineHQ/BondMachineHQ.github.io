@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BondMachine</title>
+	<meta name="keywords" content="bondmachine">
+	<meta name="description" content="BM">
+  <link rel="stylesheet" href="combo.css">
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link href="https://vjs.zencdn.net/7.17.0/video-js.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<style>
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 50%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 25%;
+    left: 0;
+    background-color: #2e2e2e;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 100;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+
+<div id="mySidenav" class="sidenav">
+<!--  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+  <a href="/">Home</a>
+  <a href="/news">News</a>
+  <a href="/docs">Docs</a>
+  <a href="/ug">User Guide</a>
+  <a href="/diy">Do It Yourself</a>
+  <a href="/examples">Examples</a>
+  <a href="/media">Media</a>
+</div>
+
+<div id="main">
+
+    <nav><ul>
+	<li><span style="cursor:pointer" onclick="switchNav()"><img src="img/logob.png" width="32px"></img></span>&nbsp;&nbsp;&nbsp;<span style="cursor:pointer" onclick="window.location.href='http://bondmachine.fisica.unipg.it'"><img src="img/home.png" width="32px"></img></span>&nbsp;&nbsp;&nbsp;<span style="color:#66cdaa;cursor:pointer" onclick="window.location.href='/ug/#packages'">Packages</span></li>
+      
+        
+	
+          <li class="p-package"><a href="#package">bmnumbers</a></li>
+	
+      
+    </ul></nav>
+
+
+    
+      
+      
+      <div id="package" class="section p-package">
+        
+        <div class="container ">
+          <h1>bmnumbers</h1>
+
+<p>bmstack is part of BondMachine project. bmnumbers is both a command line tool to convert or cast numbers to and from different formats and a library to do the same. It is used within the BondMachine every time numbers are handled.</p>
+
+<h2>Supported number types</h2>
+
+<p>The supported number types are listed in the following table.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type Name</th>
+      <th>Prefixes</th>
+      <th>Description</th>
+      <th>Static</th>
+      <th>Lenght</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>unsigned</td>
+      <td>none <br /> 0u <br /> 0d</td>
+      <td>Unsigned integer</td>
+      <td>yes</td>
+      <td>any</td>
+    </tr>
+    <tr>
+      <td>signed</td>
+      <td>0s <br /> 0sd</td>
+      <td>Signed integer</td>
+      <td>yes</td>
+      <td>any</td>
+    </tr>
+    <tr>
+      <td>bin</td>
+      <td>0b <br /> 0b&lt;s&gt;</td>
+      <td>Binary number</td>
+      <td>yes</td>
+      <td>any <br /> s bits</td>
+    </tr>
+    <tr>
+      <td>hex</td>
+      <td>0x</td>
+      <td>Hexadecimal number</td>
+      <td>yes</td>
+      <td>any</td>
+    </tr>
+    <tr>
+      <td>float16</td>
+      <td>0f&lt;16&gt;</td>
+      <td>IEEE 754 half precision floating point number</td>
+      <td>yes</td>
+      <td>16 bits</td>
+    </tr>
+    <tr>
+      <td>float32</td>
+      <td>0f <br /> 0f&lt;32&gt;</td>
+      <td>IEEE 754 single precision floating point number</td>
+      <td>yes</td>
+      <td>32 bits</td>
+    </tr>
+    <tr>
+      <td>lqs[s]t[t]</td>
+      <td>0lq&lt;s.t&gt;</td>
+      <td>Linear quantized number with size s and type t</td>
+      <td>no</td>
+      <td>s bits</td>
+    </tr>
+    <tr>
+      <td>fps[s]f[f]</td>
+      <td>0fp&lt;s.f&gt;</td>
+      <td>Fixed point number with size s and fraction f</td>
+      <td>no</td>
+      <td>s bits</td>
+    </tr>
+    <tr>
+      <td>flp[e]f[f]</td>
+      <td>0flp&lt;e.f&gt;</td>
+      <td>FloPoCo floating point number with exponent e and mantissa f</td>
+      <td>no</td>
+      <td>e+f+3 bits</td>
+    </tr>
+  </tbody>
+</table>
+
+        </div>
+      </div>
+      
+    
+
+
+    <div id="footer" class="section text-white">
+      <div class="container">
+        
+        
+<p><a href="http://bondmachine.fisica.unipg.it/">BondMachine</a>
+—
+<a href="http://www.fisgeo.unipg.it">Department of Physics and Geology</a>
+—
+<a href="http://www.unipg.it">University of Perugia</a></p>
+
+
+      </div>
+    </div>
+  </div>
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-85770689-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="site.js"></script>
+<script>
+
+opened = false;
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "200px";
+    opened = true;
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    opened = false;
+}
+
+function switchNav() {
+    if (opened) {
+	closeNav();
+    } else {
+	openNav();
+    }
+}
+</script>
+
+</html>

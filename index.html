@@ -1,1 +1,325 @@
-Hello World
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BondMachine</title>
+	<meta name="keywords" content="bondmachine">
+	<meta name="description" content="BM">
+  <link rel="stylesheet" href="combo.css">
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<style>
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 50%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 25%;
+    left: 0;
+    background-color: #2e2e2e;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 100;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+
+<div id="mySidenav" class="sidenav">
+<!--  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+  <a href="/">Home</a>
+  <a href="/news">News</a>
+  <a href="/docs">Docs</a>
+  <a href="/ug">User Guide</a>
+  <a href="/diy">Do It Yourself</a>
+  <a href="/examples">Examples</a>
+  <a href="/media">Media</a>
+</div>
+
+<div id="main">
+
+    <nav><ul>
+	<li><span style="cursor:pointer" onclick="switchNav()"><img src="img/logob.png" width="32px"></img></span>&nbsp;&nbsp;&nbsp;<span style="cursor:pointer" onclick="window.location.href='http://bondmachine.fisica.unipg.it'"><img src="img/home.png" width="32px"></img></span>&nbsp;&nbsp;&nbsp;<span style="color:#66cdaa;cursor:pointer">Home</span></li>
+      
+        
+	
+          <li class="p-intro"><a href="#intro">Intro</a></li>
+	
+      
+        
+	
+          <li class="p-ecosystem"><a href="#ecosystem">Ecosystem</a></li>
+	
+      
+        
+	
+          <li class="p-tools"><a href="#tools">Tools</a></li>
+	
+      
+        
+	
+          <li class="p-about"><a href="#about">About</a></li>
+	
+      
+    </ul></nav>
+
+
+    
+      
+      
+      <div id="intro" class="section p-intro">
+        
+        <div class="container center">
+          <p><img src="/img/logob.png" /></p>
+
+<h1><strong><em>BondMachine</em></strong></h1>
+<h2><strong><em>a mouldable computer architecture</em></strong></h2>
+
+<hr />
+
+<p><strong>The BondMachine</strong> (BM) is a new kind of computer architecture radically different from the ones usually found in today’s computers.</p>
+
+<p>The main feature of <strong>The BondMachine</strong> is that its processors forms an heterogeneous set of computing units where each of them can be configured and specialized to do a specific task implementing different architectures based on the specific problem.</p>
+
+<p>Unlike standard architectures where software has to fit processors static constraints, within <strong>The BondMachine</strong> the architecture itself is build around the problem prior to creating the software. The result is a reduction of the gap between hardware and software.</p>
+
+<p>BondMachines can be created in several ways: manually with its building tools, with a set of API that target specific problems and at last with a dedicated compiler that creates the architectures as part of the conversion of a source code to machine code.</p>
+
+<p>BondMachines can be connected together with a custon ethernet protocol called <strong>etherbond</strong>. Distributed clusters of heterogeneous multicore can be built this way.</p>
+
+<p>Ultimately the produced BondMachines can be simulated, used as computer applications or translated to RTL code and used in hardware (for example using FPGAs).</p>
+
+<p>Strictly speaking <strong>The BondMachine</strong> is not only the architecture itself but also all the other technologies developed to make all of this possible. It is ultimately a <strong>computing ecosystem</strong> made of several components.</p>
+
+
+        </div>
+      </div>
+      
+    
+      
+      
+      <div id="ecosystem" class="section p-ecosystem">
+        
+        <div class="subtlecircle sectiondivider faicon">
+          <span class="fa-stack">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-gears fa-stack-1x"></i>
+          </span>
+          <h5 class="icon-title">Ecosystem</h5>
+        </div>
+        
+        <div class="container ">
+          <p><strong><em>The BondMachine ecosystem</em></strong> is formed by two parts. The first concerns the BMs devices building with their internal behaviour and architecture, the seconds the BMs interconnecting, both among themselves and with the external world.</p>
+
+<h3><strong>BondMachines building</strong></h3>
+
+<p>A BondMachine is a set of computing units and non computing objects shared among them, all packed within a single hardware device.</p>
+
+<h4><em>Connecting Processors</em></h4>
+
+<p>The <em>Connecting Processor</em> (CP) is the computing core of the BondMachine. The name Connecting Processor describes the capability of the processor core to be configured in such a way to be connected to other processors and to Shared Objects. CPs are as simple as possible, specialized to do a single task and optimized for doing it. In fact, the CPs inside the BondMachine architecture can have different number of registers, number of input/output register, different instruction sets (i.e. opcodes) with respect to the other ones.</p>
+
+<h4><em>Shared Objects</em></h4>
+
+<p>These are objects that are shared between the CPs (SO). Several kind of objects can be implemented to increase the processing capability and the functionality of the BMs improving the high-speed synchronization and communication between tasks running on separate CPs and all other non computing capabilities.
+Three kinds of objects have been currently implemented: Channels, Shared Memories and Barriers.</p>
+
+<h3><strong>BondMachines interconnecting</strong></h3>
+
+<p>BMs may be connected together to form clusters or can interact with the external world.</p>
+
+<h4><em>EtherBond protocol</em></h4>
+
+<p>BMs may comunicate using a native protocol called EtherBond. It is a protocol over ethernet (ethertype 0x8888) whose purpose is to replicate the electronic behavior of BMs registers and to extend it over the device boundaries. In other words clusters of BMs may be created and their behaviour is driven be the same rules of the BM devices. The main objective is to handle devices and cluster the same way.</p>
+
+<h4><em>EtherBond on Linux</em></h4>
+
+<p>The EtherBond protocol has been ported to Linux. With this port BMs can comunicate with standard PC software.</p>
+
+<h4><em>Board drivers</em></h4>
+
+<p>BMs may be implemented in hardware using FPGA, several drivers, specific to different FPGA model have been developed in order to use displays, leds, switch et al.</p>
+
+        </div>
+      </div>
+      
+    
+      
+      
+      <div id="tools" class="section p-tools">
+        
+        <div class="subtlecircle sectiondivider faicon">
+          <span class="fa-stack">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-wrench fa-stack-1x"></i>
+          </span>
+          <h5 class="icon-title">Tools</h5>
+        </div>
+        
+        <div class="container ">
+          <p>Several tools has been developed to handle the various ecosystem aspects.
+All the software is written using the Go programming language.</p>
+
+<h4><strong>BondMachines building tools</strong></h4>
+
+<p>The complexity of programming the BondMachine architecture is managed by using a set of software tools.
+These tools allow to build a specify architecture as function of the task, to modify the created architecture,
+to simulate the behavior and to check the functionality with the aim to generate the Register Transfer Level (RTL) code for a programmable device, i.e. FPGA device.</p>
+
+<p>The major tools for the BMs building are two:</p>
+<ul>
+  <li><strong><em>procbuilder</em></strong> a CP builder manages the configuration parameters of the CPs</li>
+  <li><strong><em>bondmachine</em></strong> a BM builder manages the interconnection between the CPs and SOs</li>
+</ul>
+
+<p>Moreover, the tools share the possibility of using the generated BM architecture that can be directly emulated on a workstation without the need of an FPGA. This application is called <strong><em>simbox</em></strong></p>
+
+<p>Aside this two more important tools a set of application specific software can create BMs:</p>
+
+<ul>
+  <li><strong><em>neuralbond</em></strong> is an application that models a neural network over BondMachines. The final result of the process in a device composed by many CPs acting as neuron-like computing units.</li>
+  <li><strong><em>symbond</em></strong> permits the creation of BMs that computes a particular mathematical expression.</li>
+  <li><strong><em>boolbond</em></strong> handles BMs that manage boolean expressions.</li>
+  <li><strong><em>matrixwork</em></strong> make matrix calculation with BondMachines.</li>
+</ul>
+
+<p>Other tools are under development: a translator of TensorFlow models to BondMachine (<strong><em>tf2bm</em></strong>) and an evolutional computing framework to fit BM architectures to specific problems (to “grow” BondMachines so to speak).</p>
+
+<h4><strong>BondMachines interconnecting tools</strong></h4>
+
+<ul>
+  <li><strong><em>etherbond</em></strong> is the native communication protocol for the BondMachine. It a protocol over ethernet (ethertype 0x8888) that permits to create clusters of BondMachines. A Linux implementation also have been developed to allow Linux workstation to participate the clusters.</li>
+</ul>
+
+<h4><strong>The Bondgo compiler</strong></h4>
+
+<p><em>Bondgo</em> is a compiler for the BondMachine that starts from an high level language, in this case Go, and compiles the code to generate the assembly code of the architecture. The generated assembly code may be assembled with the <em>procbuilder</em> tool resulting in the generation of the binary code for a CP.
+Unlike other compilers, <em>Bondgo</em> can create the assembly code in a way that a given processor can run it, or can even create the CP optimized for that code. The resulting architecture has only the needed resources and is highly specialized to run that code.
+Moreover <em>Bondgo</em> handle the concurrency of the source code by creating a multicore BM so it creates a new CP in the BM every time a Goroutine is encountered, that is optimized to run the code produced by the compilation.
+In the same way, when Channels are encountered, the relative hardware Channel is created within the BM and if it is passed to Goroutines, the corresponding CP is connected to this hardware Channel. The final result of this process is a BM architecture with a CP interconnection structure reflecting the source code optimized not only in terms of CP resources but also in its interconnection topology.
+<em>Bondgo</em> handles Goroutines and Channels by creating respectively CPs and hardware Channels, a software concurrent program became thus a multicore, eventually heterogeneous. Some limitations on the use of Goroutines within <em>Bondgo</em> are present due to the fact that their number has to be known from the beginning since is not possible to create them dynamically at runtime as happen in Go.
+A Similar approach is used for memory allocation, variable passed to Goroutines by value are handled by <em>Bondgo</em> using Channels or input/output registers (depending on the data structure) as a way to transfer the value from one CP to the other. When a variable is passed by reference, <em>Bondgo</em> assumes that both the CPs share the RAM where the variable is to be allocated.</p>
+
+        </div>
+      </div>
+      
+    
+      
+      
+      <div id="about" class="section p-about">
+        
+        <div class="subtlecircle sectiondivider faicon">
+          <span class="fa-stack">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-at fa-stack-1x"></i>
+          </span>
+          <h5 class="icon-title">About</h5>
+        </div>
+        
+        <div class="container ">
+          <h3><strong>Contacts</strong></h3>
+<p><br />
+<strong>Email</strong> mirko.mariotti@unipg.it<br />
+<strong>Tel</strong> +390755852781<br />
+<br /></p>
+<h3><strong>Team</strong></h3>
+<p><br />
+The project is developed by a team of people of the Department of Physics and Geology, University of Perugia and of the INFN Perugia.</p>
+
+        </div>
+      </div>
+      
+    
+
+
+    <div id="footer" class="section text-white">
+      <div class="container">
+        
+        
+<p><a href="http://bondmachine.fisica.unipg.it/">BondMachine</a>
+—
+<a href="http://www.fisgeo.unipg.it">Department of Physics and Geology</a>
+—
+<a href="http://www.unipg.it">University of Perugia</a></p>
+
+
+      </div>
+    </div>
+  </div>
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-85770689-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="site.js"></script>
+<script>
+
+opened = false;
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "200px";
+    opened = true;
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    opened = false;
+}
+
+function switchNav() {
+    if (opened) {
+	closeNav();
+    } else {
+	openNav();
+    }
+}
+</script>
+
+</html>

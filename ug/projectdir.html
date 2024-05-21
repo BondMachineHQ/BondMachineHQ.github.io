@@ -1,0 +1,455 @@
+<h1>Projects</h1>
+
+<p>A BondMachine project is a directory that contains all the necessary files to generate the firmware for a specific board.
+The project is created with the <strong>bmhelper create</strong> command line tool, which is installed with the BondMachine framework. It is configured using a Kconfig file, with commands similar to the Linux kernel (for example: make menuconfig). It is then validated and completed with the <strong>bmhelper validate</strong> and <strong>bmhelper apply</strong> commands.
+Once the project is applied, it is possible to generate the firmware and make all the other operations with the <strong>make</strong> command and several targets.</p>
+
+<h2>Project workflow</h2>
+
+<p>The project workflow is divided into several steps:</p>
+<ul>
+  <li>project creation</li>
+  <li>project configuration</li>
+  <li>project validation</li>
+  <li>project apply</li>
+  <li>make targets execution</li>
+</ul>
+
+<h3>Project creation</h3>
+
+<p>An enpty project can be created with the following command:</p>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>bmhelper create --project_name project_test
+</pre></div>
+</div>
+</div>
+
+<p>This command will create a project with the name <strong>project_test</strong> in the current directory. The project will be created with the default configuration. The default configuration is defined in the <em>bmhelper</em> tool and can be changed with the <em>make menuconfig</em> command (or any other command that can be used to configure the Kconfig file).</p>
+
+<p>Additionally, the <strong>bmhelper create</strong> command can be used to create a project starting from a working example. To get the list of available examples, use the following command:</p>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>bmhelper create --list-examples
+</pre></div>
+</div>
+</div>
+
+<p>To duplicate an example, use the following command:</p>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>bmhelper create --project_name project_test --example example_name
+</pre></div>
+</div>
+</div>
+
+<p>where <strong>example_name</strong> is the name of an example in the list of examples.</p>
+
+<h3>Project configuration</h3>
+
+<p>The project configuration is defined in the <strong>Kconfig</strong> file. The <strong>Kconfig</strong> file is a text file that defines the configuration possibilities of the project. It is similar to the <strong>Kconfig</strong> file used in the Linux kernel. With a kconfig compatible tool the <strong>Kconfig</strong> file can be used to generate the specific configuration.</p>
+
+<p>For example, the <strong>make menuconfig</strong> command will open a menu that allows you to configure the project. The menu is similar to the menu used to configure the Linux kernel. The menu is divided into several sections. Each section contains a set of configuration. The details of each configuration are described in the help of the menu. The menu is used to configure the <strong>.config</strong> file. The <strong>.config</strong> file is used by the project Makefile to configure the project and carry out the operations.</p>
+
+<div class="language-bash highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>make menuconfig
+</pre></div>
+</div>
+</div>
+
+<p>If preffered, it is possible to use a <strong>local.mk</strong> file to configure the project. The <strong>local.mk</strong> file is a text file that defines the configuration of the project directly specifying the variables. The project Makefile created by <strong>bmhelper</strong> will either use the <strong>.config</strong> file or the <strong>local.mk</strong> file to configure the project. The <strong>.config</strong> file has priority over the <strong>local.mk</strong> file. The <strong>local.mk</strong> file is useful when you want to configure the project with a script or with a tool that does not support the <strong>.config</strong> file.</p>
+
+<p>Details on the configuration variables are described in the <strong>Configuration variables</strong> section.</p>
+
+<h3>Project validation</h3>
+
+<p>The bmhelper tool can be used to validate the project configuration. The validation is performed with the following command:</p>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>make validate
+</pre></div>
+</div>
+</div>
+
+<p>The validation process checks the configuration variables and the project files. For each one of them the following color codes are used:</p>
+
+<ul>
+  <li><strong>green</strong> : the variable or file is present and valid</li>
+  <li><strong>yellow</strong> : the (optional) variable or file is not present</li>
+  <li><strong>magenta</strong> : the (mandatory) variable or file is not present but bmhelper can create it with default values</li>
+  <li><strong>red</strong> : the (mandatory) variable or file is either not present or invalid</li>
+</ul>
+
+<h3>Project apply</h3>
+
+<p>The project configuration is applied with the following command:</p>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>make apply
+</pre></div>
+</div>
+</div>
+
+<p>The apply process creates the project files and directories. The files and directories are created in the working directory. The working directory is defined by the <strong>WORKING_DIR</strong> variable. The default working directory is the current directory. 
+For the items marked as <strong>magenta</strong> in the validation process, the apply process will ask for confirmation before creating the file or directory with the default values. For the items marked as <strong>red</strong> in the validation process, the apply process will fail.</p>
+
+<h3>Firmware generation and other targets</h3>
+
+<p>After creating and appling a project, you can use the <strong>make</strong> command to generate firmware and perform other operations. The <strong>make</strong> command can be used with several targets. The targets are defined in the <strong>Makefile</strong> file and are described in the following sections.</p>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>make bondmachine
+
+Create the Bondmachine and all its connecting processors.
+You can view a diagram of the Bondmachine just created with the following instructions:
+</pre></div>
+</div>
+</div>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>make show
+
+Use graphviz to visualize the architecture generated. 
+</pre></div>
+</div>
+</div>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>make hdl
+
+Generate the source HDL code (i.e. working_dir/bondmachine.sv, working_dir/bondmachine.vhd)
+</pre></div>
+</div>
+</div>
+
+<p>The first workflow commands are:</p>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>make synthesis
+
+Start the project synthesis
+</pre></div>
+</div>
+</div>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>make implementation
+
+Start the project implementation
+</pre></div>
+</div>
+</div>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>make bitstream
+
+Start the project bitstream generation
+</pre></div>
+</div>
+</div>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>make program
+
+program the board if connected
+</pre></div>
+</div>
+</div>
+
+<p>The second workflow commands are:</p>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>make design_synthesis
+
+Start the project synthesis
+</pre></div>
+</div>
+</div>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>make design_implementation
+
+Start the project implementation
+</pre></div>
+</div>
+</div>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>make design_bitstream
+
+Start the project bitstream generation
+</pre></div>
+</div>
+</div>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>make kernel_module
+
+Create the kernel module which runs on custom buildroot linux distribution
+</pre></div>
+</div>
+</div>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>make buildroot
+
+Create the custom buildroot linux sdcard-image.
+</pre></div>
+</div>
+</div>
+
+<h2>Configuration variables</h2>
+
+<p>Wether you are reading variables from the <strong>Kconfig</strong> file or from the <strong>.mk</strong> files, the syntax is the same. The following is the list of the most commonly used variables:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Variable</strong></th>
+      <th style="text-align: center"><strong>type</strong></th>
+      <th style="text-align: right"><strong>description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>ALTERA_BOARD_MAX1000</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">Board selection max1000</td>
+    </tr>
+    <tr>
+      <td><code>ALTERA_BOARD_DE0NANO</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">Board selection de0nano</td>
+    </tr>
+    <tr>
+      <td><code>BASM_DEBUG</code></td>
+      <td style="text-align: center">boolean</td>
+      <td style="text-align: right">enable or not debug of basm</td>
+    </tr>
+    <tr>
+      <td><code>BM_REGRESSION</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">missing</td>
+    </tr>
+    <tr>
+      <td><code>BOARD</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">Board type</td>
+    </tr>
+    <tr>
+      <td><code>BOARDLESS_PROJECT</code></td>
+      <td style="text-align: center">KConfig only</td>
+      <td style="text-align: right">enable or not debug of basm</td>
+    </tr>
+    <tr>
+      <td><code>GENERAL_TYPE</code></td>
+      <td style="text-align: center">KConfig only</td>
+      <td style="text-align: right">general project type</td>
+    </tr>
+    <tr>
+      <td><code>GENERAL_TYPE_BOARDLESS</code></td>
+      <td style="text-align: center">KConfig only</td>
+      <td style="text-align: right">project without board</td>
+    </tr>
+    <tr>
+      <td><code>GENERAL_TYPE_BOARD</code></td>
+      <td style="text-align: center">KConfig only</td>
+      <td style="text-align: right">project with board</td>
+    </tr>
+    <tr>
+      <td><code>HDL_REGRESSION</code></td>
+      <td style="text-align: center">filename</td>
+      <td style="text-align: right">missing</td>
+    </tr>
+    <tr>
+      <td><code>PROJECT_TYPE_BONDGO</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">BondGo project</td>
+    </tr>
+    <tr>
+      <td><code>PROJECT_TYPE_NEURALBOND</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">Neural Network project</td>
+    </tr>
+    <tr>
+      <td><code>PROJECT_TYPE_MELBOND</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">Melbond project</td>
+    </tr>
+    <tr>
+      <td><code>PROJECT_TYPE_BASM</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">sBASM project</td>
+    </tr>
+    <tr>
+      <td><code>PROJECT_TYPE_MULTI</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">Root project aggregator for multiple project</td>
+    </tr>
+    <tr>
+      <td><code>MULTI_TARGET</code></td>
+      <td style="text-align: center">string</td>
+      <td style="text-align: right">Target to exec in case of multiple projects</td>
+    </tr>
+    <tr>
+      <td><code>MULTI_TYPE</code></td>
+      <td style="text-align: center">string</td>
+      <td style="text-align: right">Type of aggregation</td>
+    </tr>
+    <tr>
+      <td><code>MULTI_TEMPLATE_DIR</code></td>
+      <td style="text-align: center">directory</td>
+      <td style="text-align: right">directory of template to clone</td>
+    </tr>
+    <tr>
+      <td><code>MULTI_TEMPLATE_DESC</code></td>
+      <td style="text-align: center">filename</td>
+      <td style="text-align: right">multifilename description json file</td>
+    </tr>
+    <tr>
+      <td><code>LATTICE_BOARD_ICE40LP1K</code></td>
+      <td style="text-align: center">Kconfig Only</td>
+      <td style="text-align: right">Board selection Lattice ice40lp1k</td>
+    </tr>
+    <tr>
+      <td><code>LATTICE_BOARD_ICEFUN</code></td>
+      <td style="text-align: center">Kconfig Only</td>
+      <td style="text-align: right">Board selection Lattice icefun</td>
+    </tr>
+    <tr>
+      <td><code>LATTICE_BOARD_ICEBREAKER</code></td>
+      <td style="text-align: center">Kconfig Only</td>
+      <td style="text-align: right">Board selection Lattice icebreaker</td>
+    </tr>
+    <tr>
+      <td><code>LATTICE_BOARD_ICESUGARNANO</code></td>
+      <td style="text-align: center">Kconfig Only</td>
+      <td style="text-align: right">Board selection Lattice icesugarnano</td>
+    </tr>
+    <tr>
+      <td><code>SELECT_PROJECT_TYPE</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">select project type</td>
+    </tr>
+    <tr>
+      <td><code>SELECT_TOOLCHAIN</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">select toolchain</td>
+    </tr>
+    <tr>
+      <td><code>SELECT_XILINX_BOARD</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">select board</td>
+    </tr>
+    <tr>
+      <td><code>REGRESSION_TEST</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">missing description</td>
+    </tr>
+    <tr>
+      <td><code>REGRESSION_TEST_BM</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">missing</td>
+    </tr>
+    <tr>
+      <td><code>REGRESSION_TEST_HDL</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">missing</td>
+    </tr>
+    <tr>
+      <td><code>REGRESSION_TEST_SIM</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">missing</td>
+    </tr>
+    <tr>
+      <td><code>ROOTDIR</code></td>
+      <td style="text-align: center">string</td>
+      <td style="text-align: right">Directory storing the board-specific files</td>
+    </tr>
+    <tr>
+      <td><code>SIM_REGRESSION</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">missing</td>
+    </tr>
+    <tr>
+      <td><code>SOURCE_GO</code></td>
+      <td style="text-align: center">filename</td>
+      <td style="text-align: right">bondgo source</td>
+    </tr>
+    <tr>
+      <td><code>SOURCE_NEURALBOND</code></td>
+      <td style="text-align: center">filename</td>
+      <td style="text-align: right">neuralbond source file</td>
+    </tr>
+    <tr>
+      <td><code>SOURCE_MELBOND</code></td>
+      <td style="text-align: center">filename</td>
+      <td style="text-align: right">melnond source file</td>
+    </tr>
+    <tr>
+      <td><code>SOURCE_BASM</code></td>
+      <td style="text-align: center">filenames</td>
+      <td style="text-align: right">basm source file</td>
+    </tr>
+    <tr>
+      <td><code>TOOLCHAIN</code></td>
+      <td style="text-align: center">string</td>
+      <td style="text-align: right">FPGA tools</td>
+    </tr>
+    <tr>
+      <td><code>TOOLCHAIN_ALTERA</code></td>
+      <td style="text-align: center">Kconfig Only</td>
+      <td style="text-align: right">select altera toolchain</td>
+    </tr>
+    <tr>
+      <td><code>TOOLCHAIN_LATTICE</code></td>
+      <td style="text-align: center">Kconfig Only</td>
+      <td style="text-align: right">select lattice toolchain</td>
+    </tr>
+    <tr>
+      <td><code>TOOLCHAIN_XILINX</code></td>
+      <td style="text-align: center">Kconfig Only</td>
+      <td style="text-align: right">select xilinx toolchain</td>
+    </tr>
+    <tr>
+      <td><code>UART_MAPFILE</code></td>
+      <td style="text-align: center">filename</td>
+      <td style="text-align: right">support for UART</td>
+    </tr>
+    <tr>
+      <td><code>UART_SUPPORT</code></td>
+      <td style="text-align: center">boolean</td>
+      <td style="text-align: right">support for UART</td>
+    </tr>
+    <tr>
+      <td><code>WORKING_DIR</code></td>
+      <td style="text-align: center">directory</td>
+      <td style="text-align: right">Working directory path</td>
+    </tr>
+    <tr>
+      <td><code>XILINX_BOARD_BASYS3</code></td>
+      <td style="text-align: center">Kconfig Only</td>
+      <td style="text-align: right">Board selection basys3</td>
+    </tr>
+    <tr>
+      <td><code>XILINX_BOARD_ZEDBOARD</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">Board selection zedboard</td>
+    </tr>
+    <tr>
+      <td><code>XILINX_BOARD_ZC702</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">Board selection zc702</td>
+    </tr>
+    <tr>
+      <td><code>XILINX_BOARD_KC705</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">Board selection kc705</td>
+    </tr>
+    <tr>
+      <td><code>XILINX_BOARD_EBAZ4205</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">Board selection ebaz4205</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BondMachine</title>
+	<meta name="keywords" content="bondmachine">
+	<meta name="description" content="BM">
+  <link rel="stylesheet" href="combo.css">
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link href="https://vjs.zencdn.net/7.17.0/video-js.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<style>
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 50%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 25%;
+    left: 0;
+    background-color: #2e2e2e;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 100;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+
+<div id="mySidenav" class="sidenav">
+<!--  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+  <a href="/">Home</a>
+  <a href="/news">News</a>
+  <a href="/docs">Docs</a>
+  <a href="/ug">User Guide</a>
+  <a href="/diy">Do It Yourself</a>
+  <a href="/examples">Examples</a>
+  <a href="/media">Media</a>
+</div>
+
+<div id="main">
+
+    <nav><ul>
+	<li><span style="cursor:pointer" onclick="switchNav()"><img src="img/logob.png" width="32px"></img></span>&nbsp;&nbsp;&nbsp;<span style="cursor:pointer" onclick="window.location.href='http://bondmachine.fisica.unipg.it'"><img src="img/home.png" width="32px"></img></span>&nbsp;&nbsp;&nbsp;<span style="color:#66cdaa;cursor:pointer" onclick="window.location.href='/ug/#packages'">Packages</span></li>
+      
+        
+	
+          <li class="p-package"><a href="#package">bmstack</a></li>
+	
+      
+    </ul></nav>
+
+
+    
+      
+      
+      <div id="package" class="section p-package">
+        
+        <div class="container ">
+          <h1>bmstack</h1>
+
+<p>bmstack is part of BondMachine project. Within the project It is used to create stacks and queues distributed among several BondMachine cores. due to its generality it can also be used as standalone tool to produce HDL shared stacks and queues to be used in other projects.
+The HDL code is build using golang templates that creates the code starting from the following data structure. The comments describe the meaning of each field.</p>
+
+<div class="language-go highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span style="color:#080;font-weight:bold">type</span> Push <span style="color:#080;font-weight:bold">struct</span> {
+        Agent <span style="color:#0a8;font-weight:bold">string</span> <span style="color:#777">// The name of the agent that is pushing</span>
+        Tick  <span style="color:#0a8;font-weight:bold">uint64</span> <span style="color:#777">// The tick at which the push occurs</span>
+        Value <span style="color:#0a8;font-weight:bold">string</span> <span style="color:#777">// The value that is pushed</span>
+}
+
+<span style="color:#080;font-weight:bold">type</span> Pop <span style="color:#080;font-weight:bold">struct</span> {
+        Agent <span style="color:#0a8;font-weight:bold">string</span> <span style="color:#777">// The name of the agent that is popping</span>
+        Tick  <span style="color:#0a8;font-weight:bold">uint64</span> <span style="color:#777">// The tick at which the pop occurs</span>
+}
+
+<span style="color:#080;font-weight:bold">type</span> TestBenchData <span style="color:#080;font-weight:bold">struct</span> {
+        Pops         []Pop    <span style="color:#777">// List of pops</span>
+        Pushes       []Push   <span style="color:#777">// List of pushes</span>
+        TestSequence []<span style="color:#0a8;font-weight:bold">string</span> <span style="color:#777">// Pushes and pops in order</span>
+}
+
+<span style="color:#080;font-weight:bold">type</span> BmStack <span style="color:#080;font-weight:bold">struct</span> {
+        ModuleName <span style="color:#0a8;font-weight:bold">string</span>   <span style="color:#777">// The name of the module</span>
+        DataSize   <span style="color:#0a8;font-weight:bold">int</span>      <span style="color:#777">// The size of the data bus</span>
+        Depth      <span style="color:#0a8;font-weight:bold">int</span>      <span style="color:#777">// The depth of the stack</span>
+        Senders    []<span style="color:#0a8;font-weight:bold">string</span> <span style="color:#777">// The names of the agents that can send data to the stack</span>
+        Receivers  []<span style="color:#0a8;font-weight:bold">string</span> <span style="color:#777">// The names of the agents that can receive data from the stack</span>
+        MemType    <span style="color:#0a8;font-weight:bold">string</span>   <span style="color:#777">// &quot;LIFO&quot; for a stack or &quot;FIFO&quot; for a queue</span>
+        funcMap    template.FuncMap
+
+        <span style="color:#777">// TestBench data</span>
+        TestBenchData
+}
+</pre></div>
+</div>
+</div>
+
+<h2>API</h2>
+
+<p>The library can be used in two ways.
+The first one is from a go program. After creating a BmStack structure, the user can call the WriteHDL function to produce the HDL code.
+An example on how the library can be used this way can be seen in the go test file (bmstack_test.go).</p>
+
+<div class="language-go highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span style="color:#080;font-weight:bold">func</span> TestWriteHDL(t *testing.T) {
+        <span style="color:#777">// Create a new stack with 4 agents</span>
+        stack := BmStack{
+                ModuleName: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">test</span><span style="color:#710">&quot;</span></span>,
+                DataSize:   <span style="color:#00D">32</span>,
+                Depth:      <span style="color:#00D">8</span>,
+                Senders:    []<span style="color:#0a8;font-weight:bold">string</span>{<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">sender1</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">sender2</span><span style="color:#710">&quot;</span></span>},
+                Receivers:  []<span style="color:#0a8;font-weight:bold">string</span>{<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">receiver1</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">receiver2</span><span style="color:#710">&quot;</span></span>},
+                MemType:    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">LIFO</span><span style="color:#710">&quot;</span></span>
+        }
+
+        <span style="color:#777">// write the HDL code</span>
+        stack.WriteHDL()
+</pre></div>
+</div>
+</div>
+
+<p>The second part of the struct can be filled with test data. These data are used to produce a test bench for the stack. Using the test bench the user can verify the correctness of the stack. The test bench is produced by calling the WriteTestBench function.</p>
+
+<div class="language-go highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span style="color:#080;font-weight:bold">func</span> TestWriteTestBench(t *testing.T) {
+        stack := BmStack{
+        <span style="color:#777">// ...</span>
+                s.Pushes = []Push{
+                        Push{<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">sender1</span><span style="color:#710">&quot;</span></span>, <span style="color:#00D">200</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">32'd1</span><span style="color:#710">&quot;</span></span>},
+                }
+                s.Pops = []Pop{
+                        Pop{<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">receiver1</span><span style="color:#710">&quot;</span></span>, <span style="color:#00D">60</span>},
+                }
+        }
+        <span style="color:#777">// write the test bench</span>
+        stack.WriteTestBench()
+}
+</pre></div>
+</div>
+</div>
+
+<p>The two functions (WriteHDL and WriteTestBench) return a string that contains the HDL code or an error if something went wrong (string, error).
+The provided go test file (bmstack_test.go) shows how the library can be used in this way. When invoked (go test), it produces the two files (bmstack.v and bmstack_tb.v).</p>
+
+<h2>CLI</h2>
+
+<p>the library also came with a companion CLI executable called bmstack that provides the basic interface to the library. This is the second Possible way to use it.</p>
+
+<div class="language-bash highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>$ bmstack -h
+Usage of bmstack:
+  -d    Verbose
+  -data-width int
+        Width of the data bus (default 32)
+  -depth int
+        Depth of the stack/queue (default 8)
+  -hdl-file string
+        Name of the file to write the HDL to (empty string to disable) (default &quot;stack.v&quot;)
+  -memory-type string
+        Memory type, either stack or queue (default &quot;queue&quot;)
+  -random-stimulus int
+        Generate random stimulus including N pushes and pops for every agent (0 to disable)
+  -receivers string
+        Comma separated list of names of signal tags that will receive data from the stack/queue
+  -senders string
+        Comma separated list of names of signal tags that will send data to the stack/queue
+  -sim-length int
+        Length of the simulation in clock cycles (default 1000)
+  -stimulus-file string
+        Name of the JSON file to load the stimulus from (empty string to disable)
+  -tb-file string
+        Name of the file to write the testbench to (empty string to disable)
+  -v    Verbose
+</pre></div>
+</div>
+</div>
+
+<p>Examples of usage:</p>
+
+<h2>Simulation</h2>
+
+<p>WIP</p>
+
+<p>To see how the library is used in the BondMachine project, please refer to the BondMachine examples directory that contains many examples of BondMachines using stacks and queues.</p>
+
+        </div>
+      </div>
+      
+    
+
+
+    <div id="footer" class="section text-white">
+      <div class="container">
+        
+        
+<p><a href="http://bondmachine.fisica.unipg.it/">BondMachine</a>
+—
+<a href="http://www.fisgeo.unipg.it">Department of Physics and Geology</a>
+—
+<a href="http://www.unipg.it">University of Perugia</a></p>
+
+
+      </div>
+    </div>
+  </div>
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-85770689-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="site.js"></script>
+<script>
+
+opened = false;
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "200px";
+    opened = true;
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    opened = false;
+}
+
+function switchNav() {
+    if (opened) {
+	closeNav();
+    } else {
+	openNav();
+    }
+}
+</script>
+
+</html>

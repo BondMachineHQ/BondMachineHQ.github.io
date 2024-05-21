@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BondMachine</title>
+	<meta name="keywords" content="bondmachine">
+	<meta name="description" content="BM">
+  <link rel="stylesheet" href="combo.css">
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<style>
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 50%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 25%;
+    left: 0;
+    background-color: #2e2e2e;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 100;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+
+<div id="mySidenav" class="sidenav">
+<!--  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+  <a href="/">Home</a>
+  <a href="/news">News</a>
+  <a href="/docs">Docs</a>
+  <a href="/ug">User Guide</a>
+  <a href="/diy">Do It Yourself</a>
+  <a href="/examples">Examples</a>
+  <a href="/media">Media</a>
+</div>
+
+<div id="main">
+
+    <nav><ul>
+	<li><span style="cursor:pointer" onclick="switchNav()"><img src="img/logob.png" width="32px"></img></span>&nbsp;&nbsp;&nbsp;<span style="cursor:pointer" onclick="window.location.href='http://bondmachine.fisica.unipg.it'"><img src="img/home.png" width="32px"></img></span>&nbsp;&nbsp;&nbsp;<span style="color:#66cdaa;cursor:pointer">Docs</span></li>
+      
+        
+	
+          <li class="p-papers"><a href="#papers">Papers</a></li>
+	
+      
+        
+	
+          <li class="p-quickstart"><a href="#quickstart">Quick Start</a></li>
+	
+      
+        
+	
+          <li class="p-tutorials"><a href="#tutorials">Tutorials</a></li>
+	
+      
+        
+	
+          <li class="p-presentations"><a href="#presentations">Presentations</a></li>
+	
+      
+    </ul></nav>
+
+
+    
+      
+      
+      <div id="papers" class="section p-papers">
+        
+        <div class="container center">
+          <h1>Papers</h1>
+
+<p>This section contains all the technical information about the project</p>
+
+<p>2021 - <a href="https://www.sciencedirect.com/science/article/pii/S0167819121001150" target="_blank">Parallel Computing Article</a></p>
+
+<p>2019 - <a href="https://cds.cern.ch/record/2708682" target="_blank">ISCG 2019 Conference paper</a></p>
+
+<p>2018 - <a href="img/design-paper-innovatefpga.pdf">Innovate FPGA Design paper</a></p>
+
+        </div>
+      </div>
+      
+    
+      
+      
+      <div id="quickstart" class="section p-quickstart">
+        
+        <div class="container justify">
+          <h1>Quick Start</h1>
+
+<h2>Installation</h2>
+
+<p>To install the framework use the installer script downloadable from the web site. It contains all the tools and can be used on every system.</p>
+
+<p>To get the framework choose the directory where the binaries have to be installed. The directory has to be writable and inserted in the user’s $PATH. There is no need of superuser access but the user has to have the rights to use the specific FPGA tools and board programming.
+Set the environment variable BONDMACHINE_DIR to point to this directory:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">export BONDMACHINE_DIR=[the choosen directory]
+</span></code></pre></div></div>
+
+<p>and execute the install script with the bash shell:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">bash &lt;(curl -fsSL http://bondmachine.fisica.unipg.it/installer/install)
+</span></code></pre></div></div>
+
+<p>A similar uninstall script exists:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">bash &lt;(curl -fsSL http://bondmachine.fisica.unipg.it/installer/uninstall)
+</span></code></pre></div></div>
+
+<p>The install/uninstall script just copy/remove the framework executables, no other files are needed.</p>
+
+<h2>Environment</h2>
+
+<p>The check that the framework is correctly installed and that all the needed tools are available, execute the command <strong>bmhelper doctor</strong>. It should print an  output similar to the following:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>bmhelper doctor
+<span class="go"> [ OK ]          Mandatory dependency found: make
+ [ OK ]          Mandatory dependency found: dot
+ [ OK ]          Mandatory dependency found: curl
+ [ OK ]          BondMachine tool basm found
+ [ OK ]          BondMachine tool bmanalysis found
+ [ OK ]          BondMachine tool bmnumbers found
+ [ OK ]          BondMachine tool bmstack found
+ [ OK ]          BondMachine tool bondgo found
+ [ OK ]          BondMachine tool bondmachine found
+ [ OK ]          BondMachine tool melbond found
+ [ OK ]          BondMachine tool neuralbond found
+ [ OK ]          BondMachine tool procbuilder found
+ [ OK ]          BondMachine tool simbox found
+ [ OK ]          All BondMachine tools has been found.
+ [ WARNING ]     Optional tool found: vivado
+ [ WARNING ]     Optional tool found: icepack
+ [ WARNING ]     Optional tool not found: yosis
+ [ WARNING ]     Optional tool not found: quartus
+ [ OK ]          Dependencies checked
+</span></code></pre></div></div>
+<p>If some of the prerequisites are missing, the framework will not work correctly. Install the missing ones according to the distro you are using and repeat the check.
+ The optional tools are needed only for specific boards, so if you don’t have the board, you can ignore the warning.</p>
+
+<h2>Basic examples</h2>
+
+<p>To test that framework is working correctly, clone the examples repository:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git clone https://github.com/BondMachineHQ/bmexamples
+</span></code></pre></div></div>
+
+<p>and move into the directory:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">cd bmexamples
+</span></code></pre></div></div>
+
+<p>The directory contains a set of examples that can be used to test the framework.</p>
+
+        </div>
+      </div>
+      
+    
+      
+      
+      <div id="tutorials" class="section p-tutorials">
+        
+        <div class="container center">
+          <h1>Tutorials</h1>
+
+<ul>
+  <li><a href="/tut001">Basic procbuilder operations</a></li>
+</ul>
+
+        </div>
+      </div>
+      
+    
+      
+      
+      <div id="presentations" class="section p-presentations">
+        
+        <div class="container center">
+          <h1>Presentations</h1>
+
+<p><a href="">Lecture and Hands-on at “<a href="https://agenda.infn.it/event/38191/" target="_blank">Introductory course to HLS FPGA programming</a>”, 27 -30 Nov 2023</a></p>
+
+<iframe src="https://www.slideshare.net/slideshow/embed_code/key/1ozgLzCP8f6dnT?hostedIn=slideshare&amp;page=upload" width="760" height="480" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px;   margin-bottom:5px;max-width: 100%;" allowfullscreen=""></iframe>
+
+<p><a href="img/talk-icsc2023.pdf">Download Slides</a></p>
+
+<hr />
+
+<p><a href="#presentations">Talk at Workshop of the CCR of INFN, 23 May 2023</a>.</p>
+
+<p><a href="img/talk-ccr2023.pdf">Download Slides</a></p>
+
+<hr />
+
+<p><a href="">Talk at “SOSC 2022 Fourth International School on Open Science Cloud, November 28, 2022 to December 2, 2022 INFN Perugia”</a></p>
+
+<iframe src="https://www.slideshare.net/slideshow/embed_code/key/efKHzbUTNM4uLv?startSlide=1" width="760" height="505" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px;   margin-bottom:5px;max-width: 100%;" allowfullscreen=""></iframe>
+
+<p><a href="img/talk-sosc2022.pdf">Download Slides</a></p>
+
+<hr />
+
+<p><a href="#presentations">Talk at “Third edition of the Machine Learning at INFN advanced level hackathon”</a></p>
+
+<iframe src="https://www.slideshare.net/slideshow/embed_code/key/FLFuuyUk2v2LH0?startSlide=1" width="760" height="505" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px;   margin-bottom:5px;max-width: 100%;" allowfullscreen=""></iframe>
+
+<p><a href="img/talk-mlhackaton2022.pdf">Download Slides</a></p>
+
+<hr />
+
+<p><a href="#presentations">Talk at “Joint ICTP-IAEA School on FPGA-based SoC and its Applications to Nuclear and Scientific Instrumentation”</a></p>
+
+<iframe src="https://www.slideshare.net/slideshow/embed_code/key/pdPOPIHdUzSItS?startSlide=1" width="760" height="505" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px;   margin-bottom:5px;max-width: 100%;" allowfullscreen=""></iframe>
+
+<p><a href="img/talk-ictp2022.pdf">Download Slides</a></p>
+
+<hr />
+
+<p><a href="#presentations">“Talk at Machine Learning Techniques with FPGA Devices for Particle Physics Experiments”</a></p>
+
+<iframe src="https://www.slideshare.net/slideshow/embed_code/key/j3q1F1T0JVc0J4?startSlide=1" width="760" height="505" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px;   margin-bottom:5px;max-width: 100%;" allowfullscreen=""></iframe>
+
+<p><a href="img/talk-infnml2022.pdf">Download Slides</a></p>
+
+<hr />
+
+<p><a href="#presentations">Talk at Workshop of the CCR of INFN, 23 May 2022</a>.</p>
+
+<iframe src="https://www.slideshare.net/slideshow/embed_code/key/a00XXegknpnysU?hostedIn=slideshare&amp;page=upload" width="760" height="505" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+
+<p><a href="img/talk-ccr2022.pdf">Download Slides</a></p>
+
+<hr />
+
+<p><a href="#presentations">Talk at ParCo2019, Prague ,10-13 Sept 2019</a></p>
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/kcjJTHoB7IwBGR" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen=""> </iframe>
+<div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/mirkomariotti/talk-at-parco2019" title="Talk at ParCo2019" target="_blank">Talk at ParCo2019</a> </strong> from <strong><a href="https://www.slideshare.net/mirkomariotti" target="_blank">Mirko Mariotti</a></strong> </div>
+
+<p><a href="img/talk-parco2019.pdf">Download Slides</a></p>
+
+<hr />
+
+<p><a href="#presentations">Lecture at NiPS 2019 Summer school, Perugia, 3-6 Sept 2019</a></p>
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/3kyPDdkqZGrI3a" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen=""> </iframe>
+<div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/mirkomariotti/nips-summer-school-2019-lecture" title="NiPS Summer School 2019 Lecture " target="_blank">NiPS Summer School 2019 Lecture </a> </strong> from <strong><a href="https://www.slideshare.net/mirkomariotti" target="_blank">Mirko Mariotti</a></strong> </div>
+
+<p><a href="img/talk-nips2019.pdf">Download Slides</a></p>
+
+<hr />
+
+<p><a href="http://indico.ictp.it/event/8680/overview" target="_blank">Lecture at Advanced Workshop on Modern FPGA Based Technology for Scientific Computing 2019, ICTP 13 May - 24 May, Trieste, Italy</a></p>
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/pZe5DIuUTkTLdS" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen=""> </iframe>
+<div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/mirkomariotti/lecture-at-advanced-workshop-on-modern-fpga-based-technology-for-scientific-computing-2019" title="Lecture at Advanced Workshop on Modern FPGA Based Technology for Scientific Computing 2019" target="_blank">Lecture at Advanced Workshop on Modern FPGA Based Technology for Scientific Computing 2019</a> </strong> from <strong><a href="https://www.slideshare.net/mirkomariotti" target="_blank">Mirko Mariotti</a></strong> </div>
+
+<p><a href="img/talk-ictp2019.pdf">Download Slides</a></p>
+
+<hr />
+
+<p><a href="#presentations">Talk at ISGC2019, 5 April 2019, Academia Sinica, Taipei, Taiwan</a></p>
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/ksJ5YZsgPGOJMU" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen=""> </iframe>
+<div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/mirkomariotti/the-bondmachine-toolkit-enabling-machine-learning-on-fpga" title="The BondMachine Toolkit, enabling machine learning on FPGA" target="_blank">The BondMachine Toolkit, enabling machine learning on FPGA</a> </strong> from <strong><a href="https://www.slideshare.net/mirkomariotti" target="_blank">Mirko Mariotti</a></strong> </div>
+
+<p><a href="img/talk-isgc2019.pdf">Download Slides</a></p>
+
+<hr />
+
+<p><a href="#presentations">Talk given at Golab 2018, Florence, 22 Oct 2018</a></p>
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/GtpBF7FgdZQmUS" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen=""> </iframe>
+<div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/mirkomariotti/go-hardware-go-my-golab-2018-talk-on-the-bondmachine-project" title="Go, hardware, Go! My Golab 2018 talk on the BondMachine Project" target="_blank">Go, hardware, Go! My Golab 2018 talk on the BondMachine Project</a> </strong> from <strong><a href="https://www.slideshare.net/mirkomariotti" target="_blank">Mirko Mariotti</a></strong> </div>
+
+<p><a href="img/talk-golab2018.pdf">Download Slides</a></p>
+
+<hr />
+
+<p><a href="#presentations">Talk given at Intel Campus, San Jose (CA), 15 Aug 2018</a></p>
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/D9AfsKfwh8KMQI" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen=""> </iframe>
+<div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/mirkomariotti/bondmachine-slides-for-the-innovatefpga-2018-grand-final" title="BondMachine slides for the InnovateFPGA 2018 Grand Final" target="_blank">BondMachine slides for the InnovateFPGA 2018 Grand Final</a> </strong> from <strong><a href="https://www.slideshare.net/mirkomariotti" target="_blank">Mirko Mariotti</a></strong> </div>
+
+<hr />
+
+<p><a href="#presentations">Talk given at INFN-CNAF, 23 Feb 2018</a></p>
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/3eqNRFdxRiKDAM" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen=""> </iframe>
+<div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/mirkomariotti/the-bondmachine-a-fully-reconfigurable-computing-ecosystem" title="The BondMachine: a fully reconfigurable computing ecosystem" target="_blank">The BondMachine: a fully reconfigurable computing ecosystem</a> </strong> from <strong><a href="https://www.slideshare.net/mirkomariotti" target="_blank">Mirko Mariotti</a></strong> </div>
+
+<hr />
+
+<p><a href="https://agenda.infn.it/conferenceDisplay.py?confId=13040">Talk given at Workshop della CCR: L.N.G.S. , 22-26 May 2017 , Gran Sasso National Laboratories, Italy</a></p>
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/61pZlQuwRdxR3" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen=""> </iframe>
+<div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/mirkomariotti/bondmachine-a-mouldable-computer-architecture" title="Bondmachine, a mouldable Computer Architecture" target="_blank">Bondmachine, a mouldable Computer Architecture</a> </strong> from <strong><a target="_blank" href="https://www.slideshare.net/mirkomariotti">Mirko Mariotti</a></strong> </div>
+
+
+        </div>
+      </div>
+      
+    
+
+
+    <div id="footer" class="section text-white">
+      <div class="container">
+        
+        
+<p><a href="http://bondmachine.fisica.unipg.it/">BondMachine</a>
+—
+<a href="http://www.fisgeo.unipg.it">Department of Physics and Geology</a>
+—
+<a href="http://www.unipg.it">University of Perugia</a></p>
+
+
+      </div>
+    </div>
+  </div>
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-85770689-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="site.js"></script>
+<script>
+
+opened = false;
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "200px";
+    opened = true;
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    opened = false;
+}
+
+function switchNav() {
+    if (opened) {
+	closeNav();
+    } else {
+	openNav();
+    }
+}
+</script>
+
+</html>

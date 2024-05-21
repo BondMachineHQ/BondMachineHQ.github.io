@@ -1,0 +1,84 @@
+<h1>bmnumbers</h1>
+
+<p>bmstack is part of BondMachine project. bmnumbers is both a command line tool to convert or cast numbers to and from different formats and a library to do the same. It is used within the BondMachine every time numbers are handled.</p>
+
+<h2>Supported number types</h2>
+
+<p>The supported number types are listed in the following table.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type Name</th>
+      <th>Prefixes</th>
+      <th>Description</th>
+      <th>Static</th>
+      <th>Lenght</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>unsigned</td>
+      <td>none <br /> 0u <br /> 0d</td>
+      <td>Unsigned integer</td>
+      <td>yes</td>
+      <td>any</td>
+    </tr>
+    <tr>
+      <td>signed</td>
+      <td>0s <br /> 0sd</td>
+      <td>Signed integer</td>
+      <td>yes</td>
+      <td>any</td>
+    </tr>
+    <tr>
+      <td>bin</td>
+      <td>0b <br /> 0b&lt;s&gt;</td>
+      <td>Binary number</td>
+      <td>yes</td>
+      <td>any <br /> s bits</td>
+    </tr>
+    <tr>
+      <td>hex</td>
+      <td>0x</td>
+      <td>Hexadecimal number</td>
+      <td>yes</td>
+      <td>any</td>
+    </tr>
+    <tr>
+      <td>float16</td>
+      <td>0f&lt;16&gt;</td>
+      <td>IEEE 754 half precision floating point number</td>
+      <td>yes</td>
+      <td>16 bits</td>
+    </tr>
+    <tr>
+      <td>float32</td>
+      <td>0f <br /> 0f&lt;32&gt;</td>
+      <td>IEEE 754 single precision floating point number</td>
+      <td>yes</td>
+      <td>32 bits</td>
+    </tr>
+    <tr>
+      <td>lqs[s]t[t]</td>
+      <td>0lq&lt;s.t&gt;</td>
+      <td>Linear quantized number with size s and type t</td>
+      <td>no</td>
+      <td>s bits</td>
+    </tr>
+    <tr>
+      <td>fps[s]f[f]</td>
+      <td>0fp&lt;s.f&gt;</td>
+      <td>Fixed point number with size s and fraction f</td>
+      <td>no</td>
+      <td>s bits</td>
+    </tr>
+    <tr>
+      <td>flp[e]f[f]</td>
+      <td>0flp&lt;e.f&gt;</td>
+      <td>FloPoCo floating point number with exponent e and mantissa f</td>
+      <td>no</td>
+      <td>e+f+3 bits</td>
+    </tr>
+  </tbody>
+</table>

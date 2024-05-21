@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BondMachine</title>
+	<meta name="keywords" content="bondmachine">
+	<meta name="description" content="BM">
+  <link rel="stylesheet" href="combo.css">
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<style>
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 50%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 25%;
+    left: 0;
+    background-color: #2e2e2e;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 100;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+
+<div id="mySidenav" class="sidenav">
+<!--  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+  <a href="/">Home</a>
+  <a href="/news">News</a>
+  <a href="/docs">Docs</a>
+  <a href="/ug">User Guide</a>
+  <a href="/diy">Do It Yourself</a>
+  <a href="/examples">Examples</a>
+  <a href="/media">Media</a>
+</div>
+
+<div id="main">
+
+    <nav><ul>
+	<li><span style="cursor:pointer" onclick="switchNav()"><img src="img/logob.png" width="32px"></img></span>&nbsp;&nbsp;&nbsp;<span style="cursor:pointer" onclick="window.location.href='http://bondmachine.fisica.unipg.it'"><img src="img/home.png" width="32px"></img></span>&nbsp;&nbsp;&nbsp;<span style="color:#66cdaa;cursor:pointer">User Guide</span></li>
+      
+        
+	
+          <li class="p-intro"><a href="#intro">Intro</a></li>
+	
+      
+        
+	
+          <li class="p-repo"><a href="#repo">Repositories</a></li>
+	
+      
+        
+	
+          <li class="p-installing"><a href="#installing">Installation</a></li>
+	
+      
+        
+	
+          <li class="p-projectdir"><a href="#projectdir">Projects</a></li>
+	
+      
+        
+	
+          <li class="p-tools"><a href="#tools">Tools</a></li>
+	
+      
+        
+	
+          <li class="p-basm"><a href="#basm">Basm</a></li>
+	
+      
+        
+	
+          <li class="p-bondgo"><a href="#bondgo">Bondgo</a></li>
+	
+      
+        
+	
+          <li class="p-packages"><a href="#packages">Packages</a></li>
+	
+      
+    </ul></nav>
+
+
+    
+      
+      
+      <div id="intro" class="section p-intro">
+        
+        <div class="container center">
+          <h1>Introduction</h1>
+
+<p><img src="../img/vip.png" alt="VIP" width="200px" style="margin: 10px;" /></p>
+
+        </div>
+      </div>
+      
+    
+      
+      
+      <div id="repo" class="section p-repo">
+        
+        <div class="container ">
+          <h1>Repositories</h1>
+
+<p>The BondMachine project source file are hosted on GitHub as the <a href="https://github.com/BondMachineHQ" target="_blank"><strong><em>BondMachineHQ organization</em></strong></a>.</p>
+
+<p>The two most important repositories are the <a href="https://github.com/BondMachineHQ/BondMachine" target="_blank"><strong><em>BondMachine repository</em></strong></a> that contains the project source code.</p>
+
+<p>And the <a href="https://github.com/BondMachineHQ/bmexamples" target="_blank"><strong><em>Projects repository</em></strong></a> that contains tested examples of BondMachine that can be built for specific devices.</p>
+
+<p>Other public repositories are:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/BondMachineHQ/BMBuildkit" target="_blank"><strong><em>BMBuildkit</em></strong></a>    </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/BondMachineHQ/BMBuildkit-dagger" target="_blank"><strong><em>BMBuildkit-dagger</em></strong></a>    </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/BondMachineHQ/bmapiaximmtransceiver" target="_blank"><strong><em>bmapiaximmtransceiver</em></strong></a>    </td>
+      <td>Transceiver-like module for AXI Memory Mapped BMAPI</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/BondMachineHQ/bmapiuarttransceiver" target="_blank"><strong><em>bmapiuarttransceiver</em></strong></a>    </td>
+      <td>Transceiver-like module for UART BMAPI</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/BondMachineHQ/bmexamples" target="_blank"><strong><em>bmexamples</em></strong></a>    </td>
+      <td>BondMachine examples, demos and tutorials</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/BondMachineHQ/bmhelper" target="_blank"><strong><em>bmhelper</em></strong></a>    </td>
+      <td>A tool to help users in creating and configuring projects using the BondMachine framework</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/BondMachineHQ/bmresources" target="_blank"><strong><em>bmresources</em></strong></a>    </td>
+      <td>Resources used by bmhelper internally</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/BondMachineHQ/bondmachine_ebaz4205_buildroot" target="_blank"><strong><em>bondmachine_ebaz4205_buildroot</em></strong></a>    </td>
+      <td>BR2 directory for ebaz4205, the repo is not meant to be used directly. It is used internally by the BondMachine makefilles to create images with buildroot</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/BondMachineHQ/bondmachine_ebaz4205_buildroot_example" target="_blank"><strong><em>bondmachine_ebaz4205_buildroot_example</em></strong></a>    </td>
+      <td>Buildroot on Ebaz4205. How to create from scratch a complete BondMachine accelerated buildroot image for the Ebaz4205 board</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/BondMachineHQ/bondmachine_zedboard_buildroot" target="_blank"><strong><em>bondmachine_zedboard_buildroot</em></strong></a>    </td>
+      <td>BR2 directory for zedboard. the repo is not meant to be used directly. It is used internally by the BondMachine makefilles to create images with buildroot</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/BondMachineHQ/bondmachine_zedboard_buildroot_example" target="_blank"><strong><em>bondmachine_zedboard_buildroot_example</em></strong></a>    </td>
+      <td>Buildroot on Zedboard. How to create from scratch a complete BondMachine accelerated buildroot image for the Zedboard</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/BondMachineHQ/kserve-bond-extension" target="_blank"><strong><em>kserve-bond-extension</em></strong></a>    </td>
+      <td>Project that extends KServe predictors</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/BondMachineHQ/kserve-ui" target="_blank"><strong><em>kserve-ui</em></strong></a>    </td>
+      <td>Dynamic KServe User Interface</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/BondMachineHQ/ml-ebaz4205" target="_blank"><strong><em>ml-ebaz4205</em></strong></a>    </td>
+      <td>Machine Learning with HLS4ML and BM on ebaz4205</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/BondMachineHQ/ml-zedboard" target="_blank"><strong><em>ml-zedboard</em></strong></a>    </td>
+      <td>Machine Learning with HLS4ML and BM on zedboard</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/BondMachineHQ/pybondmachine" target="_blank"><strong><em>pybondmachine</em></strong></a>    </td>
+      <td>pybondmachine is the Python library designed to streamline the development of FPGA accelerators through the use of the BondMachine framework.</td>
+    </tr>
+  </tbody>
+</table>
+
+        </div>
+      </div>
+      
+    
+      
+      
+      <div id="installing" class="section p-installing">
+        
+        <div class="container ">
+          <h1>Installation</h1>
+
+<h2>Binary</h2>
+
+<p>To install the framework use the installer script downloadable from the web site. It contains all the tools and can be used on every system.</p>
+
+<p>To get the framework choose the directory where the binaries have to be installed. The directory has to be writable and inserted in the user’s $PATH. There is no need of superuser access but the user has to have the rights to use the specific FPGA tools and board programming.
+Set the environment variable BONDMACHINE_DIR to point to this directory:</p>
+
+<div class="language-console highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>export BONDMACHINE_DIR=[the choosen directory]
+</pre></div>
+</div>
+</div>
+
+<p>and execute the install script with the bash shell:</p>
+
+<div class="language-console highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>bash &lt;(curl -fsSL http://bondmachine.fisica.unipg.it/installer/install)
+</pre></div>
+</div>
+</div>
+
+<p>A similar uninstall script exists:</p>
+
+<div class="language-console highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>bash &lt;(curl -fsSL http://bondmachine.fisica.unipg.it/installer/uninstall)
+</pre></div>
+</div>
+</div>
+
+<p>The install/uninstall script just copy/remove the framework executables, no other files are needed.</p>
+
+<h2>From sources</h2>
+
+<p>If you want to compile the framework from sources, you need to install the following tools:</p>
+
+<ul>
+  <li>
+    <p><a href="https://golang.org" target="_blank">Go</a> (version 1.21 or higher) is needed to compile the framework. The go language is used to write the framework and to compile the tools.</p>
+  </li>
+  <li>
+    <p><a href="https://nodejs.org/en/" target="_blank">Nodejs</a> (version 16 or higher) is needed to compile the bmhelper tool. The bmhelper tool is used to assist the user in the creation of the BondMachine projects.</p>
+  </li>
+</ul>
+
+<h2>bmhelper</h2>
+
+<p>Clone the bmhelper repo at <a href="https://github.com/BondMachineHQ/bmhelper" target="_black">https://github.com/BondMachineHQ/bmhelper</a> and compile the tool.</p>
+
+<div class="language-console highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>git clone https://github.com/BondMachineHQ/bmhelper.git
+</pre></div>
+</div>
+</div>
+
+<p>Move within the newly create bmhelper directory and execute npm to install the dependencies and compile the tool.</p>
+
+<div class="language-console highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>cd bmhelper
+npm i 
+npm run compile &amp;&amp; npm run build
+</pre></div>
+</div>
+</div>
+
+<p>The bmhelper tool is now available in the pkg_out directory.</p>
+
+<h2>BondMachine framework</h2>
+
+<p>Clone the main repo at <a href="https://github.com/BondMachineHQ/BondMachine.git" target="_black">https://github.com/BondMachineHQ/BondMachine.git</a>.</p>
+
+<div class="language-console highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>git clone https://github.com/BondMachineHQ/BondMachine.git
+</pre></div>
+</div>
+</div>
+
+<p>Move within the newly create BondMachine directory and execute make to build all the tools.</p>
+
+<div class="language-console highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>cd BondMachine ; make
+</pre></div>
+</div>
+</div>
+
+<h2>Environment</h2>
+
+<p>The check that the framework is correctly installed and that all the needed tools are available, execute the command <strong>bmhelper doctor</strong>. It should print an  output similar to the following:</p>
+
+<div class="language-console highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>$ bmhelper doctor
+ [ OK ]          Mandatory dependency found: make
+ [ OK ]          Mandatory dependency found: dot
+ [ OK ]          Mandatory dependency found: curl
+ [ OK ]          BondMachine tool basm found
+ [ OK ]          BondMachine tool bmanalysis found
+ [ OK ]          BondMachine tool bmnumbers found
+ [ OK ]          BondMachine tool bmstack found
+ [ OK ]          BondMachine tool bondgo found
+ [ OK ]          BondMachine tool bondmachine found
+ [ OK ]          BondMachine tool melbond found
+ [ OK ]          BondMachine tool neuralbond found
+ [ OK ]          BondMachine tool procbuilder found
+ [ OK ]          BondMachine tool simbox found
+ [ OK ]          All BondMachine tools has been found.
+ [ WARNING ]     Optional tool found: vivado
+ [ WARNING ]     Optional tool found: icepack
+ [ WARNING ]     Optional tool not found: yosis
+ [ WARNING ]     Optional tool not found: quartus
+ [ OK ]          Dependencies checked
+</pre></div>
+</div>
+</div>
+<p>If some of the prerequisites are missing, the framework will not work correctly. Install the missing ones according to the distro you are using and repeat the check.
+ The optional tools are needed only for specific boards, so if you don’t have the board, you can ignore the warning.
+ At this point the framework is ready to be used.</p>
+
+
+        </div>
+      </div>
+      
+    
+      
+      
+      <div id="projectdir" class="section p-projectdir">
+        
+        <div class="container ">
+          <h1>Projects</h1>
+
+<p>A BondMachine project is a directory that contains all the necessary files to generate the firmware for a specific board.
+The project is created with the <strong>bmhelper create</strong> command line tool, which is installed with the BondMachine framework. It is configured using a Kconfig file, with commands similar to the Linux kernel (for example: make menuconfig). It is then validated and completed with the <strong>bmhelper validate</strong> and <strong>bmhelper apply</strong> commands.
+Once the project is applied, it is possible to generate the firmware and make all the other operations with the <strong>make</strong> command and several targets.</p>
+
+<h2>Project workflow</h2>
+
+<p>The project workflow is divided into several steps:</p>
+<ul>
+  <li>project creation</li>
+  <li>project configuration</li>
+  <li>project validation</li>
+  <li>project apply</li>
+  <li>make targets execution</li>
+</ul>
+
+<h3>Project creation</h3>
+
+<p>An enpty project can be created with the following command:</p>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>bmhelper create --project_name project_test
+</pre></div>
+</div>
+</div>
+
+<p>This command will create a project with the name <strong>project_test</strong> in the current directory. The project will be created with the default configuration. The default configuration is defined in the <em>bmhelper</em> tool and can be changed with the <em>make menuconfig</em> command (or any other command that can be used to configure the Kconfig file).</p>
+
+<p>Additionally, the <strong>bmhelper create</strong> command can be used to create a project starting from a working example. To get the list of available examples, use the following command:</p>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>bmhelper create --list-examples
+</pre></div>
+</div>
+</div>
+
+<p>To duplicate an example, use the following command:</p>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>bmhelper create --project_name project_test --example example_name
+</pre></div>
+</div>
+</div>
+
+<p>where <strong>example_name</strong> is the name of an example in the list of examples.</p>
+
+<h3>Project configuration</h3>
+
+<p>The project configuration is defined in the <strong>Kconfig</strong> file. The <strong>Kconfig</strong> file is a text file that defines the configuration possibilities of the project. It is similar to the <strong>Kconfig</strong> file used in the Linux kernel. With a kconfig compatible tool the <strong>Kconfig</strong> file can be used to generate the specific configuration.</p>
+
+<p>For example, the <strong>make menuconfig</strong> command will open a menu that allows you to configure the project. The menu is similar to the menu used to configure the Linux kernel. The menu is divided into several sections. Each section contains a set of configuration. The details of each configuration are described in the help of the menu. The menu is used to configure the <strong>.config</strong> file. The <strong>.config</strong> file is used by the project Makefile to configure the project and carry out the operations.</p>
+
+<div class="language-bash highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>make menuconfig
+</pre></div>
+</div>
+</div>
+
+<p>If preffered, it is possible to use a <strong>local.mk</strong> file to configure the project. The <strong>local.mk</strong> file is a text file that defines the configuration of the project directly specifying the variables. The project Makefile created by <strong>bmhelper</strong> will either use the <strong>.config</strong> file or the <strong>local.mk</strong> file to configure the project. The <strong>.config</strong> file has priority over the <strong>local.mk</strong> file. The <strong>local.mk</strong> file is useful when you want to configure the project with a script or with a tool that does not support the <strong>.config</strong> file.</p>
+
+<p>Details on the configuration variables are described in the <strong>Configuration variables</strong> section.</p>
+
+<h3>Project validation</h3>
+
+<p>The bmhelper tool can be used to validate the project configuration. The validation is performed with the following command:</p>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>make validate
+</pre></div>
+</div>
+</div>
+
+<p>The validation process checks the configuration variables and the project files. For each one of them the following color codes are used:</p>
+
+<ul>
+  <li><strong>green</strong> : the variable or file is present and valid</li>
+  <li><strong>yellow</strong> : the (optional) variable or file is not present</li>
+  <li><strong>magenta</strong> : the (mandatory) variable or file is not present but bmhelper can create it with default values</li>
+  <li><strong>red</strong> : the (mandatory) variable or file is either not present or invalid</li>
+</ul>
+
+<h3>Project apply</h3>
+
+<p>The project configuration is applied with the following command:</p>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>make apply
+</pre></div>
+</div>
+</div>
+
+<p>The apply process creates the project files and directories. The files and directories are created in the working directory. The working directory is defined by the <strong>WORKING_DIR</strong> variable. The default working directory is the current directory. 
+For the items marked as <strong>magenta</strong> in the validation process, the apply process will ask for confirmation before creating the file or directory with the default values. For the items marked as <strong>red</strong> in the validation process, the apply process will fail.</p>
+
+<h3>Firmware generation and other targets</h3>
+
+<p>After creating and appling a project, you can use the <strong>make</strong> command to generate firmware and perform other operations. The <strong>make</strong> command can be used with several targets. The targets are defined in the <strong>Makefile</strong> file and are described in the following sections.</p>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>make bondmachine
+
+Create the Bondmachine and all its connecting processors.
+You can view a diagram of the Bondmachine just created with the following instructions:
+</pre></div>
+</div>
+</div>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>make show
+
+Use graphviz to visualize the architecture generated. 
+</pre></div>
+</div>
+</div>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>make hdl
+
+Generate the source HDL code (i.e. working_dir/bondmachine.sv, working_dir/bondmachine.vhd)
+</pre></div>
+</div>
+</div>
+
+<p>The first workflow commands are:</p>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>make synthesis
+
+Start the project synthesis
+</pre></div>
+</div>
+</div>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>make implementation
+
+Start the project implementation
+</pre></div>
+</div>
+</div>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>make bitstream
+
+Start the project bitstream generation
+</pre></div>
+</div>
+</div>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>make program
+
+program the board if connected
+</pre></div>
+</div>
+</div>
+
+<p>The second workflow commands are:</p>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>make design_synthesis
+
+Start the project synthesis
+</pre></div>
+</div>
+</div>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>make design_implementation
+
+Start the project implementation
+</pre></div>
+</div>
+</div>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>make design_bitstream
+
+Start the project bitstream generation
+</pre></div>
+</div>
+</div>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>make kernel_module
+
+Create the kernel module which runs on custom buildroot linux distribution
+</pre></div>
+</div>
+</div>
+
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>make buildroot
+
+Create the custom buildroot linux sdcard-image.
+</pre></div>
+</div>
+</div>
+
+<h2>Configuration variables</h2>
+
+<p>Wether you are reading variables from the <strong>Kconfig</strong> file or from the <strong>.mk</strong> files, the syntax is the same. The following is the list of the most commonly used variables:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Variable</strong></th>
+      <th style="text-align: center"><strong>type</strong></th>
+      <th style="text-align: right"><strong>description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>ALTERA_BOARD_MAX1000</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">Board selection max1000</td>
+    </tr>
+    <tr>
+      <td><code>ALTERA_BOARD_DE0NANO</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">Board selection de0nano</td>
+    </tr>
+    <tr>
+      <td><code>BASM_DEBUG</code></td>
+      <td style="text-align: center">boolean</td>
+      <td style="text-align: right">enable or not debug of basm</td>
+    </tr>
+    <tr>
+      <td><code>BM_REGRESSION</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">missing</td>
+    </tr>
+    <tr>
+      <td><code>BOARD</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">Board type</td>
+    </tr>
+    <tr>
+      <td><code>BOARDLESS_PROJECT</code></td>
+      <td style="text-align: center">KConfig only</td>
+      <td style="text-align: right">enable or not debug of basm</td>
+    </tr>
+    <tr>
+      <td><code>GENERAL_TYPE</code></td>
+      <td style="text-align: center">KConfig only</td>
+      <td style="text-align: right">general project type</td>
+    </tr>
+    <tr>
+      <td><code>GENERAL_TYPE_BOARDLESS</code></td>
+      <td style="text-align: center">KConfig only</td>
+      <td style="text-align: right">project without board</td>
+    </tr>
+    <tr>
+      <td><code>GENERAL_TYPE_BOARD</code></td>
+      <td style="text-align: center">KConfig only</td>
+      <td style="text-align: right">project with board</td>
+    </tr>
+    <tr>
+      <td><code>HDL_REGRESSION</code></td>
+      <td style="text-align: center">filename</td>
+      <td style="text-align: right">missing</td>
+    </tr>
+    <tr>
+      <td><code>PROJECT_TYPE_BONDGO</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">BondGo project</td>
+    </tr>
+    <tr>
+      <td><code>PROJECT_TYPE_NEURALBOND</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">Neural Network project</td>
+    </tr>
+    <tr>
+      <td><code>PROJECT_TYPE_MELBOND</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">Melbond project</td>
+    </tr>
+    <tr>
+      <td><code>PROJECT_TYPE_BASM</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">sBASM project</td>
+    </tr>
+    <tr>
+      <td><code>PROJECT_TYPE_MULTI</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">Root project aggregator for multiple project</td>
+    </tr>
+    <tr>
+      <td><code>MULTI_TARGET</code></td>
+      <td style="text-align: center">string</td>
+      <td style="text-align: right">Target to exec in case of multiple projects</td>
+    </tr>
+    <tr>
+      <td><code>MULTI_TYPE</code></td>
+      <td style="text-align: center">string</td>
+      <td style="text-align: right">Type of aggregation</td>
+    </tr>
+    <tr>
+      <td><code>MULTI_TEMPLATE_DIR</code></td>
+      <td style="text-align: center">directory</td>
+      <td style="text-align: right">directory of template to clone</td>
+    </tr>
+    <tr>
+      <td><code>MULTI_TEMPLATE_DESC</code></td>
+      <td style="text-align: center">filename</td>
+      <td style="text-align: right">multifilename description json file</td>
+    </tr>
+    <tr>
+      <td><code>LATTICE_BOARD_ICE40LP1K</code></td>
+      <td style="text-align: center">Kconfig Only</td>
+      <td style="text-align: right">Board selection Lattice ice40lp1k</td>
+    </tr>
+    <tr>
+      <td><code>LATTICE_BOARD_ICEFUN</code></td>
+      <td style="text-align: center">Kconfig Only</td>
+      <td style="text-align: right">Board selection Lattice icefun</td>
+    </tr>
+    <tr>
+      <td><code>LATTICE_BOARD_ICEBREAKER</code></td>
+      <td style="text-align: center">Kconfig Only</td>
+      <td style="text-align: right">Board selection Lattice icebreaker</td>
+    </tr>
+    <tr>
+      <td><code>LATTICE_BOARD_ICESUGARNANO</code></td>
+      <td style="text-align: center">Kconfig Only</td>
+      <td style="text-align: right">Board selection Lattice icesugarnano</td>
+    </tr>
+    <tr>
+      <td><code>SELECT_PROJECT_TYPE</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">select project type</td>
+    </tr>
+    <tr>
+      <td><code>SELECT_TOOLCHAIN</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">select toolchain</td>
+    </tr>
+    <tr>
+      <td><code>SELECT_XILINX_BOARD</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">select board</td>
+    </tr>
+    <tr>
+      <td><code>REGRESSION_TEST</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">missing description</td>
+    </tr>
+    <tr>
+      <td><code>REGRESSION_TEST_BM</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">missing</td>
+    </tr>
+    <tr>
+      <td><code>REGRESSION_TEST_HDL</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">missing</td>
+    </tr>
+    <tr>
+      <td><code>REGRESSION_TEST_SIM</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">missing</td>
+    </tr>
+    <tr>
+      <td><code>ROOTDIR</code></td>
+      <td style="text-align: center">string</td>
+      <td style="text-align: right">Directory storing the board-specific files</td>
+    </tr>
+    <tr>
+      <td><code>SIM_REGRESSION</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">missing</td>
+    </tr>
+    <tr>
+      <td><code>SOURCE_GO</code></td>
+      <td style="text-align: center">filename</td>
+      <td style="text-align: right">bondgo source</td>
+    </tr>
+    <tr>
+      <td><code>SOURCE_NEURALBOND</code></td>
+      <td style="text-align: center">filename</td>
+      <td style="text-align: right">neuralbond source file</td>
+    </tr>
+    <tr>
+      <td><code>SOURCE_MELBOND</code></td>
+      <td style="text-align: center">filename</td>
+      <td style="text-align: right">melnond source file</td>
+    </tr>
+    <tr>
+      <td><code>SOURCE_BASM</code></td>
+      <td style="text-align: center">filenames</td>
+      <td style="text-align: right">basm source file</td>
+    </tr>
+    <tr>
+      <td><code>TOOLCHAIN</code></td>
+      <td style="text-align: center">string</td>
+      <td style="text-align: right">FPGA tools</td>
+    </tr>
+    <tr>
+      <td><code>TOOLCHAIN_ALTERA</code></td>
+      <td style="text-align: center">Kconfig Only</td>
+      <td style="text-align: right">select altera toolchain</td>
+    </tr>
+    <tr>
+      <td><code>TOOLCHAIN_LATTICE</code></td>
+      <td style="text-align: center">Kconfig Only</td>
+      <td style="text-align: right">select lattice toolchain</td>
+    </tr>
+    <tr>
+      <td><code>TOOLCHAIN_XILINX</code></td>
+      <td style="text-align: center">Kconfig Only</td>
+      <td style="text-align: right">select xilinx toolchain</td>
+    </tr>
+    <tr>
+      <td><code>UART_MAPFILE</code></td>
+      <td style="text-align: center">filename</td>
+      <td style="text-align: right">support for UART</td>
+    </tr>
+    <tr>
+      <td><code>UART_SUPPORT</code></td>
+      <td style="text-align: center">boolean</td>
+      <td style="text-align: right">support for UART</td>
+    </tr>
+    <tr>
+      <td><code>WORKING_DIR</code></td>
+      <td style="text-align: center">directory</td>
+      <td style="text-align: right">Working directory path</td>
+    </tr>
+    <tr>
+      <td><code>XILINX_BOARD_BASYS3</code></td>
+      <td style="text-align: center">Kconfig Only</td>
+      <td style="text-align: right">Board selection basys3</td>
+    </tr>
+    <tr>
+      <td><code>XILINX_BOARD_ZEDBOARD</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">Board selection zedboard</td>
+    </tr>
+    <tr>
+      <td><code>XILINX_BOARD_ZC702</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">Board selection zc702</td>
+    </tr>
+    <tr>
+      <td><code>XILINX_BOARD_KC705</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">Board selection kc705</td>
+    </tr>
+    <tr>
+      <td><code>XILINX_BOARD_EBAZ4205</code></td>
+      <td style="text-align: center">KConfig Only</td>
+      <td style="text-align: right">Board selection ebaz4205</td>
+    </tr>
+  </tbody>
+</table>
+
+        </div>
+      </div>
+      
+    
+      
+      
+      <div id="tools" class="section p-tools">
+        
+        <div class="container center">
+          <h1>Tools</h1>
+
+<p><img src="../img/vip.png" alt="VIP" width="200px" style="margin: 10px;" /></p>
+
+        </div>
+      </div>
+      
+    
+      
+      
+      <div id="basm" class="section p-basm">
+        
+        <div class="container center">
+          <h1>Basm</h1>
+
+<p><img src="../img/vip.png" alt="VIP" width="200px" style="margin: 10px;" /></p>
+
+        </div>
+      </div>
+      
+    
+      
+      
+      <div id="bondgo" class="section p-bondgo">
+        
+        <div class="container center">
+          <h1>Bondgo</h1>
+
+<p><img src="../img/vip.png" alt="VIP" width="200px" style="margin: 10px;" /></p>
+
+        </div>
+      </div>
+      
+    
+      
+      
+      <div id="packages" class="section p-packages">
+        
+        <div class="container ">
+          <h1>Packages</h1>
+
+<p>The framework is composed by several packages. Some of these can be used standalone for other project.
+This is a list of the packages and their documentation:</p>
+<ul>
+  <li><a href="/pkg002">bmnumbers</a></li>
+  <li><a href="/pkg003">bmqsim</a></li>
+  <li><a href="/pkg001">bmstack</a></li>
+</ul>
+
+        </div>
+      </div>
+      
+    
+
+
+    <div id="footer" class="section text-white">
+      <div class="container">
+        
+        
+<p><a href="http://bondmachine.fisica.unipg.it/">BondMachine</a>
+—
+<a href="http://www.fisgeo.unipg.it">Department of Physics and Geology</a>
+—
+<a href="http://www.unipg.it">University of Perugia</a></p>
+
+
+      </div>
+    </div>
+  </div>
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-85770689-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="site.js"></script>
+<script>
+
+opened = false;
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "200px";
+    opened = true;
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    opened = false;
+}
+
+function switchNav() {
+    if (opened) {
+	closeNav();
+    } else {
+	openNav();
+    }
+}
+</script>
+
+</html>

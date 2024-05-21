@@ -1,0 +1,77 @@
+<h1>bmqsim</h1>
+
+<p><img src="bmqsim.png" alt="bmqsim" /></p>
+
+<p>bmqsim is part of BondMachine project. It is a library and a CLI tool to produce HDL code and test benches to simulate a quantum computer on FPGA using the BondMachine architecture framework. It also provides a sotfware simulator to be used in a CPU.
+The installation of bmqsim is part of the standard installation of BondMachine framework. Please refer to the <a href="http://bondmachine.fisica.unipg.it/docs/#quickstart">BondMachine quick start</a> for the instructions.</p>
+
+<h2>Usage</h2>
+
+<p>To use the bmqsim CLI tool, you have to choose two things: the backend and the quantum algorithm to simulate.
+The backend creates target hardware architecture of a specific type and its flavor (the subtype as for example the <code>only real numbers</code> or the <code>complex numbers</code> flavor) if applicable.
+The quantum algorithm is a file containing the quantum circuit to simulate. Let’s begin the latter.</p>
+
+<h2>Quantum algorithm</h2>
+
+<h2>Backend</h2>
+
+<p>Once you have the quantum algorithm, you can choose the backend to use. The backend creates the target hardware architecture of a specific type and flavor. 
+The subsequent tables show the available backend and architectures types, their flavors and the relevant command line options:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Architecture type (backend)</th>
+      <th>Command line option</th>
+      <th>Description</th>
+      <th>Flavors</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Software</code></td>
+      <td><code>--software-simulation</code></td>
+      <td>Software simulator</td>
+      <td><code>None</code></td>
+    </tr>
+    <tr>
+      <td><code>MatrixSeqHardcoded</code></td>
+      <td><code>--build-matrix-seq-hardcoded</code></td>
+      <td>Sequence of matrices hardcoded in the FPGA</td>
+      <td><code>seq_hardcoded_real</code>, <code>seq_hardcoded_complex</code></td>
+    </tr>
+    <tr>
+      <td><code>MatrixSeq</code></td>
+      <td><code>--build-matrix-seq</code></td>
+      <td>Sequence of matrices in the FPGA</td>
+      <td><em>Not yet implemented</em></td>
+    </tr>
+    <tr>
+      <td><code>FullHardwareHardcoded</code></td>
+      <td><code>--build-full-hardware-hardcoded</code></td>
+      <td>Full hardware with hardcoded matrices</td>
+      <td><em>Not yet implemented</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Each architecture type is associated to a different set of command line options and activates a different simulator backend. Some of the options are common to all the backends, while others are specific to a single backend. The following sections describe the options for each backend and the common options.</p>
+
+<h3>Common options</h3>
+
+<h3>Software simulator</h3>
+
+<h3>Hardcoded sequence of matrices</h3>
+
+<h3>Sequence of matrices</h3>
+
+<h3>Full hardware with hardcoded matrices</h3>
+
+<h2>Other options</h2>
+
+<p>Alongside these main options, there are other options that does not depend on the backend chosen. These options are listed in the following table:</p>
+
+<p>| Option | Description |
+| — | — |</p>
+
+<h2>Examples</h2>

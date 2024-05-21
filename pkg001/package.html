@@ -1,0 +1,126 @@
+<h1>bmstack</h1>
+
+<p>bmstack is part of BondMachine project. Within the project It is used to create stacks and queues distributed among several BondMachine cores. due to its generality it can also be used as standalone tool to produce HDL shared stacks and queues to be used in other projects.
+The HDL code is build using golang templates that creates the code starting from the following data structure. The comments describe the meaning of each field.</p>
+
+<div class="language-go highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span style="color:#080;font-weight:bold">type</span> Push <span style="color:#080;font-weight:bold">struct</span> {
+        Agent <span style="color:#0a8;font-weight:bold">string</span> <span style="color:#777">// The name of the agent that is pushing</span>
+        Tick  <span style="color:#0a8;font-weight:bold">uint64</span> <span style="color:#777">// The tick at which the push occurs</span>
+        Value <span style="color:#0a8;font-weight:bold">string</span> <span style="color:#777">// The value that is pushed</span>
+}
+
+<span style="color:#080;font-weight:bold">type</span> Pop <span style="color:#080;font-weight:bold">struct</span> {
+        Agent <span style="color:#0a8;font-weight:bold">string</span> <span style="color:#777">// The name of the agent that is popping</span>
+        Tick  <span style="color:#0a8;font-weight:bold">uint64</span> <span style="color:#777">// The tick at which the pop occurs</span>
+}
+
+<span style="color:#080;font-weight:bold">type</span> TestBenchData <span style="color:#080;font-weight:bold">struct</span> {
+        Pops         []Pop    <span style="color:#777">// List of pops</span>
+        Pushes       []Push   <span style="color:#777">// List of pushes</span>
+        TestSequence []<span style="color:#0a8;font-weight:bold">string</span> <span style="color:#777">// Pushes and pops in order</span>
+}
+
+<span style="color:#080;font-weight:bold">type</span> BmStack <span style="color:#080;font-weight:bold">struct</span> {
+        ModuleName <span style="color:#0a8;font-weight:bold">string</span>   <span style="color:#777">// The name of the module</span>
+        DataSize   <span style="color:#0a8;font-weight:bold">int</span>      <span style="color:#777">// The size of the data bus</span>
+        Depth      <span style="color:#0a8;font-weight:bold">int</span>      <span style="color:#777">// The depth of the stack</span>
+        Senders    []<span style="color:#0a8;font-weight:bold">string</span> <span style="color:#777">// The names of the agents that can send data to the stack</span>
+        Receivers  []<span style="color:#0a8;font-weight:bold">string</span> <span style="color:#777">// The names of the agents that can receive data from the stack</span>
+        MemType    <span style="color:#0a8;font-weight:bold">string</span>   <span style="color:#777">// &quot;LIFO&quot; for a stack or &quot;FIFO&quot; for a queue</span>
+        funcMap    template.FuncMap
+
+        <span style="color:#777">// TestBench data</span>
+        TestBenchData
+}
+</pre></div>
+</div>
+</div>
+
+<h2>API</h2>
+
+<p>The library can be used in two ways.
+The first one is from a go program. After creating a BmStack structure, the user can call the WriteHDL function to produce the HDL code.
+An example on how the library can be used this way can be seen in the go test file (bmstack_test.go).</p>
+
+<div class="language-go highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span style="color:#080;font-weight:bold">func</span> TestWriteHDL(t *testing.T) {
+        <span style="color:#777">// Create a new stack with 4 agents</span>
+        stack := BmStack{
+                ModuleName: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">test</span><span style="color:#710">&quot;</span></span>,
+                DataSize:   <span style="color:#00D">32</span>,
+                Depth:      <span style="color:#00D">8</span>,
+                Senders:    []<span style="color:#0a8;font-weight:bold">string</span>{<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">sender1</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">sender2</span><span style="color:#710">&quot;</span></span>},
+                Receivers:  []<span style="color:#0a8;font-weight:bold">string</span>{<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">receiver1</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">receiver2</span><span style="color:#710">&quot;</span></span>},
+                MemType:    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">LIFO</span><span style="color:#710">&quot;</span></span>
+        }
+
+        <span style="color:#777">// write the HDL code</span>
+        stack.WriteHDL()
+</pre></div>
+</div>
+</div>
+
+<p>The second part of the struct can be filled with test data. These data are used to produce a test bench for the stack. Using the test bench the user can verify the correctness of the stack. The test bench is produced by calling the WriteTestBench function.</p>
+
+<div class="language-go highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span style="color:#080;font-weight:bold">func</span> TestWriteTestBench(t *testing.T) {
+        stack := BmStack{
+        <span style="color:#777">// ...</span>
+                s.Pushes = []Push{
+                        Push{<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">sender1</span><span style="color:#710">&quot;</span></span>, <span style="color:#00D">200</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">32'd1</span><span style="color:#710">&quot;</span></span>},
+                }
+                s.Pops = []Pop{
+                        Pop{<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">receiver1</span><span style="color:#710">&quot;</span></span>, <span style="color:#00D">60</span>},
+                }
+        }
+        <span style="color:#777">// write the test bench</span>
+        stack.WriteTestBench()
+}
+</pre></div>
+</div>
+</div>
+
+<p>The two functions (WriteHDL and WriteTestBench) return a string that contains the HDL code or an error if something went wrong (string, error).
+The provided go test file (bmstack_test.go) shows how the library can be used in this way. When invoked (go test), it produces the two files (bmstack.v and bmstack_tb.v).</p>
+
+<h2>CLI</h2>
+
+<p>the library also came with a companion CLI executable called bmstack that provides the basic interface to the library. This is the second Possible way to use it.</p>
+
+<div class="language-bash highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>$ bmstack -h
+Usage of bmstack:
+  -d    Verbose
+  -data-width int
+        Width of the data bus (default 32)
+  -depth int
+        Depth of the stack/queue (default 8)
+  -hdl-file string
+        Name of the file to write the HDL to (empty string to disable) (default &quot;stack.v&quot;)
+  -memory-type string
+        Memory type, either stack or queue (default &quot;queue&quot;)
+  -random-stimulus int
+        Generate random stimulus including N pushes and pops for every agent (0 to disable)
+  -receivers string
+        Comma separated list of names of signal tags that will receive data from the stack/queue
+  -senders string
+        Comma separated list of names of signal tags that will send data to the stack/queue
+  -sim-length int
+        Length of the simulation in clock cycles (default 1000)
+  -stimulus-file string
+        Name of the JSON file to load the stimulus from (empty string to disable)
+  -tb-file string
+        Name of the file to write the testbench to (empty string to disable)
+  -v    Verbose
+</pre></div>
+</div>
+</div>
+
+<p>Examples of usage:</p>
+
+<h2>Simulation</h2>
+
+<p>WIP</p>
+
+<p>To see how the library is used in the BondMachine project, please refer to the BondMachine examples directory that contains many examples of BondMachines using stacks and queues.</p>

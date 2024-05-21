@@ -1,0 +1,68 @@
+<h1>Ping Pong</h1>
+
+<p>The following code shows a first example of the BondMachine. It is a trival example yet it shows the basic capabilities of the BondMachine architecture and ecosytem.
+Two Goroutines send an uint8 data value back and forth through IO registers (those created with bondgo.Make), the pong goroutine also increases the value by one before sending it back.</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">package main
+
+import (
+        "bondgo"
+)
+
+func pong() {
+        var in0 bondgo.Input
+        var out0 bondgo.Output
+
+        in0 = bondgo.Make(bondgo.Input, 3)
+        out0 = bondgo.Make(bondgo.Output, 5)
+
+        for {
+                bondgo.IOWrite(out0, bondgo.IORead(in0)+1)
+        }
+
+        bondgo.Void(in0)
+        bondgo.Void(out0)
+}
+
+func main() {
+        var in0 bondgo.Input
+        var out0 bondgo.Output
+
+        in0 = bondgo.Make(bondgo.Input, 5)
+        out0 = bondgo.Make(bondgo.Output, 3)
+
+device_0:
+        go pong()
+
+        for {
+                bondgo.IOWrite(out0, bondgo.IORead(in0))
+        }
+
+        bondgo.Void(in0)
+        bondgo.Void(out0)
+}</code></pre></figure>
+
+<p>Compiling the code with the bondgo compiler:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">bondgo -input-file pingpong.go -mpm</code></pre></figure>
+
+<p>The toolchain perform the following steps:</p>
+<ul>
+  <li>Map the two goroutines to two hardware cores.</li>
+  <li>Creates two types of core, each one optimized to execute the assigned goroutine.</li>
+  <li>Creates the two binaries.</li>
+  <li>Connected the two core as inferred from the source code, using special IO registers.</li>
+</ul>
+
+<p>The result is a multicore BondMachine:<br /></p>
+
+<p><img src="img/pingpong1.png" alt="Multicore Ping Pong" title="Multicore Ping Pong" /></p>
+
+<p>Changing the device_0 label with device_1 the compiler is instructed to put the two goroutines on different BondMachines. Compiling activating the etherbond protocol</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">bondgo -input-file pingpong.go -mpm -use-etherbond</code></pre></figure>
+
+<p>The result will be the same as before (in term of behaviour) but using a cluster of two BondMachines connected via the etherbond protocol, each running only one goroutine.<br />
+The Multicore became a distributed system:<br /></p>
+
+<p><img src="img/pingpong2.png" alt="Clustered Ping Pong" title="Clustered Ping Pong" /></p>

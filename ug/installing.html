@@ -1,0 +1,118 @@
+<h1>Installation</h1>
+
+<h2>Binary</h2>
+
+<p>To install the framework use the installer script downloadable from the web site. It contains all the tools and can be used on every system.</p>
+
+<p>To get the framework choose the directory where the binaries have to be installed. The directory has to be writable and inserted in the user’s $PATH. There is no need of superuser access but the user has to have the rights to use the specific FPGA tools and board programming.
+Set the environment variable BONDMACHINE_DIR to point to this directory:</p>
+
+<div class="language-console highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>export BONDMACHINE_DIR=[the choosen directory]
+</pre></div>
+</div>
+</div>
+
+<p>and execute the install script with the bash shell:</p>
+
+<div class="language-console highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>bash &lt;(curl -fsSL http://bondmachine.fisica.unipg.it/installer/install)
+</pre></div>
+</div>
+</div>
+
+<p>A similar uninstall script exists:</p>
+
+<div class="language-console highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>bash &lt;(curl -fsSL http://bondmachine.fisica.unipg.it/installer/uninstall)
+</pre></div>
+</div>
+</div>
+
+<p>The install/uninstall script just copy/remove the framework executables, no other files are needed.</p>
+
+<h2>From sources</h2>
+
+<p>If you want to compile the framework from sources, you need to install the following tools:</p>
+
+<ul>
+  <li>
+    <p><a href="https://golang.org" target="_blank">Go</a> (version 1.21 or higher) is needed to compile the framework. The go language is used to write the framework and to compile the tools.</p>
+  </li>
+  <li>
+    <p><a href="https://nodejs.org/en/" target="_blank">Nodejs</a> (version 16 or higher) is needed to compile the bmhelper tool. The bmhelper tool is used to assist the user in the creation of the BondMachine projects.</p>
+  </li>
+</ul>
+
+<h2>bmhelper</h2>
+
+<p>Clone the bmhelper repo at <a href="https://github.com/BondMachineHQ/bmhelper" target="_black">https://github.com/BondMachineHQ/bmhelper</a> and compile the tool.</p>
+
+<div class="language-console highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>git clone https://github.com/BondMachineHQ/bmhelper.git
+</pre></div>
+</div>
+</div>
+
+<p>Move within the newly create bmhelper directory and execute npm to install the dependencies and compile the tool.</p>
+
+<div class="language-console highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>cd bmhelper
+npm i 
+npm run compile &amp;&amp; npm run build
+</pre></div>
+</div>
+</div>
+
+<p>The bmhelper tool is now available in the pkg_out directory.</p>
+
+<h2>BondMachine framework</h2>
+
+<p>Clone the main repo at <a href="https://github.com/BondMachineHQ/BondMachine.git" target="_black">https://github.com/BondMachineHQ/BondMachine.git</a>.</p>
+
+<div class="language-console highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>git clone https://github.com/BondMachineHQ/BondMachine.git
+</pre></div>
+</div>
+</div>
+
+<p>Move within the newly create BondMachine directory and execute make to build all the tools.</p>
+
+<div class="language-console highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>cd BondMachine ; make
+</pre></div>
+</div>
+</div>
+
+<h2>Environment</h2>
+
+<p>The check that the framework is correctly installed and that all the needed tools are available, execute the command <strong>bmhelper doctor</strong>. It should print an  output similar to the following:</p>
+
+<div class="language-console highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre>$ bmhelper doctor
+ [ OK ]          Mandatory dependency found: make
+ [ OK ]          Mandatory dependency found: dot
+ [ OK ]          Mandatory dependency found: curl
+ [ OK ]          BondMachine tool basm found
+ [ OK ]          BondMachine tool bmanalysis found
+ [ OK ]          BondMachine tool bmnumbers found
+ [ OK ]          BondMachine tool bmstack found
+ [ OK ]          BondMachine tool bondgo found
+ [ OK ]          BondMachine tool bondmachine found
+ [ OK ]          BondMachine tool melbond found
+ [ OK ]          BondMachine tool neuralbond found
+ [ OK ]          BondMachine tool procbuilder found
+ [ OK ]          BondMachine tool simbox found
+ [ OK ]          All BondMachine tools has been found.
+ [ WARNING ]     Optional tool found: vivado
+ [ WARNING ]     Optional tool found: icepack
+ [ WARNING ]     Optional tool not found: yosis
+ [ WARNING ]     Optional tool not found: quartus
+ [ OK ]          Dependencies checked
+</pre></div>
+</div>
+</div>
+<p>If some of the prerequisites are missing, the framework will not work correctly. Install the missing ones according to the distro you are using and repeat the check.
+ The optional tools are needed only for specific boards, so if you don’t have the board, you can ignore the warning.
+ At this point the framework is ready to be used.</p>
+

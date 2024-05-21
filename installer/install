@@ -1,0 +1,38 @@
+#!/bin/bash
+
+if [[ -z "${BONDMACHINE_DIR}" ]]; then
+	echo "BONDMACHINE_DIR is not set. Use it to choose where to install BondMachine binaries"
+	exit 1
+else
+	if [[ -d "${BONDMACHINE_DIR}" ]]; then
+		if [[ ! -w "${BONDMACHINE_DIR}" ]]; then
+			echo "BONDMACHINE_DIR is not writable"
+			exit 1
+		fi
+	else
+		echo "BONDMACHINE_DIR does not exists"
+		exit 1
+	fi
+fi
+
+cd "${BONDMACHINE_DIR}"
+
+echo -n "bmhelper installation" ; ( curl -fsSL http://bondmachine.fisica.unipg.it/installer/bmhelper --output bmhelper && chmod 755 bmhelper && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "boolbond installation" ; ( curl -fsSL http://bondmachine.fisica.unipg.it/installer/boolbond --output boolbond && chmod 755 boolbond && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "basm installation" ; ( curl -fsSL http://bondmachine.fisica.unipg.it/installer/basm --output basm && chmod 755 basm && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "bmanalysis installation" ; ( curl -fsSL http://bondmachine.fisica.unipg.it/installer/bmanalysis --output bmanalysis && chmod 755 bmanalysis && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "bmbuilder installation" ; ( curl -fsSL http://bondmachine.fisica.unipg.it/installer/bmbuilder --output bmbuilder && chmod 755 bmbuilder && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "bmnumbers installation" ; ( curl -fsSL http://bondmachine.fisica.unipg.it/installer/bmnumbers --output bmnumbers && chmod 755 bmnumbers && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "bmqsim installation" ; ( curl -fsSL http://bondmachine.fisica.unipg.it/installer/bmqsim --output bmqsim && chmod 755 bmqsim && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "bmstack installation" ; ( curl -fsSL http://bondmachine.fisica.unipg.it/installer/bmstack --output bmstack && chmod 755 bmstack && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "bondgo installation" ; ( curl -fsSL http://bondmachine.fisica.unipg.it/installer/bondgo --output bondgo && chmod 755 bondgo && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "bondmachine installation" ; ( curl -fsSL http://bondmachine.fisica.unipg.it/installer/bondmachine --output bondmachine && chmod 755 bondmachine && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "brvgasdl installation" ; ( curl -fsSL http://bondmachine.fisica.unipg.it/installer/brvgasdl --output brvgasdl && chmod 755 brvgasdl && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "brvgasend installation" ; ( curl -fsSL http://bondmachine.fisica.unipg.it/installer/brvgasend --output brvgasend && chmod 755 brvgasend && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "melbond installation" ; ( curl -fsSL http://bondmachine.fisica.unipg.it/installer/melbond --output melbond && chmod 755 melbond && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "neuralbond installation" ; ( curl -fsSL http://bondmachine.fisica.unipg.it/installer/neuralbond --output neuralbond && chmod 755 neuralbond && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "nnef2bm installation" ; ( curl -fsSL http://bondmachine.fisica.unipg.it/installer/nnef2bm --output nnef2bm && chmod 755 nnef2bm && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "procbuilder installation" ; ( curl -fsSL http://bondmachine.fisica.unipg.it/installer/procbuilder --output procbuilder && chmod 755 procbuilder && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "simbox installation" ; ( curl -fsSL http://bondmachine.fisica.unipg.it/installer/simbox --output simbox && chmod 755 simbox && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+
+cd - > /dev/null

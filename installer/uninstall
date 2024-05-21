@@ -1,0 +1,38 @@
+#!/bin/bash
+
+if [[ -z "${BONDMACHINE_DIR}" ]]; then
+	echo "BONDMACHINE_DIR is not set. Use it to choose where to install BondMachine binaries"
+	exit 1
+else
+	if [[ -d "${BONDMACHINE_DIR}" ]]; then
+		if [[ ! -w "${BONDMACHINE_DIR}" ]]; then
+			echo "BONDMACHINE_DIR is not writable"
+			exit 1
+		fi
+	else
+		echo "BONDMACHINE_DIR does not exists"
+		exit 1
+	fi
+fi
+
+cd "${BONDMACHINE_DIR}"
+
+echo -n "bmhelper removal" ; ( rm bmhelper 2> /dev/null && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "boolbond removal" ; ( rm boolbond 2> /dev/null && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "basm removal" ; ( rm basm 2> /dev/null && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "bmanalysis removal" ; ( rm bmanalysis 2> /dev/null && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "bmbuilder removal" ; ( rm bmbuilder 2> /dev/null && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "bmnumbers removal" ; ( rm bmnumbers 2> /dev/null && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "bmqsim removal" ; ( rm bmqsim 2> /dev/null && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "bmstack removal" ; ( rm bmstack 2> /dev/null && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "bondgo removal" ; ( rm bondgo 2> /dev/null && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "bondmachine removal" ; ( rm bondmachine 2> /dev/null && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "brvgasdl removal" ; ( rm brvgasdl 2> /dev/null && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "brvgasend removal" ; ( rm brvgasend 2> /dev/null && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "melbond removal" ; ( rm melbond 2> /dev/null && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "neuralbond removal" ; ( rm neuralbond 2> /dev/null && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "nnef2bm removal" ; ( rm nnef2bm 2> /dev/null && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "procbuilder removal" ; ( rm procbuilder 2> /dev/null && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "simbox removal" ; ( rm simbox 2> /dev/null && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+
+cd - > /dev/null
