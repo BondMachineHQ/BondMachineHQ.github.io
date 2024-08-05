@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+  integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+  crossorigin="anonymous" />
+
+
+  
+  <meta charset="utf-8">
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  
+    <meta name="description" content="bmqsim is part of BondMachine project. It is a library and a CLI tool to produce HDL code and test benches to simulate a quantum computer on FPGA using the BondMachine architecture framework. It also provides a sotfware simulator to be used in a CPU. The installation of bmqsim is part of the standard installation of BondMachine framework. Please refer to the BondMachine quick start for the instructions.
+Usage To use the bmqsim CLI tool, you have to choose two things: the backend and the quantum algorithm to simulate.">
+  
+
+
+<meta name="color-scheme" content="light dark">
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.126.1">
+  <title>Quantum | BondMachine</title>
+  <link rel="canonical" href="https://bondmachinehq.github.io/docs/userguide/tools/quantum/">
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/css/base.min.8e67dbf71c26d0a6dbf4662f796d909952715e54bce477c632a31f634032185f.min.8e67dbf71c26d0a6dbf4662f796d909952715e54bce477c632a31f634032185f.css" integrity="sha256-jmfb9xwm0Kbb9GYveW2QmVJxXlS85HfGMqMfY0AyGF8=" crossorigin="anonymous">
+
+      <link rel="stylesheet" href="/css/syntax.min.065df42d2be658bb8e0720297aadf469355a5ffaf863b00e3cce0627dd106ca0.css" integrity="sha256-Bl30LSvmWLuOByApeq30aTVaX/r4Y7AOPM4GJ90QbKA=" crossorigin="anonymous">
+
+
+
+</head>
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="/">BondMachine</a>
+        <a class="Banner-link u-clickable" href="/tags"><i class="fa fa-tags"></i></a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/intro/">Intro</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/posts/">News</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/docs/">Docs</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/prototypes/">Prototypes</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/examples/">Examples</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/media/">Media</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</nav>
+
+  
+<nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      
+        <li class="Banner-item Banner-item--title">
+          <a class="Banner-link u-clickable" href=".." style="color: red;">&crarr;tools</a>
+        </li>
+      
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable"></a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+  <header class="Heading">
+  <h1 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/docs/userguide/tools/quantum/" rel="bookmark">Quantum</a>
+  </h1>
+  
+</header>
+  
+    <hr>
+<p><img src="bmqsim.png" alt="bmqsim"></p>
+<p>bmqsim is part of BondMachine project. It is a library and a CLI tool to produce HDL code and test benches to simulate a quantum computer on FPGA using the BondMachine architecture framework. It also provides a sotfware simulator to be used in a CPU.
+The installation of bmqsim is part of the standard installation of BondMachine framework. Please refer to the <a href="http://bondmachine.fisica.unipg.it/docs/#quickstart">BondMachine quick start</a> for the instructions.</p>
+
+
+
+<h2 id="usage">
+  <a class="Heading-link u-clickable" href="/docs/userguide/tools/quantum/#usage">Usage</a>
+</h2>
+<p>To use the bmqsim CLI tool, you have to choose two things: the backend and the quantum algorithm to simulate.
+The backend creates target hardware architecture of a specific type and its flavor (the subtype as for example the <code>only real numbers</code> or the <code>complex numbers</code> flavor) if applicable.
+The quantum algorithm is a file containing the quantum circuit to simulate. Let&rsquo;s begin the latter.</p>
+
+
+
+<h2 id="quantum-algorithm">
+  <a class="Heading-link u-clickable" href="/docs/userguide/tools/quantum/#quantum-algorithm">Quantum algorithm</a>
+</h2>
+<p>The quantum circuit is a file containing the quantum algorithm to simulate. The file is written in the the same format as the one used by the Basm assembler and has the bmq extension. The file is a sequence of instructions, each one in a line inserted in a <strong>block</strong> section. To instruct the simulator, outside the block section, you can use the <code>%meta</code> directive to specify the simulator metadata.</p>
+<p>The following is an example (<em>program.bmq</em>) of a quantum algorithm file implementing the Bell state:</p>
+
+  
+
+<pre tabindex="0"><code class="language-bmq" data-lang="bmq">%block code1 .sequential
+	qbits	q0,q1
+	zero	q0,q1
+	h	q0
+	cx	q0,q1
+%endblock
+
+%meta bmdef global main:code1</code></pre>
+
+
+
+<h2 id="backend">
+  <a class="Heading-link u-clickable" href="/docs/userguide/tools/quantum/#backend">Backend</a>
+</h2>
+<p>Once you have the quantum algorithm, you can choose the backend to use. The backend creates the target hardware architecture of a specific type and flavor.
+The subsequent tables show the available backend and architectures types, their flavors and the relevant command line options:</p>
+<table>
+<thead>
+<tr>
+<th>Architecture type (backend)</th>
+<th>Command line option</th>
+<th>Description</th>
+<th>Flavors</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Software</code></td>
+<td><code>--software-simulation</code></td>
+<td>Software simulator</td>
+<td><code>None</code></td>
+</tr>
+<tr>
+<td><code>MatrixSeqHardcoded</code></td>
+<td><code>--build-matrix-seq-hardcoded</code></td>
+<td>Sequence of matrices hardcoded in the FPGA</td>
+<td><code>seq_hardcoded_real</code>, <code>seq_hardcoded_complex</code></td>
+</tr>
+<tr>
+<td><code>MatrixSeq</code></td>
+<td><code>--build-matrix-seq</code></td>
+<td>Sequence of matrices in the FPGA</td>
+<td><em>Not yet implemented</em></td>
+</tr>
+<tr>
+<td><code>FullHardwareHardcoded</code></td>
+<td><code>--build-full-hardware-hardcoded</code></td>
+<td>Full hardware with hardcoded matrices</td>
+<td><em>Not yet implemented</em></td>
+</tr>
+</tbody>
+</table>
+<p>Each architecture type is associated to a different set of command line options and activates a different simulator backend. Some of the options are common to all the backends, while others are specific to a single backend. The following sections describe the possible backends and the options.</p>
+
+
+
+<h3 id="common-options">
+  <a class="Heading-link u-clickable" href="/docs/userguide/tools/quantum/#common-options">Common options</a>
+</h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-hw-flavor-list</code></td>
+<td>List the available flavors for the chosen hardware architecture.</td>
+</tr>
+<tr>
+<td><code>-hw-flavor</code></td>
+<td>Choose the flavor of the hardware architecture.</td>
+</tr>
+<tr>
+<td><code>-save-basm</code></td>
+<td>Save the BondMachine Assembly code for the Basm assembler.</td>
+</tr>
+<tr>
+<td><code>-build-app</code></td>
+<td>Build the application template to use the selected hardware architecture.</td>
+</tr>
+<tr>
+<td><code>-app-flavor-list</code></td>
+<td>List the available flavors for the chosen application template.</td>
+</tr>
+<tr>
+<td><code>-app-flavor</code></td>
+<td>Choose the flavor of the application template.</td>
+</tr>
+<tr>
+<td><code>-app-file</code></td>
+<td>Choose the file name of the application template.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h3 id="software-simulator">
+  <a class="Heading-link u-clickable" href="/docs/userguide/tools/quantum/#software-simulator">Software simulator</a>
+</h3>
+<p>The software simulator backend is used to simulate the quantum algorithm on a CPU. The program accept a json input file and produces a json output file.
+The following table shows the command line options specific to the software simulator:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-software-simulation-input</code></td>
+<td>Choose the input file for the software simulator.</td>
+</tr>
+<tr>
+<td><code>-software-simulation-output</code></td>
+<td>Choose the output file for the software simulator.</td>
+</tr>
+</tbody>
+</table>
+<p>An example of usage of the software simulator with the Bell state algorithm previously described (<em>program.bmq</em>) is the following:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bmqsim --software-simulation --software-simulation-input input.json --software-simulation-output output.json program.bmq</span></span></code></pre></div>
+<p>where <code>input.json</code>, the input file for the software simulator, is:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="err">{</span><span class="nt">&#34;Vector&#34;</span><span class="p">:[{</span><span class="nt">&#34;Real&#34;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&#34;Imag&#34;</span><span class="p">:</span><span class="mi">0</span><span class="p">},{</span><span class="nt">&#34;Real&#34;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&#34;Imag&#34;</span><span class="p">:</span><span class="mi">0</span><span class="p">},{</span><span class="nt">&#34;Real&#34;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&#34;Imag&#34;</span><span class="p">:</span><span class="mi">0</span><span class="p">},{</span><span class="nt">&#34;Real&#34;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&#34;Imag&#34;</span><span class="p">:</span><span class="mi">0</span><span class="p">}]}</span>
+</span></span><span class="line"><span class="cl"><span class="err">}</span></span></span></code></pre></div>
+<p>and <code>output.json</code>, the output file produced by the simulator, is:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="err">{</span><span class="nt">&#34;Vector&#34;</span><span class="p">:[{</span><span class="nt">&#34;Real&#34;</span><span class="p">:</span><span class="mf">0.7071067</span><span class="p">,</span><span class="nt">&#34;Imag&#34;</span><span class="p">:</span><span class="mi">0</span><span class="p">},{</span><span class="nt">&#34;Real&#34;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&#34;Imag&#34;</span><span class="p">:</span><span class="mi">0</span><span class="p">},{</span><span class="nt">&#34;Real&#34;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&#34;Imag&#34;</span><span class="p">:</span><span class="mi">0</span><span class="p">},{</span><span class="nt">&#34;Real&#34;</span><span class="p">:</span><span class="mf">0.7071067</span><span class="p">,</span><span class="nt">&#34;Imag&#34;</span><span class="p">:</span><span class="mi">0</span><span class="p">}]}</span>
+</span></span><span class="line"><span class="cl"><span class="err">}</span></span></span></code></pre></div>
+
+
+
+<h3 id="hardcoded-sequence-of-matrices">
+  <a class="Heading-link u-clickable" href="/docs/userguide/tools/quantum/#hardcoded-sequence-of-matrices">Hardcoded sequence of matrices</a>
+</h3>
+
+
+
+<h3 id="loadable-sequence-of-matrices">
+  <a class="Heading-link u-clickable" href="/docs/userguide/tools/quantum/#loadable-sequence-of-matrices">Loadable sequence of matrices</a>
+</h3>
+
+
+
+<h3 id="full-hardware-with-hardcoded-matrices">
+  <a class="Heading-link u-clickable" href="/docs/userguide/tools/quantum/#full-hardware-with-hardcoded-matrices">Full hardware with hardcoded matrices</a>
+</h3>
+
+
+
+<h2 id="other-options">
+  <a class="Heading-link u-clickable" href="/docs/userguide/tools/quantum/#other-options">Other options</a>
+</h2>
+<p>Alongside these main options, there are other options that does not depend on the backend chosen. These options are listed in the following table:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+
+
+
+<h2 id="examples">
+  <a class="Heading-link u-clickable" href="/docs/userguide/tools/quantum/#examples">Examples</a>
+</h2>
+
+  
+
+  
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+
+      </div>
+    </div>
+  </main>
+  
+  <footer class="Footer">
+    <div class="u-wrapper">
+      <div class="u-padding u-noboosting">
+        The BondMachine Project - <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY-SA 4.0</a>.
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

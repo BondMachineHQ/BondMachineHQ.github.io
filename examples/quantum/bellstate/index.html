@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+  integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+  crossorigin="anonymous" />
+
+
+  
+  <meta charset="utf-8">
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  
+    <meta name="description" content="This example demonstrates how to use the ZedBoard and the BondMachine framework to generate a quantum circuit that prepares a Bell state. The Bell state is a maximally entangled state of two qubits. The circuit is then executed on the ZedBoard and the results are read back and displayed on the host machine.
+The circuit of the Bell state is shown below:
+The circuit consists of two qubits, q0 and q1.">
+  
+
+
+<meta name="color-scheme" content="light dark">
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.126.1">
+  <title>Bell State | BondMachine</title>
+  <link rel="canonical" href="https://bondmachinehq.github.io/examples/quantum/bellstate/">
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/css/base.min.8e67dbf71c26d0a6dbf4662f796d909952715e54bce477c632a31f634032185f.min.8e67dbf71c26d0a6dbf4662f796d909952715e54bce477c632a31f634032185f.css" integrity="sha256-jmfb9xwm0Kbb9GYveW2QmVJxXlS85HfGMqMfY0AyGF8=" crossorigin="anonymous">
+
+      <link rel="stylesheet" href="/css/syntax.min.065df42d2be658bb8e0720297aadf469355a5ffaf863b00e3cce0627dd106ca0.css" integrity="sha256-Bl30LSvmWLuOByApeq30aTVaX/r4Y7AOPM4GJ90QbKA=" crossorigin="anonymous">
+
+
+
+</head>
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="/">BondMachine</a>
+        <a class="Banner-link u-clickable" href="/tags"><i class="fa fa-tags"></i></a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/intro/">Intro</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/posts/">News</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/docs/">Docs</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/prototypes/">Prototypes</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/examples/">Examples</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/media/">Media</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</nav>
+
+  
+<nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      
+        <li class="Banner-item Banner-item--title">
+          <a class="Banner-link u-clickable" href=".." style="color: red;">&crarr;quantum</a>
+        </li>
+      
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable"></a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+  <header class="Heading">
+  <h1 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/examples/quantum/bellstate/" rel="bookmark">Bell State</a>
+  </h1>
+  
+</header>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="refdb"><ul>
+
+This example is also available as:
+
+
+
+
+
+
+
+<li>Working code in the directory <strong> zedboard_bellstate </strong> within the <a href="https://github.com/BondMachineHQ/bmexamples" target="_blank">bmexamples</a> repository</li>
+
+
+
+
+
+
+
+
+
+
+<li>Quantum simulators comparisons code in the directory <strong> bellstate </strong> within the <a href="https://github.com/BondMachineHQ/bmqsimtests" target="_blank">bmqsimetests</a> repository</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="/docs/tutorials/501">Tutorial</a></li>
+
+
+
+
+
+
+
+</ul></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+    <hr>
+<p>This example demonstrates how to use the ZedBoard and the BondMachine framework to generate a quantum circuit that prepares a Bell state. The Bell state is a maximally entangled state of two qubits. The circuit is then executed on the ZedBoard and the results are read back and displayed on the host machine.</p>
+<p>The circuit of the Bell state is shown below:</p>
+<p><img src="bellstate.png" alt="Bell state circuit"></p>
+<p>The circuit consists of two qubits, q0 and q1. The Hadamard gate is applied to q0, followed by a CNOT gate with q0 as the control and q1 as the target. This translates to the following quantum circuit written in
+bmq language:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="err">%</span><span class="nf">block</span> <span class="no">code1</span> <span class="no">.sequential</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">qbits</span>	<span class="no">q0</span><span class="p">,</span><span class="no">q1</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">zero</span>	<span class="no">q0</span><span class="p">,</span><span class="no">q1</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">h</span>	<span class="no">q0</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">cx</span>	<span class="no">q0</span><span class="p">,</span><span class="no">q1</span>
+</span></span><span class="line"><span class="cl"><span class="err">%</span><span class="nf">endblock</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">%</span><span class="nf">meta</span> <span class="no">bmdef</span> <span class="no">global</span> <span class="no">main</span><span class="p">:</span><span class="no">code1</span></span></span></code></pre></div>
+<p>It worth noting the file <code>local.mk</code> in this example. This file is used to specify options for the BondMachine framework. In this case, the file specifies the target device as the ZedBoard and the target language as bmq. The file is shown below:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-make" data-lang="make"><span class="line"><span class="cl"><span class="nv">WORKING_DIR</span><span class="o">=</span>working_dir
+</span></span><span class="line"><span class="cl"><span class="nv">CURRENT_DIR</span><span class="o">=</span><span class="k">$(</span>shell <span class="nb">pwd</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">SOURCE_QUANTUM</span><span class="o">=</span>program.bmq
+</span></span><span class="line"><span class="cl"><span class="nv">QUANTUM_APP</span><span class="o">=</span>working_dir/circuit.c
+</span></span><span class="line"><span class="cl"><span class="nv">QUANTUM_ARGS</span><span class="o">=</span>-build-matrix-seq-hardcoded -hw-flavor seq_hardcoded_complex -app-flavor c_pynqapi_complex -build-app -app-file <span class="k">$(</span>QUANTUM_APP<span class="k">)</span> -emit-bmapi-maps -bmapi-maps-file bmapi.json
+</span></span><span class="line"><span class="cl"><span class="nv">BOARD</span><span class="o">=</span>zedboard
+</span></span><span class="line"><span class="cl"><span class="nv">BASM_ARGS</span><span class="o">=</span>-disable-dynamical-matching -bo <span class="k">$(</span>WORKING_DIR<span class="k">)</span>/bondmachine.bcof -chooser-min-word-size -chooser-force-same-name -dump-requirements <span class="k">$(</span>WORKING_DIR<span class="k">)</span>/requirements.json
+</span></span><span class="line"><span class="cl"><span class="nv">MAPFILE</span><span class="o">=</span>zedboard_maps.json
+</span></span><span class="line"><span class="cl"><span class="nv">SHOWARGS</span><span class="o">=</span>-dot-detail <span class="m">5</span>
+</span></span><span class="line"><span class="cl"><span class="nv">SHOWRENDERER</span><span class="o">=</span>dot -Txlib
+</span></span><span class="line"><span class="cl"><span class="nv">VERILOG_OPTIONS</span><span class="o">=</span>-comment-verilog -bcof-file <span class="k">$(</span>WORKING_DIR<span class="k">)</span>/bondmachine.bcof
+</span></span><span class="line"><span class="cl"><span class="nv">BMREQS</span><span class="o">=</span><span class="k">$(</span>WORKING_DIR<span class="k">)</span>/requirements.json
+</span></span><span class="line"><span class="cl"><span class="nv">HWOPTIMIZATIONS</span><span class="o">=</span>onlydestregs,onlysrcregs
+</span></span><span class="line"><span class="cl"><span class="err">include</span> <span class="err">bmapi.mk</span>
+</span></span><span class="line"><span class="cl"><span class="err">include</span> <span class="err">deploy.mk</span></span></span></code></pre></div>
+<p>The project can be verified by running the following command:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">make validate</span></span></code></pre></div>
+<p>if the project is valid, it can be finalized by running the following command:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">make apply</span></span></code></pre></div>
+<p>From here, all the make targets can be run. This project make use of the <strong>SoC accelerator workflow</strong>. You can find more information about this workflow in the documentation about the BondMachine projects. In particular, if you are curious about how the accelerator is built in term of processors and their connections, you can run the following command to show the BM layout:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">make show</span></span></code></pre></div>
+<p><img src="diagram.png" alt="BM layout"></p>
+<p>The following command will execute in sequence all the targets needed to build the accelerator for the ZedBoard:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">make design_bitstream</span></span></code></pre></div>
+<p>The generated bitstream can be programmed into the ZedBoard manually or editing the <code>deploy.mk</code> file and running the following command:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">make deploy</span></span></code></pre></div>
+<p>The <code>deploy.mk</code> file is shown below along with the necessary changes</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-make" data-lang="make"><span class="line"><span class="cl"><span class="nv">DEPLOY_TYPE</span><span class="o">=</span>ssh
+</span></span><span class="line"><span class="cl"><span class="nv">DEPLOY_HOST</span><span class="o">=[[</span>YOUR ZEDBOARD IP or HOSTNAME<span class="o">]]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">DEPLOY_USER</span><span class="o">=[[</span>YOUR ZEDBOARD USERNAME<span class="o">]]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">DEPLOY_GROUP</span><span class="o">=[[</span>YOUR ZEDBOARD GROUP<span class="o">]]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">DEPLOY_OVERRIDE</span><span class="o">=</span><span class="nb">true</span>
+</span></span><span class="line"><span class="cl"><span class="nv">DEPLOY_PATH</span><span class="o">=</span>quantum/<span class="k">$(</span>PROJECT_NAME<span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">DEPLOY_APP</span><span class="o">=</span>working_dir/circuit.c
+</span></span><span class="line"><span class="cl"><span class="nv">SSH_ARGS</span><span class="o">=</span>-i <span class="o">[[</span>YOUR SSH KEY<span class="o">]]</span>
+</span></span></code></pre></div>
+<p>After the deploy target is executed, a directory named $DEPLOY_PATH will be created in the ZedBoard. The directory will contain the necessary files to run the accelerator: the circuit.c file and bitstream file (that will be called firmware.bit). The application can be built with the following command:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">gcc circuit.c -o circuit -l pynq -lcma -lpthread</span></span></code></pre></div>
+<p>For this to be possible, the <a href="https://github.com/mesham/pynq_api">PYNQ API</a> must be installed in the ZedBoard linux distribution. The application is now ready to be executed. Just run the following command:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./circuit
+</span></span><span class="line"><span class="cl">1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 
+</span></span><span class="line"><span class="cl">0.707107 0.000000 0.000000 0.000000 0.000000 0.000000 0.707107 0.000000</span></span></code></pre></div>
+<p>The results of the execution will be displayed on the terminal. Executing the circuit without arguments will run the circuit starting from the |00&gt; state. And will display the final state of the vector state.</p>
+<p>Alternatively, the circuit can be executed with the following arguments:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./circuit inputs.txt outputs.txt</span></span></code></pre></div>
+<p>This will read the initial state of the vectors from the file <code>inputs.txt</code> and write the final state of the vectors to the file <code>outputs.txt</code>.
+Both files must contain a sequence of 8 floating point numbers (1 on each line) representing the real and imaginary parts of the vector state.</p>
+<p>For example, the file <code>inputs.txt</code> for the |00&gt; state contains the following:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">1.000000
+</span></span><span class="line"><span class="cl">0.000000
+</span></span><span class="line"><span class="cl">0.000000
+</span></span><span class="line"><span class="cl">0.000000
+</span></span><span class="line"><span class="cl">0.000000
+</span></span><span class="line"><span class="cl">0.000000
+</span></span><span class="line"><span class="cl">0.000000
+</span></span><span class="line"><span class="cl">0.000000</span></span></code></pre></div>
+<p>Multiple vectors can be executed in sequence by providing multiple lines in the input file. The output file will contain the final state of each vector in sequence.</p>
+
+  
+
+  
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+ 
+
+  
+  
+
+
+
+      </div>
+    </div>
+  </main>
+  
+  <footer class="Footer">
+    <div class="u-wrapper">
+      <div class="u-padding u-noboosting">
+        The BondMachine Project - <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY-SA 4.0</a>.
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="text/xsl" href="https://bondmachinehq.github.io/xml/base.min.xml" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Enc28j60 on BondMachine</title>
+    <link>https://bondmachinehq.github.io/tags/enc28j60/</link>
+    <description>Recent content in Enc28j60 on BondMachine</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link rel="self" href="https://bondmachinehq.github.io/tags/enc28j60/feed.xml" type="application/rss+xml" />
+    <item>
+      <title>Talk at the 1st FPGA Developer&#39; Forum (FDF)</title>
+      <link>https://bondmachinehq.github.io/posts/2024-06-11-cern/</link>
+      <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://bondmachinehq.github.io/posts/2024-06-11-cern/</guid>
+      <description>&lt;p&gt;Talk at the &lt;a href=&#34;https://indico.cern.ch/event/1381060&#34; rel=&#34;noopener&#34; target=&#34;_blank&#34;&gt;1st FPGA Developers&amp;#39; Forum (FDF) meeting&lt;/a&gt;,
+Slides and the recording on the &lt;a href=&#34;https://bondmachinehq.github.io/docs/slides/&#34;&gt;slides&lt;/a&gt; section of the site.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Lecture at the ICSC Course: Introductory course to HLS FPGA programming</title>
+      <link>https://bondmachinehq.github.io/posts/2023-11-27-icsc/</link>
+      <pubDate>Mon, 27 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://bondmachinehq.github.io/posts/2023-11-27-icsc/</guid>
+      <description>&lt;p&gt;Lecture at the &lt;a href=&#34;https://agenda.infn.it/event/38191/&#34; rel=&#34;noopener&#34; target=&#34;_blank&#34;&gt;ICSC Course: Introductory course to HLS FPGA programming&lt;/a&gt;, a course thought for the new personnel hired by means of the &lt;a href=&#34;https://www.supercomputing-icsc.it/en/icsc-home/&#34; rel=&#34;noopener&#34; target=&#34;_blank&#34;&gt;ICSC&lt;/a&gt; project to work on projects and research activities in the framework of Spoke 2 (&amp;ldquo;Fundamental Research And Space Economy&amp;rdquo;).
+It has been an occasion to build new documentation and hands-on material for the BondMachine project now available in the BM repository. Slides on the &lt;a href=&#34;https://bondmachinehq.github.io/docs/&#34;&gt;docs&lt;/a&gt; section of the site.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Talk at Workshop of the CCR of INFN</title>
+      <link>https://bondmachinehq.github.io/posts/2023-05-23-ccr2023/</link>
+      <pubDate>Tue, 23 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://bondmachinehq.github.io/posts/2023-05-23-ccr2023/</guid>
+      <description>&lt;p&gt;Talk about our latest work on creating computing accelerators at &lt;a href=&#34;https://agenda.infn.it/event/34683/&#34; rel=&#34;noopener&#34; target=&#34;_blank&#34;&gt;Workshop of the CCR of INFN&lt;/a&gt;.&lt;br&gt;
+Slides on the &lt;a href=&#34;https://bondmachinehq.github.io/docs/&#34;&gt;docs&lt;/a&gt; section of the site.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>BondMachine Project Thrives with Four Talks in Late 2022</title>
+      <link>https://bondmachinehq.github.io/posts/2022-12-01-late2022/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://bondmachinehq.github.io/posts/2022-12-01-late2022/</guid>
+      <description>&lt;p&gt;The year 2022 drew to a close with an exhilarating period for the BondMachine project, as it witnessed the presentation of four captivating talks across various locations. These engaging sessions showcased the progress made by the project. Let&amp;rsquo;s delve into the highlights of these talks that marked the end of 2022 as a truly exceptional period for BondMachine.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&amp;ldquo;Machine Learning inference with the BondMachine project&amp;rdquo; - &lt;a href=&#34;https://agenda.infn.it/event/15116/&#34; rel=&#34;noopener&#34; target=&#34;_blank&#34;&gt;Machine Learning Techniques with FPGA Devices for Particle Physics Experiments&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;The BondMachine project&amp;rdquo; - &lt;a href=&#34;https://indico.ictp.it/event/9933/&#34; rel=&#34;noopener&#34; target=&#34;_blank&#34;&gt;Joint ICTP-IAEA School on FPGA-based SoC and its Applications to Nuclear and Scientific Instrumentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Machine Learning on FPGA&amp;rdquo; - &lt;a href=&#34;https://agenda.infn.it/event/32568/&#34; rel=&#34;noopener&#34; target=&#34;_blank&#34;&gt;Third edition of the Machine Learning at INFN advanced level hackathon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Machine Learning on FPGA: The BondMachine Project&amp;rdquo; - &lt;a href=&#34;https://agenda.infn.it/event/31408/&#34; rel=&#34;noopener&#34; target=&#34;_blank&#34;&gt;SOSC 2022 Fourth International School on Open Science Cloud&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Slides on the &lt;a href=&#34;https://bondmachinehq.github.io/docs/&#34;&gt;docs&lt;/a&gt; section of the site.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Talk at Workshop of the CCR of INFN</title>
+      <link>https://bondmachinehq.github.io/posts/2022-05-23-ccr2022/</link>
+      <pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://bondmachinehq.github.io/posts/2022-05-23-ccr2022/</guid>
+      <description>&lt;p&gt;Talk about our latest work on creating computing accelerators at &lt;a href=&#34;https://agenda.infn.it/event/30202/&#34; rel=&#34;noopener&#34; target=&#34;_blank&#34;&gt;Workshop of the CCR of INFN&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Slides on the &lt;a href=&#34;https://bondmachinehq.github.io/docs/&#34;&gt;docs&lt;/a&gt; section of the site.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>BondMachine article published on Parallel Computing</title>
+      <link>https://bondmachinehq.github.io/posts/2021-12-10-parallelcomputing/</link>
+      <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://bondmachinehq.github.io/posts/2021-12-10-parallelcomputing/</guid>
+      <description>&lt;p&gt;Our article on the BondMachine has been published on &lt;a href=&#34;https://www.journals.elsevier.com/parallel-computing&#34; rel=&#34;noopener&#34; target=&#34;_blank&#34;&gt;Parallel Computing&lt;/a&gt; (Elsevier) a peer-reviewed journal.&lt;/p&gt;
+&lt;a href=&#34;https://www.sciencedirect.com/science/article/pii/S0167819121001150&#34; rel=&#34;noopener&#34; target=&#34;_blank&#34;&gt;Check it out&lt;/a&gt;
+</description>
+    </item>
+    <item>
+      <title>VGA and Keyboard firmwares</title>
+      <link>https://bondmachinehq.github.io/posts/2020-06-10-vgs/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://bondmachinehq.github.io/posts/2020-06-10-vgs/</guid>
+      <description>&lt;p&gt;The BondMachine has now interfaces for keyboard and VGA monitors.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Talk at ParCo2019</title>
+      <link>https://bondmachinehq.github.io/posts/2019-09-10-parco/</link>
+      <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>https://bondmachinehq.github.io/posts/2019-09-10-parco/</guid>
+      <description>&lt;p&gt;Talk at The International Conference on Parallel Computing ParCo2019. Slides on the &lt;a href=&#34;https://bondmachinehq.github.io/docs/&#34;&gt;docs&lt;/a&gt; section of the site.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Lecture at 2019 NiPS Summer school</title>
+      <link>https://bondmachinehq.github.io/posts/2019-07-03-nips/</link>
+      <pubDate>Wed, 03 Jul 2019 00:00:00 +0000</pubDate>
+      <guid>https://bondmachinehq.github.io/posts/2019-07-03-nips/</guid>
+      <description>&lt;p&gt;2 hours lecture “Enabling Machine Learning on FPGA” in the program of the &lt;a href=&#34;https://www.nipslab.org/nips-summer-school-2019&#34; rel=&#34;noopener&#34; target=&#34;_blank&#34;&gt;NiPS Summer School 2019&lt;/a&gt; – Architectures and Algorithms for Energy-Efficient IoT and HPC Applications. The lecture was about the use a system like the BondMachine to run ML payloads on FPGA. Slides on the &lt;a href=&#34;https://bondmachinehq.github.io/docs/&#34;&gt;docs&lt;/a&gt; section of the site.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Lecture at ICTP</title>
+      <link>https://bondmachinehq.github.io/posts/2019-05-16-ictp/</link>
+      <pubDate>Thu, 16 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://bondmachinehq.github.io/posts/2019-05-16-ictp/</guid>
+      <description>&lt;p&gt;Lecture “The BondMachine: a moldable computer architecture” in the program of the &lt;a href=&#34;http://indico.ictp.it/event/8680/overview&#34; rel=&#34;noopener&#34; target=&#34;_blank&#34;&gt;Advanced Workshop on Modern FPGA Based Technology for Scientific Computing&lt;/a&gt;. The lecture was about the BondMachine project and contains a full hands-on session made on Zedboards. Slides on the &lt;a href=&#34;https://bondmachinehq.github.io/docs/&#34;&gt;docs&lt;/a&gt; section of the site.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Video of the InnovateFPGA 2018 Global</title>
+      <link>https://bondmachinehq.github.io/posts/2019-05-09-video/</link>
+      <pubDate>Thu, 09 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://bondmachinehq.github.io/posts/2019-05-09-video/</guid>
+      <description>&lt;p&gt;Terasic and Intel published on youtube the video recap of the last year grand final. We where there with the BondMachine, &lt;a href=&#34;https://bondmachinehq.github.io/media/&#34;&gt;check it&lt;/a&gt; on the media section of the site.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Talk at ISGC2019</title>
+      <link>https://bondmachinehq.github.io/posts/2019-05-04-isgc/</link>
+      <pubDate>Sat, 04 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://bondmachinehq.github.io/posts/2019-05-04-isgc/</guid>
+      <description>&lt;p&gt;Talk at &lt;a href=&#34;https://indico4.twgrid.org/event/8/&#34; rel=&#34;noopener&#34; target=&#34;_blank&#34;&gt;The International Symposium on Grids and Clouds (ISGC) 2019&lt;/a&gt;. The talk was fucused on the BondMachine project and its possible machine learning applications.&lt;/p&gt;
+&lt;p&gt;Slides on the &lt;a href=&#34;https://bondmachinehq.github.io/docs/&#34;&gt;docs&lt;/a&gt; section of the site.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Golab2018 talk video</title>
+      <link>https://bondmachinehq.github.io/posts/2019-01-22-golab/</link>
+      <pubDate>Tue, 22 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://bondmachinehq.github.io/posts/2019-01-22-golab/</guid>
+      <description>&lt;p&gt;Online the video of the talk at Golab 2018 &lt;a href=&#34;https://bondmachinehq.github.io/media/&#34;&gt;check it&lt;/a&gt; it on the media section of the site.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Interview at TEF</title>
+      <link>https://bondmachinehq.github.io/posts/2018-11-27-tef/</link>
+      <pubDate>Tue, 27 Nov 2018 00:00:00 +0000</pubDate>
+      <guid>https://bondmachinehq.github.io/posts/2018-11-27-tef/</guid>
+      <description>&lt;p&gt;Same day ago we where guests on an episode of &amp;ldquo;Speciale Università&amp;rdquo; a talk show of &lt;a href=&#34;http://www.tefchannel.it&#34; rel=&#34;noopener&#34; target=&#34;_blank&#34;&gt;TEF&lt;/a&gt; a local TV (in italian).
+Unfortunately the episode is not available online anymore.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Talk at Golab 2018</title>
+      <link>https://bondmachinehq.github.io/posts/2018-10-22-golab/</link>
+      <pubDate>Mon, 22 Oct 2018 00:00:00 +0000</pubDate>
+      <guid>https://bondmachinehq.github.io/posts/2018-10-22-golab/</guid>
+      <description>&lt;p&gt;given at &lt;a href=&#34;https://www.golab.io&#34; rel=&#34;noopener&#34; target=&#34;_blank&#34;&gt;Golab 2018&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Slides on the docs section.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>InnovateFPGA 2018 Grand Final Iron Award</title>
+      <link>https://bondmachinehq.github.io/posts/2018-08-20-innovatefpga/</link>
+      <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
+      <guid>https://bondmachinehq.github.io/posts/2018-08-20-innovatefpga/</guid>
+      <description>&lt;p&gt;The project won the Iron Award at the &lt;a href=&#34;http://www.innovatefpga.com&#34; rel=&#34;noopener&#34; target=&#34;_blank&#34;&gt;InnovateFPGA 2018&lt;/a&gt; grand final at Intel Campus in San Jose (CA) USA on 15th of August 2018. It has been a pleasure and an honor to be there. I collected &lt;a href=&#34;https://www.mirkomariotti.it/galleries/20180814-innovatefpga&#34; rel=&#34;noopener&#34; target=&#34;_blank&#34;&gt;some photos&lt;/a&gt; of our adventure in San Francisco.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/innovatefpgagrandfinal.png&#34; alt=&#34;InnovateFPGA Final&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>NiPS Summer School 2018</title>
+      <link>https://bondmachinehq.github.io/posts/2018-07-20-nips/</link>
+      <pubDate>Fri, 20 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://bondmachinehq.github.io/posts/2018-07-20-nips/</guid>
+      <description>&lt;p&gt;Poster of the BondMachine project presented at the &lt;a href=&#34;https://www.nipslab.org/summerschool2018/&#34; rel=&#34;noopener&#34; target=&#34;_blank&#34;&gt;NiPS Summer School 2018&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>InnovateFPGA Grand final</title>
+      <link>https://bondmachinehq.github.io/posts/2018-07-02-innovatefpga/</link>
+      <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://bondmachinehq.github.io/posts/2018-07-02-innovatefpga/</guid>
+      <description>&lt;p&gt;The project reached the &lt;a href=&#34;http://www.innovatefpga.com&#34; rel=&#34;noopener&#34; target=&#34;_blank&#34;&gt;InnovateFPGA&lt;/a&gt; Grand final by winning the silver award in the EMEA final. We will present the project in San Jose in August.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>InnovateFPGA Regional final</title>
+      <link>https://bondmachinehq.github.io/posts/2018-05-31-innovatefpga/</link>
+      <pubDate>Thu, 31 May 2018 00:00:00 +0000</pubDate>
+      <guid>https://bondmachinehq.github.io/posts/2018-05-31-innovatefpga/</guid>
+      <description>&lt;p&gt;The project reached the  &lt;a href=&#34;https://www.innovatefpga.com&#34; rel=&#34;noopener&#34; target=&#34;_blank&#34;&gt;InnovateFPGA&lt;/a&gt; EMEA Regional final, we are very happy for this achivement.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/innovatefpgafinal.png&#34; alt=&#34;InnovateFPGA Final&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Video for the InnovateFPGA contest</title>
+      <link>https://bondmachinehq.github.io/posts/2018-05-27-innovatefpga/</link>
+      <pubDate>Sun, 27 May 2018 00:00:00 +0000</pubDate>
+      <guid>https://bondmachinehq.github.io/posts/2018-05-27-innovatefpga/</guid>
+      <description>&lt;p&gt;Published the video for the InnovateFPGA 2018 contest&lt;/p&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/Xx68ZzuEs3U?si=D11vkfkfhqeHkg64&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; allowfullscreen&gt;&lt;/iframe&gt;
+</description>
+    </item>
+    <item>
+      <title>Talk at INFN-CNAF</title>
+      <link>https://bondmachinehq.github.io/posts/2018-02-23-cnaf/</link>
+      <pubDate>Fri, 23 Feb 2018 00:00:00 +0000</pubDate>
+      <guid>https://bondmachinehq.github.io/posts/2018-02-23-cnaf/</guid>
+      <description>&lt;p&gt;given at &lt;a href=&#34;https://www.cnaf.infn.it/en&#34; rel=&#34;noopener&#34; target=&#34;_blank&#34;&gt;INFN-CNAF&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Slides on the docs section.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Semifinal InnovateFPGA 2018</title>
+      <link>https://bondmachinehq.github.io/posts/2018-02-03-innovatefpga/</link>
+      <pubDate>Sat, 03 Feb 2018 00:00:00 +0000</pubDate>
+      <guid>https://bondmachinehq.github.io/posts/2018-02-03-innovatefpga/</guid>
+      <description>&lt;p&gt;The project reach the &lt;a href=&#34;http://www.innovatefpga.com&#34; rel=&#34;noopener&#34; target=&#34;_blank&#34;&gt;InnovateFPGA&lt;/a&gt; EMEA Semifinal, we are very happy for this achivement.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>The BondMachine partecipation @ InnovateFPGA 2018</title>
+      <link>https://bondmachinehq.github.io/posts/2017-12-28-innovatefpga/</link>
+      <pubDate>Thu, 28 Dec 2017 00:00:00 +0000</pubDate>
+      <guid>https://bondmachinehq.github.io/posts/2017-12-28-innovatefpga/</guid>
+      <description>&lt;p&gt;The BondMachine project will participate in the &lt;a href=&#34;https://www.innovatefpga.com/portal/news/winner-2018.html&#34; rel=&#34;noopener&#34; target=&#34;_blank&#34;&gt;InnovateFPGA 2018&lt;/a&gt;  contest, wish us good luck.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>The BondMachine @ Umbria Business Matching 2017</title>
+      <link>https://bondmachinehq.github.io/posts/2017-11-09-ubm2017/</link>
+      <pubDate>Thu, 09 Nov 2017 00:00:00 +0000</pubDate>
+      <guid>https://bondmachinehq.github.io/posts/2017-11-09-ubm2017/</guid>
+      <description>&lt;p&gt;For the second time we presented the BondMachine prototype &amp;ldquo;James&amp;rdquo; at the Umbria Business Matching event in Bastia Umbra, Italy.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Talk on the BondMachine at CCR Workshop</title>
+      <link>https://bondmachinehq.github.io/posts/2017-05-23-ccr2017/</link>
+      <pubDate>Tue, 23 May 2017 00:00:00 +0000</pubDate>
+      <guid>https://bondmachinehq.github.io/posts/2017-05-23-ccr2017/</guid>
+      <description>&lt;p&gt;given at &amp;ldquo;Workshop della CCR: L.N.G.S. , 22-26 May 2017 , Gran Sasso National Laboratories, Italy&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Slides on the docs section.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>The BondMachine @ Umbria Business Matching 2016</title>
+      <link>https://bondmachinehq.github.io/posts/2016-11-25-ubm2016/</link>
+      <pubDate>Fri, 25 Nov 2016 00:00:00 +0000</pubDate>
+      <guid>https://bondmachinehq.github.io/posts/2016-11-25-ubm2016/</guid>
+      <description>&lt;p&gt;We presented our prototype at Umbria Business Matching 2016 in Perugia.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>The BondMachine @ Maker Faire 2016 Rome</title>
+      <link>https://bondmachinehq.github.io/posts/2016-10-14-makerfaire/</link>
+      <pubDate>Fri, 14 Oct 2016 00:00:00 +0000</pubDate>
+      <guid>https://bondmachinehq.github.io/posts/2016-10-14-makerfaire/</guid>
+      <description>&lt;p&gt;We presented our prototype at Maker Faire 2016 in Rome. It has been an exciting adventure and we would like to thank everyone that stopped to our stand and give us feedback about our project and ideas.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/mf2016.jpg&#34; alt=&#34;Maker Faire 2016&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Poster on the BondMachine at CCR Workshop</title>
+      <link>https://bondmachinehq.github.io/posts/2016-05-16-ccr2016/</link>
+      <pubDate>Mon, 16 May 2016 00:00:00 +0000</pubDate>
+      <guid>https://bondmachinehq.github.io/posts/2016-05-16-ccr2016/</guid>
+      <description>&lt;p&gt;presented at &amp;ldquo;Workshop della CCR: 16-20 May 2016, La Biodola - Isola d&amp;rsquo;Elba, Italy&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/ccr2016poster.png&#34; alt=&#34;CCR Poster&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+  </channel>
+</rss>

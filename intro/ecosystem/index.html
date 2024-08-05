@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+  integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+  crossorigin="anonymous" />
+
+
+  
+  <meta charset="utf-8">
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  
+    <meta name="description" content="The BondMachine ecosystem is formed by two parts. The first concerns the BMs devices building with their internal behaviour and architecture, the seconds the BMs interconnecting, both among themselves and with the external world.
+BondMachines building A BondMachine is a set of computing units and non computing objects shared among them, all packed within a single hardware device.
+Connecting Processors The Connecting Processor (CP) is the computing core of the BondMachine.">
+  
+
+
+<meta name="color-scheme" content="light dark">
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.126.1">
+  <title>EcoSystem | BondMachine</title>
+  <link rel="canonical" href="https://bondmachinehq.github.io/intro/ecosystem/">
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/css/base.min.8e67dbf71c26d0a6dbf4662f796d909952715e54bce477c632a31f634032185f.min.8e67dbf71c26d0a6dbf4662f796d909952715e54bce477c632a31f634032185f.css" integrity="sha256-jmfb9xwm0Kbb9GYveW2QmVJxXlS85HfGMqMfY0AyGF8=" crossorigin="anonymous">
+
+
+
+</head>
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="/">BondMachine</a>
+        <a class="Banner-link u-clickable" href="/tags"><i class="fa fa-tags"></i></a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/intro/">Intro</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/posts/">News</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/docs/">Docs</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/prototypes/">Prototypes</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/examples/">Examples</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/media/">Media</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</nav>
+
+  
+<nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      
+        <li class="Banner-item Banner-item--title">
+          <a class="Banner-link u-clickable" href=".." style="color: red;">&crarr;intro</a>
+        </li>
+      
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable"></a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+  <header class="Heading">
+  <h1 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/intro/ecosystem/" rel="bookmark">EcoSystem</a>
+  </h1>
+  
+</header>
+  
+    <hr>
+<p><em><strong>The BondMachine ecosystem</strong></em> is formed by two parts. The first concerns the BMs devices building with their internal behaviour and architecture, the seconds the BMs interconnecting, both among themselves and with the external world.</p>
+
+
+
+<h3 id="bondmachines-building">
+  <a class="Heading-link u-clickable" href="/intro/ecosystem/#bondmachines-building"><strong>BondMachines building</strong></a>
+</h3>
+<p>A BondMachine is a set of computing units and non computing objects shared among them, all packed within a single hardware device.</p>
+
+
+
+<h4 id="connecting-processors">
+  <a class="Heading-link u-clickable" href="/intro/ecosystem/#connecting-processors"><em>Connecting Processors</em></a>
+</h4>
+<p>The <em>Connecting Processor</em> (CP) is the computing core of the BondMachine. The name Connecting Processor describes the capability of the processor core to be configured in such a way to be connected to other processors and to Shared Objects. CPs are as simple as possible, specialized to do a single task and optimized for doing it. In fact, the CPs inside the BondMachine architecture can have different number of registers, number of input/output register, different instruction sets (i.e. opcodes) with respect to the other ones.</p>
+
+
+
+<h4 id="shared-objects">
+  <a class="Heading-link u-clickable" href="/intro/ecosystem/#shared-objects"><em>Shared Objects</em></a>
+</h4>
+<p>These are objects that are shared between the CPs (SO). Several kind of objects can be implemented to increase the processing capability and the functionality of the BMs improving the high-speed synchronization and communication between tasks running on separate CPs and all other non computing capabilities.
+Three kinds of objects have been currently implemented: Channels, Shared Memories and Barriers.</p>
+
+
+
+<h3 id="bondmachines-interconnecting">
+  <a class="Heading-link u-clickable" href="/intro/ecosystem/#bondmachines-interconnecting"><strong>BondMachines interconnecting</strong></a>
+</h3>
+<p>BMs may be connected together to form clusters or can interact with the external world.</p>
+
+
+
+<h4 id="etherbond-protocol">
+  <a class="Heading-link u-clickable" href="/intro/ecosystem/#etherbond-protocol"><em>EtherBond protocol</em></a>
+</h4>
+<p>BMs may comunicate using a native protocol called EtherBond. It is a protocol over ethernet (ethertype 0x8888) whose purpose is to replicate the electronic behavior of BMs registers and to extend it over the device boundaries. In other words clusters of BMs may be created and their behaviour is driven be the same rules of the BM devices. The main objective is to handle devices and cluster the same way.</p>
+
+
+
+<h4 id="etherbond-on-linux">
+  <a class="Heading-link u-clickable" href="/intro/ecosystem/#etherbond-on-linux"><em>EtherBond on Linux</em></a>
+</h4>
+<p>The EtherBond protocol has been ported to Linux. With this port BMs can comunicate with standard PC software.</p>
+
+
+
+<h4 id="board-drivers">
+  <a class="Heading-link u-clickable" href="/intro/ecosystem/#board-drivers"><em>Board drivers</em></a>
+</h4>
+<p>BMs may be implemented in hardware using FPGA, several drivers, specific to different FPGA model have been developed in order to use displays, leds, switch et al.</p>
+
+  
+
+  
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+
+      </div>
+    </div>
+  </main>
+  
+  <footer class="Footer">
+    <div class="u-wrapper">
+      <div class="u-padding u-noboosting">
+        The BondMachine Project - <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY-SA 4.0</a>.
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

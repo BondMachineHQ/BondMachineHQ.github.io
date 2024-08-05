@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+  integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+  crossorigin="anonymous" />
+
+
+  
+  <meta charset="utf-8">
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  
+    <meta name="description" content="The main purpose of the procbuilder command is to provide a command-line interface for interacting with the procbuilder package. The procbuilder package is the library that contains the core functionality for building and interacting with a CP processor architecture. The command accepts various flags that control its behavior and perform different operations based on those flags. This document provides an overview of the command&rsquo;s functionality, the flags it accepts, and the operations it performs based on those flags.">
+  
+
+
+<meta name="color-scheme" content="light dark">
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.126.1">
+  <title>Processor Builder | BondMachine</title>
+  <link rel="canonical" href="https://bondmachinehq.github.io/docs/userguide/tools/procbuilder/">
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/css/base.min.8e67dbf71c26d0a6dbf4662f796d909952715e54bce477c632a31f634032185f.min.8e67dbf71c26d0a6dbf4662f796d909952715e54bce477c632a31f634032185f.css" integrity="sha256-jmfb9xwm0Kbb9GYveW2QmVJxXlS85HfGMqMfY0AyGF8=" crossorigin="anonymous">
+
+
+
+</head>
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="/">BondMachine</a>
+        <a class="Banner-link u-clickable" href="/tags"><i class="fa fa-tags"></i></a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/intro/">Intro</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/posts/">News</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/docs/">Docs</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/prototypes/">Prototypes</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/examples/">Examples</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/media/">Media</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</nav>
+
+  
+<nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      
+        <li class="Banner-item Banner-item--title">
+          <a class="Banner-link u-clickable" href=".." style="color: red;">&crarr;tools</a>
+        </li>
+      
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable"></a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+  <header class="Heading">
+  <h1 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/docs/userguide/tools/procbuilder/" rel="bookmark">Processor Builder</a>
+  </h1>
+  
+</header>
+  
+
+
+
+
+
+
+ 
+
+    <hr>
+<p>The main purpose of the <code>procbuilder</code> command is to provide a command-line interface for interacting with the <code>procbuilder</code> package. The <code>procbuilder</code> package is the library that contains the core functionality for building and interacting with a CP processor architecture. The command accepts various flags that control its behavior and perform different operations based on those flags. This document provides an overview of the command&rsquo;s functionality, the flags it accepts, and the operations it performs based on those flags.</p>
+<p>This command performs various operations based on the provided flags. It can create a new CP, add instructions to the CP, assemble a program, disassemble a program and produce the HDL code for the CP.</p>
+
+
+
+<h3 id="usage">
+  <a class="Heading-link u-clickable" href="/docs/userguide/tools/procbuilder/#usage">Usage</a>
+</h3>
+<p>The two main workflows for the <code>procbuilder</code> command are:</p>
+<ul>
+<li>
+<p><strong>Loading an existing CP</strong> and program from JSON files, inspecting the CP and program. Using the CP to generate HDL code.</p>
+</li>
+<li>
+<p><strong>Creating a new CP</strong>, adding instructions to the CP, assembling a program, disassembling the program and saving the machine state to a JSON file</p>
+</li>
+</ul>
+
+
+
+<h3 id="loading-an-existing-cp-and-program">
+  <a class="Heading-link u-clickable" href="/docs/userguide/tools/procbuilder/#loading-an-existing-cp-and-program">Loading an Existing CP and Program</a>
+</h3>
+<p>The flag to load an existing CP and program is <code>load-machine</code>. If this flag is set to a non-empty string, the command checks if a file with the specified name exists. If the file exists, the command reads the machine state from the file and initializes the CP and program with the read data. If any errors occur during file operations or JSON unmarshaling, the command panics.</p>
+
+
+
+<h3 id="todo---finish-this-section">
+  <a class="Heading-link u-clickable" href="/docs/userguide/tools/procbuilder/#todo---finish-this-section">TODO - Finish this section</a>
+</h3>
+
+
+
+<h3 id="creating-a-new-cp-and-program">
+  <a class="Heading-link u-clickable" href="/docs/userguide/tools/procbuilder/#creating-a-new-cp-and-program">Creating a New CP and Program</a>
+</h3>
+<p>The flags to create a new CP and program are <code>save-machine</code>. It is used to save the machine state to a JSON file. If this flag is set to a non-empty string, the command saves the machine state to a JSON file with the specified name.</p>
+
+
+
+<h3 id="todo---finish-this-section-1">
+  <a class="Heading-link u-clickable" href="/docs/userguide/tools/procbuilder/#todo---finish-this-section-1">TODO - Finish this section</a>
+</h3>
+
+  
+
+  
+
+  
+
+
+
+
+
+  <footer>
+    
+      
+    
+      
+        <ul class="Tags">
+          
+            <li class="Tags-item u-background">
+              <a class="Tags-link u-clickable" href="/tags/tools/" rel="tag">Tools</a>
+            </li>
+          
+            <li class="Tags-item u-background">
+              <a class="Tags-link u-clickable" href="/tags/procbuilder/" rel="tag">Procbuilder</a>
+            </li>
+          
+        </ul>
+      
+    
+  </footer>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<h3 class="Heading-link u-clickable" style="color: #66cdaa">Related resources:</h3>
+
+
+
+<div class="refdb"><ul>
+
+
+<strong>Basic procbuilder operations</strong>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="/docs/tutorials/001">Tutorial</a></li>
+
+
+
+
+
+
+
+</ul></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+
+
+ 
+
+  
+  
+
+
+
+      </div>
+    </div>
+  </main>
+  
+  <footer class="Footer">
+    <div class="u-wrapper">
+      <div class="u-padding u-noboosting">
+        The BondMachine Project - <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY-SA 4.0</a>.
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

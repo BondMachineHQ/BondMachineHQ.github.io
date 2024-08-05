@@ -1,295 +1,316 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
+<html lang="en-us">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BondMachine</title>
-	<meta name="keywords" content="bondmachine">
-	<meta name="description" content="BM">
-  <link rel="stylesheet" href="combo.css">
-  <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-	<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<style>
-body {
-    font-family: "Lato", sans-serif;
-}
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+  integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+  crossorigin="anonymous" />
 
-.sidenav {
-    height: 50%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 25%;
-    left: 0;
-    background-color: #2e2e2e;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-}
 
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
+  
+  <meta charset="utf-8">
 
-.sidenav a:hover, .offcanvas a:focus{
-    color: #f1f1f1;
-}
 
-.sidenav .closebtn {
-    position: absolute;
-    top: 100;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
 
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  
+    
+  
+
+
+<meta name="color-scheme" content="light dark">
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.126.1">
+  <title>Examples | BondMachine</title>
+  <link rel="canonical" href="https://bondmachinehq.github.io/examples/">
+
+
+
+
+  <link rel="alternate" href="/examples/feed.xml" type="application/rss+xml">
+
+  
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/css/base.min.8e67dbf71c26d0a6dbf4662f796d909952715e54bce477c632a31f634032185f.min.8e67dbf71c26d0a6dbf4662f796d909952715e54bce477c632a31f634032185f.css" integrity="sha256-jmfb9xwm0Kbb9GYveW2QmVJxXlS85HfGMqMfY0AyGF8=" crossorigin="anonymous">
+
+
+
 </head>
+
 <body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
 
-
-<div id="mySidenav" class="sidenav">
-<!--  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
-  <a href="/">Home</a>
-  <a href="/news">News</a>
-  <a href="/docs">Docs</a>
-  <a href="/ug">User Guide</a>
-  <a href="/diy">Do It Yourself</a>
-  <a href="/examples">Examples</a>
-  <a href="/media">Media</a>
-</div>
-
-<div id="main">
-
-    <nav><ul>
-	<li><span style="cursor:pointer" onclick="switchNav()"><img src="img/logob.png" width="32px"></img></span>&nbsp;&nbsp;&nbsp;<span style="cursor:pointer" onclick="window.location.href='http://bondmachine.fisica.unipg.it'"><img src="img/home.png" width="32px"></img></span>&nbsp;&nbsp;&nbsp;<span style="color:#66cdaa;cursor:pointer">Examples</span></li>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="/">BondMachine</a>
+        <a class="Banner-link u-clickable" href="/tags"><i class="fa fa-tags"></i></a>
+        </li>
       
         
-	
-          <li class="p-zoo"><a href="#zoo">Zoo</a></li>
-	
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/intro/">Intro</a>
+        </li>
       
         
-	
-          <li class="p-pingpong"><a href="#pingpong">Ping Pong</a></li>
-	
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/posts/">News</a>
+        </li>
       
         
-	
-          <li class="p-channels"><a href="#channels">Channels</a></li>
-	
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/docs/">Docs</a>
+        </li>
       
-    </ul></nav>
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/prototypes/">Prototypes</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/examples/">Examples</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/media/">Media</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</nav>
+
+  
+<nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      
+        <li class="Banner-item Banner-item--title">
+          <a class="Banner-link u-clickable" href=".." style="color: red;">&crarr;home</a>
+        </li>
+      
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable"></a>
+      </li>
+      
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="bmexamples">Repository</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="minimalistic">Minimalistic</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="zoo">Zoo</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="lisp">Lisp</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="forth">Forth</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="advanced">Advanced</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="ml">ML</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="quantum">Quantum</a>
+        </li>
+      
+      
+    </ul>
+  </div>
+</nav>
 
 
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+  <header class="Heading">
+  <h1 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/examples/" rel="bookmark">Examples</a>
+  </h1>
+  
+</header>
+
+  <hr>
+<p>This section contains a collection of examples that demonstrate the capabilities of the BondMachine project. All kind of examples are shown here, from the simplest to the most complex. Using tags you can filter the examples by topic, FPGA, board, etc.</p>
+<p>The examples are organized in the following categories:</p>
+
+
+  
+
+
+
+
+
+<ul class="posts">
+  <li>
+    <div class="flex">
+      <a href="https://bondmachinehq.github.io/examples/advanced/" class="truncate">Advanced Examples</a>
+      
+    </div>
+  </li><li>
+    <div class="flex">
+      <a href="https://bondmachinehq.github.io/examples/basic/" class="truncate">Basic Examples</a>
+      
+      
+      
+    </div>
+  </li><li>
+    <div class="flex">
+      <a href="https://bondmachinehq.github.io/examples/bmexamples/" class="truncate">BM Examples repository</a>
+      
+      
+      
+    </div>
+  </li><li>
+    <div class="flex">
+      <a href="https://bondmachinehq.github.io/examples/forth/" class="truncate">Forth on the BondMachine</a>
+      
+      
+      
+    </div>
+  </li><li>
+    <div class="flex">
+      <a href="https://bondmachinehq.github.io/examples/lisp/" class="truncate">Lisp on the BondMachine</a>
+      
+      
+      
+    </div>
+  </li><li>
+    <div class="flex">
+      <a href="https://bondmachinehq.github.io/examples/ml/" class="truncate">Machine Learning</a>
+      
+    </div>
+  </li><li>
+    <div class="flex">
+      <a href="https://bondmachinehq.github.io/examples/minimalistic/" class="truncate">Minimalistic</a>
+      
+      
+      
+    </div>
+  </li><li>
+    <div class="flex">
+      <a href="https://bondmachinehq.github.io/examples/quantum/" class="truncate">Quantum Computing</a>
+      
+    </div>
+  </li><li>
+    <div class="flex">
+      <a href="https://bondmachinehq.github.io/examples/zoo/" class="truncate">Zoo</a>
+      
+      
+      
+    </div>
+  </li>
+
+
+
+
+
+
+  
+
+  
+
+
+
+
+
+  <footer>
     
       
-      
-      <div id="zoo" class="section p-zoo">
-        
-        <div class="container center">
-          <h1>Zoo</h1>
-
-<p><img src="../img/vip.png" alt="VIP" width="200px" style="margin: 10px;" /></p>
-
-        </div>
-      </div>
-      
     
       
-      
-      <div id="pingpong" class="section p-pingpong">
-        
-        <div class="container ">
-          <h1>Ping Pong</h1>
-
-<p>The following code shows a first example of the BondMachine. It is a trival example yet it shows the basic capabilities of the BondMachine architecture and ecosytem.
-Two Goroutines send an uint8 data value back and forth through IO registers (those created with bondgo.Make), the pong goroutine also increases the value by one before sending it back.</p>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">package main
-
-import (
-        "bondgo"
-)
-
-func pong() {
-        var in0 bondgo.Input
-        var out0 bondgo.Output
-
-        in0 = bondgo.Make(bondgo.Input, 3)
-        out0 = bondgo.Make(bondgo.Output, 5)
-
-        for {
-                bondgo.IOWrite(out0, bondgo.IORead(in0)+1)
-        }
-
-        bondgo.Void(in0)
-        bondgo.Void(out0)
-}
-
-func main() {
-        var in0 bondgo.Input
-        var out0 bondgo.Output
-
-        in0 = bondgo.Make(bondgo.Input, 5)
-        out0 = bondgo.Make(bondgo.Output, 3)
-
-device_0:
-        go pong()
-
-        for {
-                bondgo.IOWrite(out0, bondgo.IORead(in0))
-        }
-
-        bondgo.Void(in0)
-        bondgo.Void(out0)
-}</code></pre></figure>
-
-<p>Compiling the code with the bondgo compiler:</p>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">bondgo -input-file pingpong.go -mpm</code></pre></figure>
-
-<p>The toolchain perform the following steps:</p>
-<ul>
-  <li>Map the two goroutines to two hardware cores.</li>
-  <li>Creates two types of core, each one optimized to execute the assigned goroutine.</li>
-  <li>Creates the two binaries.</li>
-  <li>Connected the two core as inferred from the source code, using special IO registers.</li>
-</ul>
-
-<p>The result is a multicore BondMachine:<br /></p>
-
-<p><img src="img/pingpong1.png" alt="Multicore Ping Pong" title="Multicore Ping Pong" /></p>
-
-<p>Changing the device_0 label with device_1 the compiler is instructed to put the two goroutines on different BondMachines. Compiling activating the etherbond protocol</p>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">bondgo -input-file pingpong.go -mpm -use-etherbond</code></pre></figure>
-
-<p>The result will be the same as before (in term of behaviour) but using a cluster of two BondMachines connected via the etherbond protocol, each running only one goroutine.<br />
-The Multicore became a distributed system:<br /></p>
-
-<p><img src="img/pingpong2.png" alt="Clustered Ping Pong" title="Clustered Ping Pong" /></p>
-
-        </div>
-      </div>
+        <ul class="Tags">
+          
+            <li class="Tags-item u-background">
+              <a class="Tags-link u-clickable" href="/tags/examples/" rel="tag">Examples</a>
+            </li>
+          
+        </ul>
       
     
-      
-      
-      <div id="channels" class="section p-channels">
-        
-        <div class="container ">
-          <h1>Ping Pong Channels</h1>
+  </footer>
 
-<p>The following code shows a similar behaviour but using channels.</p>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">package main
-
-import (
-	"bondgo"
-)
-
-func pong(c chan uint8) {
-	var ball uint8
-	for {
-		ball = &lt;-c
-		ball++
-		c &lt;- ball
-	}
-	bondgo.Void(ball)
-}
-
-func main() {
-	var ch chan uint8
-	var ball uint8
-
-	ball = 1
-
-device_0:
-	go pong(ch)
-
-	for {
-		select {
-		case ch &lt;- ball:
-		case ball := &lt;-ch:
-		}
-	}
-	bondgo.Void(ch)
-	bondgo.Void(ball)
-}</code></pre></figure>
-
-
-        </div>
-      </div>
-      
-    
-
-
-    <div id="footer" class="section text-white">
-      <div class="container">
-        
-        
-<p><a href="http://bondmachine.fisica.unipg.it/">BondMachine</a>
-—
-<a href="http://www.fisgeo.unipg.it">Department of Physics and Geology</a>
-—
-<a href="http://www.unipg.it">University of Perugia</a></p>
 
 
       </div>
     </div>
-  </div>
-
-
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-85770689-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
+  </main>
+  
+  <footer class="Footer">
+    <div class="u-wrapper">
+      <div class="u-padding u-noboosting">
+        The BondMachine Project - <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY-SA 4.0</a>.
+      </div>
+    </div>
+  </footer>
 
 </body>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="site.js"></script>
-<script>
-
-opened = false;
-
-function openNav() {
-    document.getElementById("mySidenav").style.width = "200px";
-    opened = true;
-}
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    opened = false;
-}
-
-function switchNav() {
-    if (opened) {
-	closeNav();
-    } else {
-	openNav();
-    }
-}
-</script>
 
 </html>
