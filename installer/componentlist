@@ -1,6 +1,7 @@
 bmhelper
 boolbond
 basm
+bcof
 bmanalysis
 bmbuilder
 bmnumbers
@@ -15,3 +16,4 @@ neuralbond
 nnef2bm
 procbuilder
 simbox
+bmregression

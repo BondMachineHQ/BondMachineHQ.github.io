@@ -23,6 +23,18 @@
     <loc>https://bondmachinehq.github.io/posts/2024-06-11-cern/</loc>
     <lastmod>2024-06-11T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://bondmachinehq.github.io/tags/ifae/</loc>
+    <lastmod>2024-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/isgc/</loc>
+    <lastmod>2024-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/physics/</loc>
+    <lastmod>2024-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/posts/2024-04-05-ifae/</loc>
+    <lastmod>2024-04-05T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://bondmachinehq.github.io/tags/course/</loc>
     <lastmod>2023-11-27T00:00:00+00:00</lastmod>
   </url><url>
@@ -123,9 +135,6 @@
     <lastmod>2019-05-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://bondmachinehq.github.io/tags/conference/</loc>
-    <lastmod>2019-05-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://bondmachinehq.github.io/tags/isgc/</loc>
     <lastmod>2019-05-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://bondmachinehq.github.io/tags/taiwan/</loc>
@@ -312,6 +321,8 @@
   </url><url>
     <loc>https://bondmachinehq.github.io/examples/forth/</loc>
   </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/installation/</loc>
+  </url><url>
     <loc>https://bondmachinehq.github.io/tags/getting-started/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/media/golab/</loc>
@@ -321,8 +332,6 @@
     <loc>https://bondmachinehq.github.io/media/innovatefpga/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/tags/installation/</loc>
-  </url><url>
-    <loc>https://bondmachinehq.github.io/docs/userguide/installation/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/prototypes/james/</loc>
   </url><url>
@@ -378,6 +387,8 @@
   </url><url>
     <loc>https://bondmachinehq.github.io/docs/quickstart/</loc>
   </url><url>
+    <loc>https://bondmachinehq.github.io/tags/regression/</loc>
+  </url><url>
     <loc>https://bondmachinehq.github.io/docs/userguide/repositories/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/tags/rollup/</loc>
@@ -393,6 +404,8 @@
     <loc>https://bondmachinehq.github.io/docs/slides/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/media/tef/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/examples/regression/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/tags/tools/</loc>
   </url><url>

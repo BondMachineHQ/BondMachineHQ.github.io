@@ -19,6 +19,7 @@ cd "${BONDMACHINE_DIR}"
 echo -n "bmhelper installation" ; ( curl -fsSL https://bondmachinehq.github.io/installer/bmhelper --output bmhelper && chmod 755 bmhelper && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
 echo -n "boolbond installation" ; ( curl -fsSL https://bondmachinehq.github.io/installer/boolbond --output boolbond && chmod 755 boolbond && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
 echo -n "basm installation" ; ( curl -fsSL https://bondmachinehq.github.io/installer/basm --output basm && chmod 755 basm && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "bcof installation" ; ( curl -fsSL https://bondmachinehq.github.io/installer/bcof --output bcof && chmod 755 bcof && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
 echo -n "bmanalysis installation" ; ( curl -fsSL https://bondmachinehq.github.io/installer/bmanalysis --output bmanalysis && chmod 755 bmanalysis && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
 echo -n "bmbuilder installation" ; ( curl -fsSL https://bondmachinehq.github.io/installer/bmbuilder --output bmbuilder && chmod 755 bmbuilder && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
 echo -n "bmnumbers installation" ; ( curl -fsSL https://bondmachinehq.github.io/installer/bmnumbers --output bmnumbers && chmod 755 bmnumbers && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
@@ -33,5 +34,6 @@ echo -n "neuralbond installation" ; ( curl -fsSL https://bondmachinehq.github.io
 echo -n "nnef2bm installation" ; ( curl -fsSL https://bondmachinehq.github.io/installer/nnef2bm --output nnef2bm && chmod 755 nnef2bm && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
 echo -n "procbuilder installation" ; ( curl -fsSL https://bondmachinehq.github.io/installer/procbuilder --output procbuilder && chmod 755 procbuilder && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
 echo -n "simbox installation" ; ( curl -fsSL https://bondmachinehq.github.io/installer/simbox --output simbox && chmod 755 simbox && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "bmregression installation" ; ( curl -fsSL https://bondmachinehq.github.io/installer/bmregression --output bmregression && chmod 755 bmregression && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
 
 cd - > /dev/null

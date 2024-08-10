@@ -19,6 +19,7 @@ cd "${BONDMACHINE_DIR}"
 echo -n "bmhelper removal" ; ( rm bmhelper 2> /dev/null && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
 echo -n "boolbond removal" ; ( rm boolbond 2> /dev/null && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
 echo -n "basm removal" ; ( rm basm 2> /dev/null && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "bcof removal" ; ( rm bcof 2> /dev/null && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
 echo -n "bmanalysis removal" ; ( rm bmanalysis 2> /dev/null && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
 echo -n "bmbuilder removal" ; ( rm bmbuilder 2> /dev/null && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
 echo -n "bmnumbers removal" ; ( rm bmnumbers 2> /dev/null && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
@@ -33,5 +34,6 @@ echo -n "neuralbond removal" ; ( rm neuralbond 2> /dev/null && echo -e "\033[32m
 echo -n "nnef2bm removal" ; ( rm nnef2bm 2> /dev/null && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
 echo -n "procbuilder removal" ; ( rm procbuilder 2> /dev/null && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
 echo -n "simbox removal" ; ( rm simbox 2> /dev/null && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
+echo -n "bmregression removal" ; ( rm bmregression 2> /dev/null && echo -e "\033[32m\033[500C\033[7D[ Ok ]\033[0m" ) || echo -e "\033[31m\033[500C\033[7D[ Fail ]\033[0m"
 
 cd - > /dev/null
