@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6ERRTFXF0G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6ERRTFXF0G');
+</script>
+
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+  integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+  crossorigin="anonymous" />
+
+
+  
+  <meta charset="utf-8">
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  
+    <meta name="description" content="The following tables show the feature state in term of level of development for each instruction and instruction group. For each of them the support of the features is shown.
+The features are the following:
+Feature Description hdl The instruction can be translated to hardware description language asm The instruction can be assembled by the assembler disasm The instruction can be disassembled by the disassembler hlasm The instruction can be assembled by the high-level assembler (Basm) asmmeta The instruction has metadata for the assembler gosim The instruction can be simulated in the Go-based simulator hdlsim The instruction can be simulated in the hardware description language simulator mt Instruction thread support The possible support values are shown below:">
+  
+
+
+<meta name="color-scheme" content="light dark">
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.126.1">
+  <title>Support Matrix | BondMachine</title>
+  <link rel="canonical" href="https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/matrix/">
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/css/base.min.8e67dbf71c26d0a6dbf4662f796d909952715e54bce477c632a31f634032185f.min.8e67dbf71c26d0a6dbf4662f796d909952715e54bce477c632a31f634032185f.css" integrity="sha256-jmfb9xwm0Kbb9GYveW2QmVJxXlS85HfGMqMfY0AyGF8=" crossorigin="anonymous">
+
+
+
+</head>
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="/">BondMachine</a>
+        <a class="Banner-link u-clickable" href="/tags"><i class="fa fa-tags"></i></a>
+        <a class="Banner-link u-clickable" href="https://github.com/BondMachineHQ" target="_blank"><i class="fab fa-github"></i></a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/intro/">Intro</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/posts/">News</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/docs/">Docs</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/prototypes/">Prototypes</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/examples/">Examples</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/media/">Media</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</nav>
+
+  
+<nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      
+        <li class="Banner-item Banner-item--title">
+          <a class="Banner-link u-clickable" href=".." style="color: red;">&crarr;reference</a>
+        </li>
+      
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable"></a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+  <header class="Heading">
+  <h1 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/docs/userguide/tools/basm/reference/matrix/" rel="bookmark">Support Matrix</a>
+  </h1>
+  
+</header>
+  
+    <hr>
+<p><img src="/img/wip.png" alt="WIP">
+The following tables show the feature state in term of level of development for each instruction and instruction group.
+For each of them the support of the features is shown.</p>
+<p>The features are the following:</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hdl</td>
+<td>The instruction can be translated to hardware description language</td>
+</tr>
+<tr>
+<td>asm</td>
+<td>The instruction can be assembled by the assembler</td>
+</tr>
+<tr>
+<td>disasm</td>
+<td>The instruction can be disassembled by the disassembler</td>
+</tr>
+<tr>
+<td>hlasm</td>
+<td>The instruction can be assembled by the high-level assembler (Basm)</td>
+</tr>
+<tr>
+<td>asmmeta</td>
+<td>The instruction has metadata for the assembler</td>
+</tr>
+<tr>
+<td>gosim</td>
+<td>The instruction can be simulated in the Go-based simulator</td>
+</tr>
+<tr>
+<td>hdlsim</td>
+<td>The instruction can be simulated in the hardware description language simulator</td>
+</tr>
+<tr>
+<td>mt</td>
+<td>Instruction thread support</td>
+</tr>
+</tbody>
+</table>
+<p>The possible support values are shown below:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="iconok.png" alt="ok"></td>
+<td>The feature is fully implemented</td>
+</tr>
+<tr>
+<td><img src="iconno.png" alt="no"></td>
+<td>The feature is not yet implemented</td>
+</tr>
+<tr>
+<td><img src="icontesting.png" alt="testing"></td>
+<td>The feature is being tested</td>
+</tr>
+<tr>
+<td><img src="iconpartial.png" alt="partial"></td>
+<td>The feature is partially implemented</td>
+</tr>
+<tr>
+<td><img src="iconnotapplicable.png" alt="notapplicable"></td>
+<td>The feature is not applicable to the instruction</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h2 id="support-matrix-for-static-instructions">
+  <a class="Heading-link u-clickable" href="/docs/userguide/tools/basm/reference/matrix/#support-matrix-for-static-instructions">Support Matrix for Static Instructions</a>
+</h2>
+<table>
+<thead>
+<tr>
+<th>Instruction</th>
+<th>disasm</th>
+<th>gosim</th>
+<th>mt</th>
+<th>hlasm</th>
+<th>hdl</th>
+<th>asmeta</th>
+<th>asm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../adc.md">adc</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../add.md">add</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../addf.md">addf</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../addf16.md">addf16</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../addi.md">addi</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../addp.md">addp</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../and.md">and</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../chc.md">chc</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../chw.md">chw</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../cil.md">cil</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../cilc.md">cilc</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../cir.md">cir</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../cirn.md">cirn</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../clc.md">clc</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../clr.md">clr</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../cmpr.md">cmpr</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../cmprlt.md">cmprlt</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../cmpv.md">cmpv</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../cpy.md">cpy</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../cset.md">cset</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../dec.md">dec</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../div.md">div</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../divf.md">divf</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../divf16.md">divf16</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../divp.md">divp</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../dpc.md">dpc</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../expf.md">expf</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../hit.md">hit</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../hlt.md">hlt</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../i2r.md">i2r</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../i2rw.md">i2rw</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../inc.md">inc</a></td>
+<td><img src="iconok.png" alt="ok"></td>
+<td><img src="iconok.png" alt="ok"></td>
+<td><img src="iconok.png" alt="ok"></td>
+<td><img src="iconok.png" alt="ok"></td>
+<td><img src="iconok.png" alt="ok"></td>
+<td><img src="iconok.png" alt="ok"></td>
+<td><img src="iconok.png" alt="ok"></td>
+</tr>
+<tr>
+<td><a href="../incc.md">incc</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../j.md">j</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../ja.md">ja</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../jc.md">jc</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../jcmpa.md">jcmpa</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../jcmpl.md">jcmpl</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../jcmpo.md">jcmpo</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../jcmpria.md">jcmpria</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../jcmprio.md">jcmprio</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../je.md">je</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../jgt0f.md">jgt0f</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../jo.md">jo</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../jri.md">jri</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../jria.md">jria</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../jrio.md">jrio</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../jz.md">jz</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../k2r.md">k2r</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../lfsr82r.md">lfsr82r</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../m2r.md">m2r</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../m2rri.md">m2rri</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../mod.md">mod</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../mulc.md">mulc</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../mult.md">mult</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../multf.md">multf</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../multf16.md">multf16</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../multp.md">multp</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../nand.md">nand</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../nop.md">nop</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../nor.md">nor</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../not.md">not</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../or.md">or</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../q2r.md">q2r</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../r2m.md">r2m</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../r2mri.md">r2mri</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../r2o.md">r2o</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../r2owa.md">r2owa</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../r2owaa.md">r2owaa</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../r2q.md">r2q</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../r2s.md">r2s</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../r2t.md">r2t</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../r2u.md">r2u</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../r2v.md">r2v</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../r2vri.md">r2vri</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../ro2r.md">ro2r</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../ro2rri.md">ro2rri</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../rsc.md">rsc</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../rset.md">rset</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../s2r.md">s2r</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../saj.md">saj</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../sbc.md">sbc</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../sic.md">sic</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../sub.md">sub</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../t2r.md">t2r</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../tsp.md">tsp</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../u2r.md">u2r</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../wrd.md">wrd</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../wwr.md">wwr</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../xnor.md">xnor</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="../xor.md">xor</a></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h2 id="support-matrix-for-dynamical-instructions">
+  <a class="Heading-link u-clickable" href="/docs/userguide/tools/basm/reference/matrix/#support-matrix-for-dynamical-instructions">Support Matrix for Dynamical Instructions</a>
+</h2>
+<table>
+<thead>
+<tr>
+<th>Instruction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../call.md">call</a></td>
+</tr>
+<tr>
+<td><a href="../fixed_point.md">fixed_point</a></td>
+</tr>
+<tr>
+<td><a href="../flopoco.md">flopoco</a></td>
+</tr>
+<tr>
+<td><a href="../linear_quantizer.md">linear_quantizer</a></td>
+</tr>
+<tr>
+<td><a href="../rsets.md">rsets</a></td>
+</tr>
+<tr>
+<td><a href="../stack.md">stack</a></td>
+</tr>
+</tbody>
+</table>
+
+  
+
+  
+
+  
+
+
+
+
+
+  <footer>
+    
+      
+    
+      
+        <ul class="Tags">
+          
+            <li class="Tags-item u-background">
+              <a class="Tags-link u-clickable" href="/tags/tools/" rel="tag">Tools</a>
+            </li>
+          
+            <li class="Tags-item u-background">
+              <a class="Tags-link u-clickable" href="/tags/basm/" rel="tag">Basm</a>
+            </li>
+          
+            <li class="Tags-item u-background">
+              <a class="Tags-link u-clickable" href="/tags/assembly/" rel="tag">Assembly</a>
+            </li>
+          
+            <li class="Tags-item u-background">
+              <a class="Tags-link u-clickable" href="/tags/reference/" rel="tag">Reference</a>
+            </li>
+          
+            <li class="Tags-item u-background">
+              <a class="Tags-link u-clickable" href="/tags/support-matrix/" rel="tag">Support Matrix</a>
+            </li>
+          
+        </ul>
+      
+    
+  </footer>
+
+  
+  
+  
+
+
+
+      </div>
+    </div>
+  </main>
+  
+  <footer class="Footer">
+    <div class="u-wrapper">
+      <div class="u-padding u-noboosting">
+        The BondMachine Project - <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY-SA 4.0</a>.
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

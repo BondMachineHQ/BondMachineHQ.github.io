@@ -28,7 +28,7 @@
 
 
   
-    <meta name="description" content=" ">
+    
   
 
 
@@ -47,6 +47,8 @@
 
 
 
+  <link rel="alternate" href="/docs/userguide/tools/basm/feed.xml" type="application/rss+xml">
+
   
 
 
@@ -63,6 +65,8 @@
   
       <link rel="stylesheet" href="/css/base.min.8e67dbf71c26d0a6dbf4662f796d909952715e54bce477c632a31f634032185f.min.8e67dbf71c26d0a6dbf4662f796d909952715e54bce477c632a31f634032185f.css" integrity="sha256-jmfb9xwm0Kbb9GYveW2QmVJxXlS85HfGMqMfY0AyGF8=" crossorigin="anonymous">
 
+      <link rel="stylesheet" href="/css/syntax.min.065df42d2be658bb8e0720297aadf469355a5ffaf863b00e3cce0627dd106ca0.css" integrity="sha256-Bl30LSvmWLuOByApeq30aTVaX/r4Y7AOPM4GJ90QbKA=" crossorigin="anonymous">
+
 
 
 </head>
@@ -78,6 +82,7 @@
       <li class="Banner-item Banner-item--title">
         <a class="Banner-link u-clickable" href="/">BondMachine</a>
         <a class="Banner-link u-clickable" href="/tags"><i class="fa fa-tags"></i></a>
+        <a class="Banner-link u-clickable" href="https://github.com/BondMachineHQ" target="_blank"><i class="fab fa-github"></i></a>
         </li>
       
         
@@ -139,6 +144,32 @@
         <a class="Banner-link u-clickable"></a>
       </li>
       
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="docbasmfile">File Structure</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="docinstructions">Instructions</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="docinternals">Internals</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="reference">Assembly Reference</a>
+        </li>
+      
+      
     </ul>
   </div>
 </nav>
@@ -155,12 +186,75 @@
   </h1>
   
 </header>
-  
-    <hr>
-<p><img src="/img/wip.png" alt="Basm"></p>
+
+  <hr>
+<p><img src="/img/wip.png" alt="WIP">
+Basm is the BondMachine assembler. It is a tool that translates a BondMachine assembly code into a BondMachine cluster object file (BCOF) or into a BondMachine architecture file. Basm is a tool that is part of the BondMachine toolchain.</p>
+<p>Basm is very different from traditional assemblers. In the default case, the target architecture of a basm instance does not yet exists when it is running. The creation of the architecture is part of the assembling process. The architecture is created by the assembler itself by looking at the code and at the metadatas. The assembler creates the architecture and fills it with the data collected during the process.
+This is a novel concept of the BondMachine.</p>
+<p>One or more .basm files contain the code to be compiled in an existing BM or to produce a suitable one. Basm files not only contain the code but also the metadatas that are used to define the architecture. The metadatas are used to define the SOs, the CPs and the BM itself. The metadatas are defined by using the %meta directives.</p>
+<p>The page <a href="docbasmfile.md">Basm File Structure</a> contains a detailed description of the structure of a .basm file. The page <a href="docinstructions.md">Basm Instructions</a> contains a detailed description how to write instructions and I/O objects in a .basm file. The page <a href="docinternals.md">Basm Internals</a> contains information about the internals of the assembler. The single instructions documentation is available in the <a href="reference/">BASM Assembly Reference</a>.</p>
+
+
+
+<h2 id="__usage__">
+  <a class="Heading-link u-clickable" href="/docs/userguide/tools/basm/#__usage__"><strong>Usage</strong></a>
+</h2>
 
   
 
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">basm <span class="o">[</span>options<span class="o">]</span> <span class="o">[</span>input files<span class="o">]</span></span></span></code></pre></div>
+<p>where options are:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Usage of basm:
+</span></span><span class="line"><span class="cl">  -activate-optimizations string
+</span></span><span class="line"><span class="cl">        List of comma separated optional optimizations to activate <span class="o">(</span>default: none, everything: all<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  -activate-passes string
+</span></span><span class="line"><span class="cl">        List of comma separated optional passes to activate <span class="o">(</span>default: none<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  -bminfo-file string
+</span></span><span class="line"><span class="cl">        Load additional information about the BondMachine
+</span></span><span class="line"><span class="cl">  -bo string
+</span></span><span class="line"><span class="cl">        BCOF Output file
+</span></span><span class="line"><span class="cl">  -bondmachine string
+</span></span><span class="line"><span class="cl">        Load a bondmachine JSON file
+</span></span><span class="line"><span class="cl">  -chooser-force-same-name
+</span></span><span class="line"><span class="cl">        Force the chooser to use the same name <span class="k">for</span> the ROM and the RAM
+</span></span><span class="line"><span class="cl">  -chooser-min-word-size
+</span></span><span class="line"><span class="cl">        Choose the minimum word size <span class="k">for</span> the chooser
+</span></span><span class="line"><span class="cl">  -d    Verbose
+</span></span><span class="line"><span class="cl">  -deactivate-passes string
+</span></span><span class="line"><span class="cl">        List of comma separated optional passes to deactivate <span class="o">(</span>default: none<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  -disable-dynamical-matching
+</span></span><span class="line"><span class="cl">        Disable the dynamical matching
+</span></span><span class="line"><span class="cl">  -dump-requirements string
+</span></span><span class="line"><span class="cl">        Dump the requirements of the BondMachine in a JSON file
+</span></span><span class="line"><span class="cl">  -getmeta string
+</span></span><span class="line"><span class="cl">        Get the metadata of an internal parameter of the BondMachine
+</span></span><span class="line"><span class="cl">  -linear-data-range string
+</span></span><span class="line"><span class="cl">        Load a linear data range file <span class="o">(</span>with the syntax index,filename<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  -list-optimizations
+</span></span><span class="line"><span class="cl">        List the available optimizations
+</span></span><span class="line"><span class="cl">  -list-passes
+</span></span><span class="line"><span class="cl">        List the available passes
+</span></span><span class="line"><span class="cl">  -o string
+</span></span><span class="line"><span class="cl">        BondMachine Output file
+</span></span><span class="line"><span class="cl">  -si string
+</span></span><span class="line"><span class="cl">        Load a symbols JSON file
+</span></span><span class="line"><span class="cl">  -so string
+</span></span><span class="line"><span class="cl">        Symbols Output file
+</span></span><span class="line"><span class="cl">  -v    Verbose</span></span></code></pre></div>
+
+
+  
+
+
+
+
+
+
+
   
 
   
@@ -169,9 +263,25 @@
 
 
 
-  
-  
-  
+  <footer>
+    
+      
+    
+      
+        <ul class="Tags">
+          
+            <li class="Tags-item u-background">
+              <a class="Tags-link u-clickable" href="/tags/tools/" rel="tag">Tools</a>
+            </li>
+          
+            <li class="Tags-item u-background">
+              <a class="Tags-link u-clickable" href="/tags/basm/" rel="tag">Basm</a>
+            </li>
+          
+        </ul>
+      
+    
+  </footer>
 
 
 

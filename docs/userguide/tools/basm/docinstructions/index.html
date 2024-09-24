@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6ERRTFXF0G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6ERRTFXF0G');
+</script>
+
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+  integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+  crossorigin="anonymous" />
+
+
+  
+  <meta charset="utf-8">
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  
+    <meta name="description" content="Instructions Basm instructions are identified by an operation that requires operands to be processed. Operands can be registers, memory address or more generally any SOs I/O ports. Some instructions do not require an operand, whereas some other instructions may require one, two, or three operands.
+The first operand is generally the destination and the second operand is the source.
+Pseudo instructions Pseudo instructions are not real instructions, they are directives that are translated into one or more real instructions.">
+  
+
+
+<meta name="color-scheme" content="light dark">
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.126.1">
+  <title>Basm Instructions | BondMachine</title>
+  <link rel="canonical" href="https://bondmachinehq.github.io/docs/userguide/tools/basm/docinstructions/">
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/css/base.min.8e67dbf71c26d0a6dbf4662f796d909952715e54bce477c632a31f634032185f.min.8e67dbf71c26d0a6dbf4662f796d909952715e54bce477c632a31f634032185f.css" integrity="sha256-jmfb9xwm0Kbb9GYveW2QmVJxXlS85HfGMqMfY0AyGF8=" crossorigin="anonymous">
+
+
+
+</head>
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="/">BondMachine</a>
+        <a class="Banner-link u-clickable" href="/tags"><i class="fa fa-tags"></i></a>
+        <a class="Banner-link u-clickable" href="https://github.com/BondMachineHQ" target="_blank"><i class="fab fa-github"></i></a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/intro/">Intro</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/posts/">News</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/docs/">Docs</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/prototypes/">Prototypes</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/examples/">Examples</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/media/">Media</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</nav>
+
+  
+<nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      
+        <li class="Banner-item Banner-item--title">
+          <a class="Banner-link u-clickable" href=".." style="color: red;">&crarr;basm</a>
+        </li>
+      
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable"></a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+  <header class="Heading">
+  <h1 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/docs/userguide/tools/basm/docinstructions/" rel="bookmark">Basm Instructions</a>
+  </h1>
+  
+</header>
+  
+    <hr>
+<p><img src="/img/wip.png" alt="WIP"></p>
+
+
+
+<h2 id="__instructions__">
+  <a class="Heading-link u-clickable" href="/docs/userguide/tools/basm/docinstructions/#__instructions__"><strong>Instructions</strong></a>
+</h2>
+<p>Basm instructions are identified by an operation that requires operands to be processed. Operands can be registers, memory address or more generally any SOs I/O ports.
+Some instructions do not require an operand, whereas some other instructions may require one, two, or three operands.</p>
+<p>The first operand is generally the destination and the second operand is the source.</p>
+
+
+
+<h2 id="pseudo-instructions">
+  <a class="Heading-link u-clickable" href="/docs/userguide/tools/basm/docinstructions/#pseudo-instructions">Pseudo instructions</a>
+</h2>
+<p>Pseudo instructions are not real instructions, they are directives that are translated into one or more real instructions. They are used in the instruction field anyway because that’s the most convenient place to put them. The most common pseudo instructions are the ones that define data and reserve storage space. They are used to define constants and variables and to reserve space for arrays and other data structures.</p>
+
+
+
+<h3 id="declaring-data">
+  <a class="Heading-link u-clickable" href="/docs/userguide/tools/basm/docinstructions/#declaring-data">Declaring data</a>
+</h3>
+<p>The declaration of data is done in data sections by using the syntax:</p>
+<pre><code>symbol directive expression [, expression]...
+</code></pre>
+<p><strong>symbol</strong> is the name of the variable. It can be any valid identifier. It as to be unique in the current section.</p>
+<p><strong>directive</strong> is the name of the directive that declares the data. The list of directives is given in the table below.</p>
+<p><strong>expression</strong> is a constant expression that evaluates to a byte (or other types according to the directives) value. The assembler assigns the first expression to the first byte of the variable, the second expression to the second byte, and so on. The assembler automatically advances the location counter by the number of bytes declared.</p>
+<p>The following table lists the directives that can be used to declare data:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Directive</th>
+<th style="text-align:left">Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">db</td>
+<td style="text-align:left">Initiatialized data</td>
+<td>Declare byte</td>
+<td>examplevar db 1, 2, 3</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h2 id="expressing-io">
+  <a class="Heading-link u-clickable" href="/docs/userguide/tools/basm/docinstructions/#expressing-io">Expressing I/O</a>
+</h2>
+<p>Apart from operations among internal elements, CP instructions can interact with external objects. These can be memories, like in standard processor, or more generally can be all kind of SOs. Basm has a special syntax to express such data movements. The most common instruction is <em><strong>mov</strong></em> and  the general syntax for the I/O objects is:</p>
+<pre><code>[IO object name][object index]:[I/O port]
+</code></pre>
+<p>If the object has no port the colon can be omitted. Similarly, if the object has no index, just the name can be used alone.</p>
+<p>Following is a list of examples of I/O objects:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Object name</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>ram</em></td>
+<td style="text-align:left">The random access memory</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>rom</em></td>
+<td style="text-align:left">The read only memory</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>i</em></td>
+<td style="text-align:left">The input</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>o</em></td>
+<td style="text-align:left">The output</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>vtm</em></td>
+<td style="text-align:left">The video textual memory</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>q</em></td>
+<td style="text-align:left">The shared queue</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>s</em></td>
+<td style="text-align:left">The shared stack</td>
+</tr>
+</tbody>
+</table>
+<p>The I/O port can be addressed in two ways:</p>
+<ul>
+<li>
+<p><em>Immediate addressing</em>: An immediate port has a constant value or an expression.</p>
+</li>
+<li>
+<p><em>Register addressing</em>: In this addressing mode, a register contains the port. In this mode the register name is surrounded by brackets.</p>
+</li>
+<li>
+<p><em>Symbol addressing</em>: In this addressing mode, a symbol refers to a port.</p>
+</li>
+</ul>
+<p>Here is some examples along with theirs descriptions:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Example</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>mov r0 5</em></td>
+<td style="text-align:left">The register <em><strong>r0</strong></em> is filled with the decimal value of 5</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>mov r1 i0</em> or <em>mov r1 i0:</em></td>
+<td style="text-align:left">The register <em><strong>r0</strong></em> is filled with the value read from the input <em><strong>i0</strong></em></td>
+</tr>
+<tr>
+<td style="text-align:left"><em>mov vtm0:48 r0</em></td>
+<td style="text-align:left">Copy the value contained in the <em><strong>r0</strong></em> register into the location 48 of the video textual memory using immediate addressing</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>mov vtm0:[r1] r0</em></td>
+<td style="text-align:left">Copy the value contained in the <em><strong>r0</strong></em> register into the location of the video textual memory pointed by the <em><strong>r1</strong></em> register using register addressing</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h2 id="contexts">
+  <a class="Heading-link u-clickable" href="/docs/userguide/tools/basm/docinstructions/#contexts">Contexts</a>
+</h2>
+<pre><code>%macro macro_name num_of_params
+%endmacro
+</code></pre>
+<p>Macros are not CP-bounded, they are assembler bounded</p>
+<hr>
+<p>Every section takes a CP tag, if that is missing it means there is only 1 tag associated to CP 0</p>
+<pre><code>sections .romtext cp_tag
+     .romdata cp_tag
+     .text cp_tag
+     .data cp_tag
+     .bss cp_tag
+</code></pre>
+<hr>
+
+
+
+<h2 id="labels-are-cp-bounded">
+  <a class="Heading-link u-clickable" href="/docs/userguide/tools/basm/docinstructions/#labels-are-cp-bounded">Labels are CP-bounded</a>
+</h2>
+<p>metas are directives specific of the BondMachine, they are used to create groups of processors or groups of groups (clusters)</p>
+<pre><code>%meta sodef [so name] [so definition] [so tags]
+
+%meta cpdef [cp name] [cp tags]
+
+%meta bmdef 
+</code></pre>
+<ul>
+<li></li>
+</ul>
+
+  
+
+  
+
+  
+
+
+
+
+
+  <footer>
+    
+      
+    
+      
+        <ul class="Tags">
+          
+            <li class="Tags-item u-background">
+              <a class="Tags-link u-clickable" href="/tags/tools/" rel="tag">Tools</a>
+            </li>
+          
+            <li class="Tags-item u-background">
+              <a class="Tags-link u-clickable" href="/tags/basm/" rel="tag">Basm</a>
+            </li>
+          
+        </ul>
+      
+    
+  </footer>
+
+  
+  
+  
+
+
+
+      </div>
+    </div>
+  </main>
+  
+  <footer class="Footer">
+    <div class="u-wrapper">
+      <div class="u-padding u-noboosting">
+        The BondMachine Project - <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY-SA 4.0</a>.
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

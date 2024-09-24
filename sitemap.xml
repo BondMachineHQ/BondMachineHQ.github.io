@@ -239,6 +239,8 @@
     <loc>https://bondmachinehq.github.io/posts/2016-05-16-ccr2016/</loc>
     <lastmod>2016-05-16T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://bondmachinehq.github.io/docs/slides/golab2018/</loc>
+  </url><url>
     <loc>https://bondmachinehq.github.io/docs/slides/ictp2022/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/docs/slides/icsc2023/</loc>
@@ -247,11 +249,43 @@
   </url><url>
     <loc>https://bondmachinehq.github.io/about/</loc>
   </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/adc/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/adc/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/add/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/add/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/addf/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/addf/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/addf16/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/addf16/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/addi/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/addi/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/addp/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/addp/</loc>
+  </url><url>
     <loc>https://bondmachinehq.github.io/tags/advanced/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/examples/advanced/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/docs/slides/all/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/and/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/and/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/assembly/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/examples/ml/banknote/</loc>
   </url><url>
@@ -261,9 +295,19 @@
   </url><url>
     <loc>https://bondmachinehq.github.io/docs/tutorials/001/</loc>
   </url><url>
+    <loc>https://bondmachinehq.github.io/tags/basm/</loc>
+  </url><url>
     <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/</loc>
   </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/docbasmfile/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/docinstructions/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/docinternals/</loc>
+  </url><url>
     <loc>https://bondmachinehq.github.io/tags/basys3/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/examples/bmexamples/basys3counter/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/examples/quantum/bellstate/</loc>
   </url><url>
@@ -271,9 +315,17 @@
   </url><url>
     <loc>https://bondmachinehq.github.io/examples/bmexamples/</loc>
   </url><url>
+    <loc>https://bondmachinehq.github.io/tags/bm2basm/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/bmbuilder/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/bmbuilder/</loc>
+  </url><url>
     <loc>https://bondmachinehq.github.io/tags/bmexamples/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/docs/userguide/packages/002/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/bmnumbers/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/docs/userguide/packages/001/</loc>
   </url><url>
@@ -283,19 +335,105 @@
   </url><url>
     <loc>https://bondmachinehq.github.io/docs/userguide/tools/bondmachine/</loc>
   </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/bm2basm/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/call/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/call/</loc>
+  </url><url>
     <loc>https://bondmachinehq.github.io/categories/</loc>
   </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/chc/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/chc/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/chw/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/chw/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/cil/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/cil/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/cilc/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/cilc/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/cir/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/cir/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/cirn/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/cirn/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/clc/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/clc/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/clr/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/clr/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/cmpr/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/cmpr/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/cmprlt/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/cmprlt/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/cmpv/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/cmpv/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/snippets/</loc>
+  </url><url>
     <loc>https://bondmachinehq.github.io/tags/courses/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/cpy/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/cpy/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/cset/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/cset/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/dec/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/dec/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/tags/distributed/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/media/distributed/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/div/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/div/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/divf/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/divf/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/divf16/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/divf16/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/divp/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/divp/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/tags/diy/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/tags/docs/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/docs/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/dpc/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/dpc/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/dynamical-instruction/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/intro/ecosystem/</loc>
   </url><url>
@@ -311,9 +449,29 @@
   </url><url>
     <loc>https://bondmachinehq.github.io/tags/exotic/</loc>
   </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/expf/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/expf/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/fdf/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/media/fdf/</loc>
+  </url><url>
     <loc>https://bondmachinehq.github.io/media/firstrun/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/tags/firstrun/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/fixed/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/fixed/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/fixed_point/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/fixed_point/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/flopoco/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/flopoco/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/tags/flyer/</loc>
   </url><url>
@@ -325,25 +483,143 @@
   </url><url>
     <loc>https://bondmachinehq.github.io/tags/getting-started/</loc>
   </url><url>
+    <loc>https://bondmachinehq.github.io/tags/go/</loc>
+  </url><url>
     <loc>https://bondmachinehq.github.io/media/golab/</loc>
   </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/hit/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/hit/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/hlt/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/hlt/</loc>
+  </url><url>
     <loc>https://bondmachinehq.github.io/tags/howto/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/i2r/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/i2r/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/i2rw/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/i2rw/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/inc/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/inc/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/incc/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/incc/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/media/innovatefpga/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/tags/installation/</loc>
   </url><url>
+    <loc>https://bondmachinehq.github.io/tags/instruction/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/j/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/j/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/ja/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/ja/</loc>
+  </url><url>
     <loc>https://bondmachinehq.github.io/prototypes/james/</loc>
   </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/jc/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/jc/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/jcmpa/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/jcmpa/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/jcmpl/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/jcmpl/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/jcmpo/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/jcmpo/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/jcmpria/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/jcmpria/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/jcmprio/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/jcmprio/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/je/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/je/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/jgt0f/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/jgt0f/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/jo/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/jo/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/jri/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/jri/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/jria/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/jria/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/jrio/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/jrio/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/jz/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/jz/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/k2r/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/k2r/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/examples/minimalistic/blink/</loc>
+  </url><url>
     <loc>https://bondmachinehq.github.io/examples/advanced/ledonoffshell/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/lfsr82r/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/lfsr82r/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/linear/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/linear/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/linear_quantizer/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/linear_quantizer/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/tags/lisp/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/examples/lisp/</loc>
   </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/m2r/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/m2r/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/m2rri/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/m2rri/</loc>
+  </url><url>
     <loc>https://bondmachinehq.github.io/docs/userguide/tools/ml/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/examples/ml/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/maxpool/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/bmbuilder/docsmaxpool/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/media/</loc>
   </url><url>
@@ -354,6 +630,50 @@
     <loc>https://bondmachinehq.github.io/tags/miscellaneous/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/media/misc/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/mod/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/mod/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/mulc/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/mulc/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/mult/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/mult/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/multf/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/multf/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/multf16/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/multf16/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/multp/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/multp/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/nand/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/nand/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/nop/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/nop/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/nor/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/nor/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/not/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/not/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/or/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/or/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/docs/userguide/packages/</loc>
   </url><url>
@@ -375,6 +695,10 @@
   </url><url>
     <loc>https://bondmachinehq.github.io/tags/publications/</loc>
   </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/q2r/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/q2r/</loc>
+  </url><url>
     <loc>https://bondmachinehq.github.io/docs/userguide/tools/quantum/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/tags/quantum-computing/</loc>
@@ -387,15 +711,97 @@
   </url><url>
     <loc>https://bondmachinehq.github.io/docs/quickstart/</loc>
   </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/r2m/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/r2m/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/r2mri/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/r2mri/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/r2o/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/r2o/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/r2owa/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/r2owa/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/r2owaa/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/r2owaa/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/r2q/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/r2q/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/r2s/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/r2s/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/r2t/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/r2t/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/r2u/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/r2u/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/r2v/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/r2v/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/r2vri/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/r2vri/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/reference/</loc>
+  </url><url>
     <loc>https://bondmachinehq.github.io/tags/regression/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/docs/userguide/repositories/</loc>
   </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/ro2r/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/ro2r/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/ro2rri/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/ro2rri/</loc>
+  </url><url>
     <loc>https://bondmachinehq.github.io/tags/rollup/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/rsc/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/rsc/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/rset/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/rset/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/rsets/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/rsets/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/s2r/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/s2r/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/saj/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/saj/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/sbc/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/sbc/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/tags/school/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/tags/seminars/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/sic/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/sic/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/tags/simulator/</loc>
   </url><url>
@@ -403,9 +809,29 @@
   </url><url>
     <loc>https://bondmachinehq.github.io/docs/slides/</loc>
   </url><url>
+    <loc>https://bondmachinehq.github.io/tags/snippets/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/stack/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/stack/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/sub/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/sub/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/support-matrix/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/matrix/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/t2r/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/t2r/</loc>
+  </url><url>
     <loc>https://bondmachinehq.github.io/media/tef/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/examples/regression/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/snippets/inc/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/tags/tools/</loc>
   </url><url>
@@ -413,15 +839,39 @@
   </url><url>
     <loc>https://bondmachinehq.github.io/intro/tools/</loc>
   </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/tsp/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/tsp/</loc>
+  </url><url>
     <loc>https://bondmachinehq.github.io/tags/tutorials/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/docs/tutorials/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/u2r/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/u2r/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/docs/userguide/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/tags/userguide/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/tags/wifi/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/wrd/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/wrd/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/wwr/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/wwr/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/xnor/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/xnor/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/xor/</loc>
+  </url><url>
+    <loc>https://bondmachinehq.github.io/tags/xor/</loc>
   </url><url>
     <loc>https://bondmachinehq.github.io/tags/youtube/</loc>
   </url><url>

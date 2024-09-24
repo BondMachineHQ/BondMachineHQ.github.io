@@ -28,7 +28,7 @@
 
 
   
-    <meta name="description" content="The BondMachine ecosystem is formed by two parts. The first concerns the BMs devices building with their internal behaviour and architecture, the seconds the BMs interconnecting, both among themselves and with the external world.
+    <meta name="description" content="The BondMachine ecosystem is formed by two parts. The first concerns all the activities related to the BondMachines (BMs) devices building with their internal behaviour and architecture, the second the BMs interconnecting, both among themselves and with the external world.
 BondMachines building A BondMachine is a set of computing units and non computing objects shared among them, all packed within a single hardware device.
 Connecting Processors The Connecting Processor (CP) is the computing core of the BondMachine.">
   
@@ -80,6 +80,7 @@ Connecting Processors The Connecting Processor (CP) is the computing core of the
       <li class="Banner-item Banner-item--title">
         <a class="Banner-link u-clickable" href="/">BondMachine</a>
         <a class="Banner-link u-clickable" href="/tags"><i class="fa fa-tags"></i></a>
+        <a class="Banner-link u-clickable" href="https://github.com/BondMachineHQ" target="_blank"><i class="fab fa-github"></i></a>
         </li>
       
         
@@ -159,7 +160,7 @@ Connecting Processors The Connecting Processor (CP) is the computing core of the
 </header>
   
     <hr>
-<p><em><strong>The BondMachine ecosystem</strong></em> is formed by two parts. The first concerns the BMs devices building with their internal behaviour and architecture, the seconds the BMs interconnecting, both among themselves and with the external world.</p>
+<p><em><strong>The BondMachine ecosystem</strong></em> is formed by two parts. The first concerns all the activities related to the BondMachines (BMs) devices building with their internal behaviour and architecture, the second the BMs interconnecting, both among themselves and with the external world.</p>
 
 
 
@@ -173,43 +174,46 @@ Connecting Processors The Connecting Processor (CP) is the computing core of the
 <h4 id="connecting-processors">
   <a class="Heading-link u-clickable" href="/intro/ecosystem/#connecting-processors"><em>Connecting Processors</em></a>
 </h4>
-<p>The <em>Connecting Processor</em> (CP) is the computing core of the BondMachine. The name Connecting Processor describes the capability of the processor core to be configured in such a way to be connected to other processors and to Shared Objects. CPs are as simple as possible, specialized to do a single task and optimized for doing it. In fact, the CPs inside the BondMachine architecture can have different number of registers, number of input/output register, different instruction sets (i.e. opcodes) with respect to the other ones.</p>
+<p>The <em>Connecting Processor</em> (CP) is the computing core of the BondMachine. The name Connecting Processor describes the capability of the processor core to be configured in such a way to be connected to other processors and to Shared Objects. CPs are as simple as possible, specialized to do a single task and optimized for doing it. In fact, the CPs inside the BondMachine architecture can have different number of registers, number of input/output registers, different instruction sets (i.e. opcodes) with respect to the other ones.</p>
 
 
 
 <h4 id="shared-objects">
   <a class="Heading-link u-clickable" href="/intro/ecosystem/#shared-objects"><em>Shared Objects</em></a>
 </h4>
-<p>These are objects that are shared between the CPs (SO). Several kind of objects can be implemented to increase the processing capability and the functionality of the BMs improving the high-speed synchronization and communication between tasks running on separate CPs and all other non computing capabilities.
-Three kinds of objects have been currently implemented: Channels, Shared Memories and Barriers.</p>
+<p>These are objects that are shared between the CPs (SO). Several kinds of objects can be implemented to increase the processing capability and the functionality of the BMs, improving the high-speed synchronization and communication between tasks running on separate CPs and all other non-computing capabilities.
+Several kinds of objects have been currently implemented: Channels, Shared Memories, Barriers, Queues, Stack and a Random Number Generator.</p>
 
 
 
 <h3 id="bondmachines-interconnecting">
   <a class="Heading-link u-clickable" href="/intro/ecosystem/#bondmachines-interconnecting"><strong>BondMachines interconnecting</strong></a>
 </h3>
-<p>BMs may be connected together to form clusters or can interact with the external world.</p>
+<p>BMs may be connected together to form clusters or can interact with the external world as standalone devices or as accelerators for standard servers or PCs.</p>
 
 
 
-<h4 id="etherbond-protocol">
-  <a class="Heading-link u-clickable" href="/intro/ecosystem/#etherbond-protocol"><em>EtherBond protocol</em></a>
+<h4 id="bm-to-bm-communication">
+  <a class="Heading-link u-clickable" href="/intro/ecosystem/#bm-to-bm-communication">BM to BM communication</a>
 </h4>
-<p>BMs may comunicate using a native protocol called EtherBond. It is a protocol over ethernet (ethertype 0x8888) whose purpose is to replicate the electronic behavior of BMs registers and to extend it over the device boundaries. In other words clusters of BMs may be created and their behaviour is driven be the same rules of the BM devices. The main objective is to handle devices and cluster the same way.</p>
+<p>BMs may communicate using a native protocol called <em>EtherBond</em>. It is a protocol over ethernet (ethertype 0x8888) whose purpose is to replicate the electronic behavior of BMs registers and to extend it over the device boundaries. In other words clusters of BMs may be created and their behavior is driven by the same rules of the BM devices. The main objective is to handle devices and clusters the same way.
+The EtherBond protocol has been ported to Linux. With this port BMs can comunicate with standard PC software and with BM emulated on PC.</p>
+<p>Other communication protocols are under development. <em>UdpBond</em> is a protocol that allows BMs to communicate with the external world using the UDP protocol. <em>bondirect</em> is a protocol that allows BMs to communicate with other BMs using a direct physical connection.</p>
 
 
 
-<h4 id="etherbond-on-linux">
-  <a class="Heading-link u-clickable" href="/intro/ecosystem/#etherbond-on-linux"><em>EtherBond on Linux</em></a>
+<h4 id="standalone-bms-to-the-external-world">
+  <a class="Heading-link u-clickable" href="/intro/ecosystem/#standalone-bms-to-the-external-world">Standalone BMs to the external world</a>
 </h4>
-<p>The EtherBond protocol has been ported to Linux. With this port BMs can comunicate with standard PC software.</p>
+<p>BMs may be implemented in hardware using FPGA. Several <em>board drivers</em>, specific to different FPGA models, have been developed in order to use displays, LEDs, switches, etc.</p>
+<p>A VGA driver has been developed to use a VGA monitor as a display for the BMs, capable of displaying text. Additionally, a keyboard driver has been developed to complement the VGA driver. The keyboard driver can read key presses and send the key codes to the BMs.</p>
 
 
 
-<h4 id="board-drivers">
-  <a class="Heading-link u-clickable" href="/intro/ecosystem/#board-drivers"><em>Board drivers</em></a>
+<h4 id="bms-as-accelerators">
+  <a class="Heading-link u-clickable" href="/intro/ecosystem/#bms-as-accelerators">BMs as accelerators</a>
 </h4>
-<p>BMs may be implemented in hardware using FPGA, several drivers, specific to different FPGA model have been developed in order to use displays, leds, switch et al.</p>
+<p>BMs can also be use as computing accelerators for standard servers or PCs. This either by using SoCs (System on Chip) or by using a PCIe cards.</p>
 
   
 

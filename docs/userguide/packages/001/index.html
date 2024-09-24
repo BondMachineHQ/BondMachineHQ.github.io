@@ -80,6 +80,7 @@
       <li class="Banner-item Banner-item--title">
         <a class="Banner-link u-clickable" href="/">BondMachine</a>
         <a class="Banner-link u-clickable" href="/tags"><i class="fa fa-tags"></i></a>
+        <a class="Banner-link u-clickable" href="https://github.com/BondMachineHQ" target="_blank"><i class="fab fa-github"></i></a>
         </li>
       
         
@@ -165,40 +166,46 @@ The HDL code is build using golang templates that creates the code starting from
   
 
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">Push</span> <span class="kd">struct</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">Agent</span> <span class="kt">string</span> <span class="c1">// The name of the agent that is pushing
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">Tick</span>  <span class="kt">uint64</span> <span class="c1">// The tick at which the push occurs
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">Value</span> <span class="kt">string</span> <span class="c1">// The value that is pushed
+</span></span><span class="line"><span class="cl">  <span class="nx">Agent</span> <span class="kt">string</span> <span class="c1">// The name of the agent that is pushing
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">Tick</span>  <span class="kt">uint64</span> <span class="c1">// The tick at which the push occurs
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">Value</span> <span class="kt">string</span> <span class="c1">// The value that is pushed
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">Pop</span> <span class="kd">struct</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">Agent</span> <span class="kt">string</span> <span class="c1">// The name of the agent that is popping
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">Tick</span>  <span class="kt">uint64</span> <span class="c1">// The tick at which the pop occurs
+</span></span><span class="line"><span class="cl">  <span class="nx">Agent</span> <span class="kt">string</span> <span class="c1">// The name of the agent that is popping
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">Tick</span>  <span class="kt">uint64</span> <span class="c1">// The tick at which the pop occurs
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">TestBenchData</span> <span class="kd">struct</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">Pops</span>         <span class="p">[]</span><span class="nx">Pop</span>    <span class="c1">// List of pops
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">Pushes</span>       <span class="p">[]</span><span class="nx">Push</span>   <span class="c1">// List of pushes
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">TestSequence</span> <span class="p">[]</span><span class="kt">string</span> <span class="c1">// Pushes and pops in order
+</span></span><span class="line"><span class="cl">  <span class="nx">Pops</span>         <span class="p">[]</span><span class="nx">Pop</span>    <span class="c1">// List of pops
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">Pushes</span>       <span class="p">[]</span><span class="nx">Push</span>   <span class="c1">// List of pushes
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">TestSequence</span> <span class="p">[]</span><span class="kt">string</span> <span class="c1">// Pushes and pops in order
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">BmStack</span> <span class="kd">struct</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">ModuleName</span> <span class="kt">string</span>   <span class="c1">// The name of the module
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">DataSize</span>   <span class="kt">int</span>      <span class="c1">// The size of the data bus
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">Depth</span>      <span class="kt">int</span>      <span class="c1">// The depth of the stack
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">Senders</span>    <span class="p">[]</span><span class="kt">string</span> <span class="c1">// The names of the agents that can send data to the stack
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">Receivers</span>  <span class="p">[]</span><span class="kt">string</span> <span class="c1">// The names of the agents that can receive data from the stack
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">MemType</span>    <span class="kt">string</span>   <span class="c1">// &#34;LIFO&#34; for a stack or &#34;FIFO&#34; for a queue
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">funcMap</span>    <span class="nx">template</span><span class="p">.</span><span class="nx">FuncMap</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">ModuleName</span> <span class="kt">string</span>   <span class="c1">// The name of the module
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">DataSize</span>   <span class="kt">int</span>      <span class="c1">// The size of the data bus
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">Depth</span>      <span class="kt">int</span>      <span class="c1">// The depth of the stack
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">Senders</span>    <span class="p">[]</span><span class="kt">string</span> <span class="c1">// The names of the agents that can send data to the stack
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">Receivers</span>  <span class="p">[]</span><span class="kt">string</span> <span class="c1">// The names of the agents that can receive data from the stack
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">MemType</span>    <span class="kt">string</span>   <span class="c1">// &#34;LIFO&#34; for a stack or &#34;FIFO&#34; for a queue
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">funcMap</span>    <span class="nx">template</span><span class="p">.</span><span class="nx">FuncMap</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="c1">// TestBench data
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">TestBenchData</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// TestBench data
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">TestBenchData</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
 
 
 
-<h2 id="api">
-  <a class="Heading-link u-clickable" href="/docs/userguide/packages/001/#api">API</a>
+<h2 id="usage">
+  <a class="Heading-link u-clickable" href="/docs/userguide/packages/001/#usage">Usage</a>
 </h2>
+
+
+
+<h3 id="usage-api">
+  <a class="Heading-link u-clickable" href="/docs/userguide/packages/001/#usage-api">Usage: API</a>
+</h3>
 <p>The library can be used in two ways.
 The first one is from a go program. After creating a BmStack structure, the user can call the WriteHDL function to produce the HDL code.
 An example on how the library can be used this way can be seen in the go test file (bmstack_test.go).</p>
@@ -206,44 +213,46 @@ An example on how the library can be used this way can be seen in the go test fi
   
 
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">TestWriteHDL</span><span class="p">(</span><span class="nx">t</span> <span class="o">*</span><span class="nx">testing</span><span class="p">.</span><span class="nx">T</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="c1">// Create a new stack with 4 agents
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">stack</span> <span class="o">:=</span> <span class="nx">BmStack</span><span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="nx">ModuleName</span><span class="p">:</span> <span class="s">&#34;test&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">		<span class="nx">DataSize</span><span class="p">:</span>   <span class="mi">32</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">		<span class="nx">Depth</span><span class="p">:</span>      <span class="mi">8</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">		<span class="nx">Senders</span><span class="p">:</span>    <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&#34;sender1&#34;</span><span class="p">,</span> <span class="s">&#34;sender2&#34;</span><span class="p">},</span>
-</span></span><span class="line"><span class="cl">		<span class="nx">Receivers</span><span class="p">:</span>  <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&#34;receiver1&#34;</span><span class="p">,</span> <span class="s">&#34;receiver2&#34;</span><span class="p">},</span>
-</span></span><span class="line"><span class="cl">		<span class="nx">MemType</span><span class="p">:</span>    <span class="s">&#34;LIFO&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// Create a new stack with 4 agents
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">stack</span> <span class="o">:=</span> <span class="nx">BmStack</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">ModuleName</span><span class="p">:</span> <span class="s">&#34;test&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">DataSize</span><span class="p">:</span>   <span class="mi">32</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">Depth</span><span class="p">:</span>      <span class="mi">8</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">Senders</span><span class="p">:</span>    <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&#34;sender1&#34;</span><span class="p">,</span> <span class="s">&#34;sender2&#34;</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">Receivers</span><span class="p">:</span>  <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&#34;receiver1&#34;</span><span class="p">,</span> <span class="s">&#34;receiver2&#34;</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">MemType</span><span class="p">:</span>    <span class="s">&#34;LIFO&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="c1">// write the HDL code
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">stack</span><span class="p">.</span><span class="nf">WriteHDL</span><span class="p">()</span></span></span></code></pre></div>
+</span></span><span class="line"><span class="cl">  <span class="c1">// write the HDL code
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">stack</span><span class="p">.</span><span class="nf">WriteHDL</span><span class="p">()</span></span></span></code></pre></div>
 <p>The second part of the struct can be filled with test data. These data are used to produce a test bench for the stack. Using the test bench the user can verify the correctness of the stack. The test bench is produced by calling the WriteTestBench function.</p>
 
   
 
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">TestWriteTestBench</span><span class="p">(</span><span class="nx">t</span> <span class="o">*</span><span class="nx">testing</span><span class="p">.</span><span class="nx">T</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">stack</span> <span class="o">:=</span> <span class="nx">BmStack</span><span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="c1">// ...
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nx">s</span><span class="p">.</span><span class="nx">Pushes</span> <span class="p">=</span> <span class="p">[]</span><span class="nx">Push</span><span class="p">{</span>
-</span></span><span class="line"><span class="cl">			<span class="nx">Push</span><span class="p">{</span><span class="s">&#34;sender1&#34;</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="s">&#34;32&#39;d1&#34;</span><span class="p">},</span>
-</span></span><span class="line"><span class="cl">		<span class="p">}</span>
-</span></span><span class="line"><span class="cl">		<span class="nx">s</span><span class="p">.</span><span class="nx">Pops</span> <span class="p">=</span> <span class="p">[]</span><span class="nx">Pop</span><span class="p">{</span>
-</span></span><span class="line"><span class="cl">			<span class="nx">Pop</span><span class="p">{</span><span class="s">&#34;receiver1&#34;</span><span class="p">,</span> <span class="mi">60</span><span class="p">},</span>
-</span></span><span class="line"><span class="cl">		<span class="p">}</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl">	<span class="c1">// write the test bench
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">stack</span><span class="p">.</span><span class="nf">WriteTestBench</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">stack</span> <span class="o">:=</span> <span class="nx">BmStack</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">s</span><span class="p">.</span><span class="nx">Pushes</span> <span class="p">=</span> <span class="p">[]</span><span class="nx">Push</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">Push</span><span class="p">{</span><span class="s">&#34;sender1&#34;</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="s">&#34;32&#39;d1&#34;</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">s</span><span class="p">.</span><span class="nx">Pops</span> <span class="p">=</span> <span class="p">[]</span><span class="nx">Pop</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">Pop</span><span class="p">{</span><span class="s">&#34;receiver1&#34;</span><span class="p">,</span> <span class="mi">60</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// write the test bench
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">stack</span><span class="p">.</span><span class="nf">WriteTestBench</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
 <p>The two functions (WriteHDL and WriteTestBench) return a string that contains the HDL code or an error if something went wrong (string, error).
-The provided go test file (bmstack_test.go) shows how the library can be used in this way. When invoked (go test), it produces the two files (bmstack.v and bmstack_tb.v).</p>
+The provided go test file (bmstack_test.go) shows how the library can be used in this way. When invoked (go test), it produces the two files (bmstack.v and bmstack_tb.v).
+This kind of usage is useful when the user needs to create a stack or a queue in HDL and then use it in a bigger project like it is done in the BondMachine project.</p>
 
 
 
-<h2 id="cli">
-  <a class="Heading-link u-clickable" href="/docs/userguide/packages/001/#cli">CLI</a>
-</h2>
-<p>the library also came with a companion CLI executable called bmstack that provides the basic interface to the library. This is the second Possible way to use it.</p>
+<h3 id="usage-cli">
+  <a class="Heading-link u-clickable" href="/docs/userguide/packages/001/#usage-cli">Usage: CLI</a>
+</h3>
+<p>The library also came with a companion CLI executable called bmstack that provides the basic interface to the library. This is the second Possible way to use it.
+With the -h flag the user can see the available options and their meaning.</p>
 
   
 
@@ -271,15 +280,138 @@ The provided go test file (bmstack_test.go) shows how the library can be used in
 </span></span><span class="line"><span class="cl">  -tb-file string
 </span></span><span class="line"><span class="cl">        Name of the file to write the testbench to <span class="o">(</span>empty string to disable<span class="o">)</span>
 </span></span><span class="line"><span class="cl">  -v    Verbose</span></span></code></pre></div>
-<p>Examples of usage:</p>
+
+
+
+<h2 id="examples">
+  <a class="Heading-link u-clickable" href="/docs/userguide/packages/001/#examples">Examples</a>
+</h2>
+<p>Within the BondMachine project, the library is used to create stacks and queues in HDL whenever needed. Some example of this are:</p>
+<ul>
+<li>The queue used by the thread manager in the CP cores to store the CP threads state</li>
+<li>The stack used to store the return addresses in the call instruction</li>
+<li>The queue used to get data for the keyboard</li>
+</ul>
+<p>To further see how the library is used in the BondMachine project, please refer to the BondMachine examples directory that contains many examples of BondMachines using stacks and queues. Instead, here we provide a simple example of how to use the library as standalone tool.</p>
+
+
+
+<h3 id="example-api">
+  <a class="Heading-link u-clickable" href="/docs/userguide/packages/001/#example-api">Example: API</a>
+</h3>
+<p>The provided go test file (bmstack_test.go) shows how the library can be used in this way. When invoked (go test), it produces the two files (bmstack.v and bmstack_tb.v).</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ go <span class="nb">test</span>
+</span></span><span class="line"><span class="cl">$ ls *.v
+</span></span><span class="line"><span class="cl">bmstack_tb.v  bmstack.v</span></span></code></pre></div>
+<p>This example sets up a stack with 5 agents (3 senders and 2 receivers) and then produces the HDL code and the test bench for the stack. The test bench contains a sequence of pushes and pops that are used to verify the correctness of the stack.
+In detail the 3 senders push 6 values (2 each) to the stack at different times, while the 2 receivers pop the 6 values (3 each) from the stack at different times. The 6 values are distributed among the 2 receivers.</p>
+
+
+
+<h3 id="example-cli">
+  <a class="Heading-link u-clickable" href="/docs/userguide/packages/001/#example-cli">Example: CLI</a>
+</h3>
+<p>The CLI can be used to produce the HDL code and the test bench for the stack. The following command produces the exact same file (bmsta.v) as the API example above.</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ bmstack -senders sender1,sender2,sender3 -receivers receiver1,receiver2 -hdl-file bmstack.v</span></span></code></pre></div>
+<p>To also produce the (same) test bench, the user can use the following command.</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ bmstack -senders sender1,sender2,sender3 -receivers receiver1,receiver2 -hdl-file bmstack.v -tb-file bmstack_tb.v -stimulus-file stimulus.json</span></span></code></pre></div>
+<p>Where <code>stimulus.json</code> is a JSON file that contains the test bench data. The JSON file has the following format.</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;Pops&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span><span class="nt">&#34;Agent&#34;</span><span class="p">:</span> <span class="s2">&#34;receiver1&#34;</span><span class="p">,</span><span class="nt">&#34;Tick&#34;</span><span class="p">:</span> <span class="mi">110</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span><span class="nt">&#34;Agent&#34;</span><span class="p">:</span> <span class="s2">&#34;receiver2&#34;</span><span class="p">,</span><span class="nt">&#34;Tick&#34;</span><span class="p">:</span> <span class="mi">160</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span><span class="nt">&#34;Agent&#34;</span><span class="p">:</span> <span class="s2">&#34;receiver1&#34;</span><span class="p">,</span><span class="nt">&#34;Tick&#34;</span><span class="p">:</span> <span class="mi">210</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span><span class="nt">&#34;Agent&#34;</span><span class="p">:</span> <span class="s2">&#34;receiver2&#34;</span><span class="p">,</span><span class="nt">&#34;Tick&#34;</span><span class="p">:</span> <span class="mi">260</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span><span class="nt">&#34;Agent&#34;</span><span class="p">:</span> <span class="s2">&#34;receiver1&#34;</span><span class="p">,</span><span class="nt">&#34;Tick&#34;</span><span class="p">:</span> <span class="mi">310</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span><span class="nt">&#34;Agent&#34;</span><span class="p">:</span> <span class="s2">&#34;receiver2&#34;</span><span class="p">,</span><span class="nt">&#34;Tick&#34;</span><span class="p">:</span> <span class="mi">360</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">],</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;Pushes&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span><span class="nt">&#34;Agent&#34;</span><span class="p">:</span> <span class="s2">&#34;sender1&#34;</span><span class="p">,</span><span class="nt">&#34;Tick&#34;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span><span class="nt">&#34;Value&#34;</span><span class="p">:</span> <span class="s2">&#34;32&#39;d1&#34;</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span><span class="nt">&#34;Agent&#34;</span><span class="p">:</span> <span class="s2">&#34;sender2&#34;</span><span class="p">,</span><span class="nt">&#34;Tick&#34;</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span><span class="nt">&#34;Value&#34;</span><span class="p">:</span> <span class="s2">&#34;32&#39;d2&#34;</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span><span class="nt">&#34;Agent&#34;</span><span class="p">:</span> <span class="s2">&#34;sender3&#34;</span><span class="p">,</span><span class="nt">&#34;Tick&#34;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span><span class="nt">&#34;Value&#34;</span><span class="p">:</span> <span class="s2">&#34;32&#39;d3&#34;</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span><span class="nt">&#34;Agent&#34;</span><span class="p">:</span> <span class="s2">&#34;sender1&#34;</span><span class="p">,</span><span class="nt">&#34;Tick&#34;</span><span class="p">:</span> <span class="mi">250</span><span class="p">,</span><span class="nt">&#34;Value&#34;</span><span class="p">:</span> <span class="s2">&#34;32&#39;d4&#34;</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span><span class="nt">&#34;Agent&#34;</span><span class="p">:</span> <span class="s2">&#34;sender2&#34;</span><span class="p">,</span><span class="nt">&#34;Tick&#34;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span><span class="nt">&#34;Value&#34;</span><span class="p">:</span> <span class="s2">&#34;32&#39;d5&#34;</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span><span class="nt">&#34;Agent&#34;</span><span class="p">:</span> <span class="s2">&#34;sender3&#34;</span><span class="p">,</span><span class="nt">&#34;Tick&#34;</span><span class="p">:</span> <span class="mi">350</span><span class="p">,</span><span class="nt">&#34;Value&#34;</span><span class="p">:</span> <span class="s2">&#34;32&#39;d6&#34;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">],</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;TestSequence&#34;</span><span class="p">:</span> <span class="kc">null</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<p>The JSON file contains the same data as the test bench data in the API example above. The user can use the JSON file to provide his own test bench data to the CLI. With -random-stimulus the user can also generate random stimulus data for the test bench.
+The CLI can be used to produce the HDL code and the test bench for a custom distributed stack/queue to use in other projects.</p>
+<p><code>Warning</code>: If the simulation prints a message like</p>
+
+  
+
+<pre tabindex="0"><code>Warning: impulse while request is active, the impulse will be ignored</code></pre>
+<p>it is due to the fact that the test bench data is not correct. Some pops/pushes are fired while the stack has already a request active from the same agent. In a real scenario, the agent would wait for the ack signal before sending another request.
+The test bench provided in the example is correct.</p>
 
 
 
 <h2 id="simulation">
   <a class="Heading-link u-clickable" href="/docs/userguide/packages/001/#simulation">Simulation</a>
 </h2>
-<p>WIP</p>
-<p>To see how the library is used in the BondMachine project, please refer to the BondMachine examples directory that contains many examples of BondMachines using stacks and queues.</p>
+<p>Whether the HDL code is produced using the API or the CLI, the user can simulate the stack/queue using the provided test bench. The test bench is written in Verilog and can be simulated using any Verilog simulator. Here we provide an example using the Icarus Verilog simulator to run the simulation. The simulation produces a vcd file that can be viewed using gtkwave.</p>
+<p>Following the API example above, the user can simulate the stack using the following commands.</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ iverilog -o bmstack.vvp *.v
+</span></span><span class="line"><span class="cl">$ vvp bmstack.vvp
+</span></span><span class="line"><span class="cl">VCD info: dumpfile bmstack.vcd opened <span class="k">for</span> output.
+</span></span><span class="line"><span class="cl">stack_tb.v:142: <span class="nv">$finish</span> called at <span class="m">1304000</span> <span class="o">(</span>1ps<span class="o">)</span>
+</span></span><span class="line"><span class="cl">$ gtkwave bmstack.vcd</span></span></code></pre></div>
+<p><img src="sim.png" alt="Sim"></p>
+<p>The simulation shows the stack in action. The stack is filled with 6 values and then the values are popped by the receivers. The values are distributed among the two receivers as expected. Alongside the values pushed and popped, the simulation also shows some internal signals of the stack.</p>
+
+
+
+<h2 id="interface">
+  <a class="Heading-link u-clickable" href="/docs/userguide/packages/001/#interface">Interface</a>
+</h2>
+<p>To use the generated HDL code, the user needs to connect the stack/queue to the agents that send and receive data. The stack/queue has the following interface.</p>
+
+
+
+<h3 id="senders">
+  <a class="Heading-link u-clickable" href="/docs/userguide/packages/001/#senders">Senders</a>
+</h3>
+<p>The senders need to connect the following signals to the stack/queue.</p>
+<ul>
+<li><code>clk</code>: The clock signal</li>
+<li><code>reset</code>: The reset signal</li>
+<li><code>[sendername]Data</code>: The data to be pushed to the stack/queue</li>
+<li><code>[sendername]Write</code>: The write signal to push the data to the stack/queue</li>
+<li><code>[sendername]Ack</code>: The acknowledge signal to confirm the data has been pushed to the stack/queue</li>
+</ul>
+<p>So, for example, if the user has a sender agent called sender1, the user needs to write the data to be pushed to the stack/queue in the <code>sender1Data</code> signal, then set the <code>sender1Write</code> signal to 1 to push the data to the stack/queue. The <code>sender1Ack</code> signal will be set to 1 when the data has been pushed to the stack/queue.</p>
+<p>Sendername is the name of the sender agent chosen by the user.</p>
+
+
+
+<h3 id="receivers">
+  <a class="Heading-link u-clickable" href="/docs/userguide/packages/001/#receivers">Receivers</a>
+</h3>
+<p>Similarly, the receivers need to connect the following signals to the stack/queue.</p>
+<ul>
+<li><code>clk</code>: The clock signal</li>
+<li><code>reset</code>: The reset signal</li>
+<li><code>[receivername]Data</code>: The data to be popped from the stack/queue</li>
+<li><code>[receivername]Read</code>: The read signal to pop the data from the stack/queue</li>
+<li><code>[receivername]Ack</code>: The acknowledge signal to confirm the data has been popped from the stack/queue</li>
+</ul>
+<p>So, for example, if the user has a receiver agent called receiver1, the user needs to set the <code>receiver1Read</code> signal to 1 to pop the data from the stack/queue. The <code>receiver1Data</code> signal will contain the data popped from the stack/queue. The <code>receiver1Ack</code> signal will be set to 1 when the data has been popped from the stack/queue and is available in the <code>receiver1Data</code> signal.</p>
 
   
 

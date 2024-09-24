@@ -28,8 +28,8 @@
 
 
   
-    <meta name="description" content="Several tools has been developed to handle the various ecosystem aspects. All the software is written using the Go programming language.
-BondMachines building tools The complexity of programming the BondMachine architecture is managed by using a set of software tools. These tools allow to build a specify architecture as function of the task, to modify the created architecture, to simulate the behavior and to check the functionality with the aim to generate the Register Transfer Level (RTL) code for a programmable device, i.">
+    <meta name="description" content="Several tools, written in Go, have been developed to handle various aspects of the ecosystem. Some of them are used to build and handle the BondMachines at the architecture level, others are used to build the architecture and the software from a higher level (codesign).
+Architecture level tools These tools allow control over every aspect of BM building, such as building a specific architecture based on the task, modifying the CP behavior, connecting the CP and the shared objects (SOs), simulating the behavior, and checking the functionality with the aim of generating the Hardware Description Language (HDL) code for a programmable device, i.">
   
 
 
@@ -79,6 +79,7 @@ BondMachines building tools The complexity of programming the BondMachine archit
       <li class="Banner-item Banner-item--title">
         <a class="Banner-link u-clickable" href="/">BondMachine</a>
         <a class="Banner-link u-clickable" href="/tags"><i class="fa fa-tags"></i></a>
+        <a class="Banner-link u-clickable" href="https://github.com/BondMachineHQ" target="_blank"><i class="fab fa-github"></i></a>
         </li>
       
         
@@ -158,40 +159,39 @@ BondMachines building tools The complexity of programming the BondMachine archit
 </header>
   
     <hr>
-<p>Several tools has been developed to handle the various ecosystem aspects.
-All the software is written using the Go programming language.</p>
+<p>Several tools, written in Go, have been developed to handle various aspects of the ecosystem. Some of them are used to build and handle the BondMachines at the architecture level, others are used to build the architecture and the software from a higher level (codesign).</p>
 
 
 
-<h4 id="bondmachines-building-tools">
-  <a class="Heading-link u-clickable" href="/intro/tools/#bondmachines-building-tools"><strong>BondMachines building tools</strong></a>
-</h4>
-<p>The complexity of programming the BondMachine architecture is managed by using a set of software tools.
-These tools allow to build a specify architecture as function of the task, to modify the created architecture,
-to simulate the behavior and to check the functionality with the aim to generate the Register Transfer Level (RTL) code for a programmable device, i.e. FPGA device.</p>
+<h3 id="architecture-level-tools">
+  <a class="Heading-link u-clickable" href="/intro/tools/#architecture-level-tools"><strong>Architecture level tools</strong></a>
+</h3>
+<p>These tools allow control over every aspect of BM building, such as building a specific architecture based on the task, modifying the CP behavior, connecting the CP and the shared objects (SOs), simulating the behavior, and checking the functionality with the aim of generating the Hardware Description Language (HDL) code for a programmable device, i.e., an FPGA device.</p>
 <p>The major tools for the BMs building are two:</p>
 <ul>
-<li><em><strong>procbuilder</strong></em> a CP builder manages the configuration parameters of the CPs</li>
-<li><em><strong>bondmachine</strong></em> a BM builder manages the interconnection between the CPs and SOs</li>
+<li>
+<p><em><strong>procbuilder</strong></em> a CP builder manages the configuration parameters of the CPs</p>
+</li>
+<li>
+<p><em><strong>bondmachine</strong></em> a BM builder manages the interconnection between the CPs and SOs</p>
+</li>
 </ul>
-<p>Moreover, the tools share the possibility of using the generated BM architecture that can be directly emulated on a workstation without the need of an FPGA. This application is called <em><strong>simbox</strong></em></p>
-<p>Aside this two more important tools a set of application specific software can create BMs:</p>
-<ul>
-<li><em><strong>neuralbond</strong></em> is an application that models a neural network over BondMachines. The final result of the process in a device composed by many CPs acting as neuron-like computing units.</li>
-<li><em><strong>symbond</strong></em> permits the creation of BMs that computes a particular mathematical expression.</li>
-<li><em><strong>boolbond</strong></em> handles BMs that manage boolean expressions.</li>
-<li><em><strong>matrixwork</strong></em> make matrix calculation with BondMachines.</li>
-</ul>
-<p>Other tools are under development: a translator of TensorFlow models to BondMachine (<em><strong>tf2bm</strong></em>) and an evolutional computing framework to fit BM architectures to specific problems (to &ldquo;grow&rdquo; BondMachines so to speak).</p>
+<p>Moreover, the tools share the possibility of using the generated BM architecture that can be directly emulated on a workstation without the need of an FPGA. This application is called <em><strong>simbox</strong></em>.</p>
 
 
 
-<h4 id="bondmachines-interconnecting-tools">
-  <a class="Heading-link u-clickable" href="/intro/tools/#bondmachines-interconnecting-tools"><strong>BondMachines interconnecting tools</strong></a>
+<h3 id="codesign-tools-low-level">
+  <a class="Heading-link u-clickable" href="/intro/tools/#codesign-tools-low-level"><strong>Codesign tools (low level)</strong></a>
+</h3>
+<p>The low-level codesign tools are used to build the software that runs on the BMs. The software is written in a specific assembly language, called Basm. The Bondgo compiler is a Go compiler that generates the code from a high-level language, in this case, Go.
+Both the tools share the possibility of generating the BM architecture as well as the software that runs on it. This is the major achievement of the BondMachine ecosystem, the possibility of generating the hardware and the software from the same source code.</p>
+
+
+
+<h4 id="the-basm-assembler">
+  <a class="Heading-link u-clickable" href="/intro/tools/#the-basm-assembler"><strong>The Basm assembler</strong></a>
 </h4>
-<ul>
-<li><em><strong>etherbond</strong></em> is the native communication protocol for the BondMachine. It a protocol over ethernet (ethertype 0x8888) that permits to create clusters of BondMachines. A Linux implementation also have been developed to allow Linux workstation to participate the clusters.</li>
-</ul>
+<p><em>Basm</em> is the assembly language of the BondMachine. It is a RISC-like language with a few instructions and a few addressing modes. The main goal of Basm is to be simple and to be easily translated into the BM architecture.</p>
 
 
 
@@ -200,10 +200,25 @@ to simulate the behavior and to check the functionality with the aim to generate
 </h4>
 <p><em>Bondgo</em> is a compiler for the BondMachine that starts from an high level language, in this case Go, and compiles the code to generate the assembly code of the architecture. The generated assembly code may be assembled with the <em>procbuilder</em> tool resulting in the generation of the binary code for a CP.
 Unlike other compilers, <em>Bondgo</em> can create the assembly code in a way that a given processor can run it, or can even create the CP optimized for that code. The resulting architecture has only the needed resources and is highly specialized to run that code.
-Moreover <em>Bondgo</em> handle the concurrency of the source code by creating a multicore BM so it creates a new CP in the BM every time a Goroutine is encountered, that is optimized to run the code produced by the compilation.
-In the same way, when Channels are encountered, the relative hardware Channel is created within the BM and if it is passed to Goroutines, the corresponding CP is connected to this hardware Channel. The final result of this process is a BM architecture with a CP interconnection structure reflecting the source code optimized not only in terms of CP resources but also in its interconnection topology.
-<em>Bondgo</em> handles Goroutines and Channels by creating respectively CPs and hardware Channels, a software concurrent program became thus a multicore, eventually heterogeneous. Some limitations on the use of Goroutines within <em>Bondgo</em> are present due to the fact that their number has to be known from the beginning since is not possible to create them dynamically at runtime as happen in Go.
-A Similar approach is used for memory allocation, variable passed to Goroutines by value are handled by <em>Bondgo</em> using Channels or input/output registers (depending on the data structure) as a way to transfer the value from one CP to the other. When a variable is passed by reference, <em>Bondgo</em> assumes that both the CPs share the RAM where the variable is to be allocated.</p>
+Moreover <em>Bondgo</em> handle the concurrency of the source code by creating a multicore BM so it creates a new CP in the BM every time a Goroutine is encountered, that is optimized to run the code produced by the compilation.</p>
+<!-- In the same way, when Channels are encountered, the relative hardware Channel is created within the BM and if it is passed to Goroutines, the corresponding CP is connected to this hardware Channel. The final result of this process is a BM architecture with a CP interconnection structure reflecting the source code optimized not only in terms of CP resources but also in its interconnection topology. -->
+<!-- *Bondgo* handles Goroutines and Channels by creating respectively CPs and hardware Channels, a software concurrent program became thus a multicore, eventually heterogeneous. Some limitations on the use of Goroutines within *Bondgo* are present due to the fact that their number has to be known from the beginning since is not possible to create them dynamically at runtime as happen in Go. -->
+<!-- A Similar approach is used for memory allocation, variable passed to Goroutines by value are handled by *Bondgo* using Channels or input/output registers (depending on the data structure) as a way to transfer the value from one CP to the other. When a variable is passed by reference, *Bondgo* assumes that both the CPs share the RAM where the variable is to be allocated. -->
+
+
+
+<h3 id="codesign-tools-high-level">
+  <a class="Heading-link u-clickable" href="/intro/tools/#codesign-tools-high-level"><strong>Codesign tools (high level)</strong></a>
+</h3>
+<p>The low-level codesing tools can be thinked as the building blocks for these high-level tools. Each of these tools is specialized in a particular task, such as neural network modeling, quantum computing simulation, matrix calculation, etc.</p>
+<p>A few of these tools are:</p>
+<ul>
+<li><em><strong>neuralbond</strong></em> is an application that models a neural network over BondMachines. The final result of the process is a device composed of many CPs acting as neuron-like computing units.</li>
+<li><em><strong>bmqsim</strong></em> is a quantum simulator that uses BMs to simulate quantum circuits.</li>
+<li><em><strong>symbond</strong></em> permits the creation of BMs that compute particular mathematical expressions.</li>
+<li><em><strong>boolbond</strong></em> handles BMs that manage boolean expressions.</li>
+<li><em><strong>matrixwork</strong></em> performs matrix calculations with BondMachines.</li>
+</ul>
 
   
 

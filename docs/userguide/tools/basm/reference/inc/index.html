@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6ERRTFXF0G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6ERRTFXF0G');
+</script>
+
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+  integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+  crossorigin="anonymous" />
+
+
+  
+  <meta charset="utf-8">
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  
+    <meta name="description" content="Instruction: inc
+Length: opBits &#43; regBits
+Description:
+The INC instruction increments a register by 1. It assumes that the register is a positive integer and it will overflow to 0 if the maximum value is reached. The length of the register is defined by the architecture.
+Snippet:
+%section code .romtext entry _start ; Entry point _start: clr r0 loop: inc	r0 r2o	r0,o0 j	loop %endsection %meta cpdef	cpu	romcode: code, ramsize:8 %meta ioatt testio cp: cpu, index:0, type:output %meta ioatt testio cp: bm, index:0, type:output %meta bmdef	global registersize:8 INC example">
+  
+
+
+<meta name="color-scheme" content="light dark">
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.126.1">
+  <title>inc | BondMachine</title>
+  <link rel="canonical" href="https://bondmachinehq.github.io/docs/userguide/tools/basm/reference/inc/">
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/css/base.min.8e67dbf71c26d0a6dbf4662f796d909952715e54bce477c632a31f634032185f.min.8e67dbf71c26d0a6dbf4662f796d909952715e54bce477c632a31f634032185f.css" integrity="sha256-jmfb9xwm0Kbb9GYveW2QmVJxXlS85HfGMqMfY0AyGF8=" crossorigin="anonymous">
+
+      <link rel="stylesheet" href="/css/syntax.min.065df42d2be658bb8e0720297aadf469355a5ffaf863b00e3cce0627dd106ca0.css" integrity="sha256-Bl30LSvmWLuOByApeq30aTVaX/r4Y7AOPM4GJ90QbKA=" crossorigin="anonymous">
+
+
+
+</head>
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="/">BondMachine</a>
+        <a class="Banner-link u-clickable" href="/tags"><i class="fa fa-tags"></i></a>
+        <a class="Banner-link u-clickable" href="https://github.com/BondMachineHQ" target="_blank"><i class="fab fa-github"></i></a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/intro/">Intro</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/posts/">News</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/docs/">Docs</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/prototypes/">Prototypes</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/examples/">Examples</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/media/">Media</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</nav>
+
+  
+<nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      
+        <li class="Banner-item Banner-item--title">
+          <a class="Banner-link u-clickable" href=".." style="color: red;">&crarr;reference</a>
+        </li>
+      
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable"></a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+  <header class="Heading">
+  <h1 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/docs/userguide/tools/basm/reference/inc/" rel="bookmark">inc</a>
+  </h1>
+  
+</header>
+  
+    <hr>
+<p><img src="/img/wip.png" alt="WIP">
+<strong>Instruction</strong>: inc</p>
+<p><strong>Length</strong>: opBits + regBits</p>
+<p><strong>Description</strong>:</p>
+<p>The INC instruction increments a register by 1. It assumes that the register is a positive integer and it will overflow to 0 if the maximum value is reached. The length of the register is defined by the architecture.</p>
+<p><strong>Snippet</strong>:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="err">%</span><span class="nf">section</span> <span class="no">code</span> <span class="no">.romtext</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">entry</span> <span class="no">_start</span>    <span class="c1">; Entry point
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nl">_start:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nf">clr</span>     <span class="no">r0</span>
+</span></span><span class="line"><span class="cl"><span class="nl">loop:</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">inc</span>	<span class="no">r0</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">r2o</span>	<span class="no">r0</span><span class="p">,</span><span class="no">o0</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">j</span>	<span class="no">loop</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">%</span><span class="nf">endsection</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">%</span><span class="nf">meta</span> <span class="no">cpdef</span>	<span class="no">cpu</span>	<span class="no">romcode</span><span class="p">:</span> <span class="no">code</span><span class="p">,</span> <span class="no">ramsize</span><span class="p">:</span><span class="mi">8</span>
+</span></span><span class="line"><span class="cl"><span class="err">%</span><span class="nf">meta</span> <span class="no">ioatt</span>     <span class="no">testio</span> <span class="no">cp</span><span class="p">:</span> <span class="no">cpu</span><span class="p">,</span> <span class="no">index</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="no">type</span><span class="p">:</span><span class="no">output</span>
+</span></span><span class="line"><span class="cl"><span class="err">%</span><span class="nf">meta</span> <span class="no">ioatt</span>     <span class="no">testio</span> <span class="no">cp</span><span class="p">:</span> <span class="no">bm</span><span class="p">,</span> <span class="no">index</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="no">type</span><span class="p">:</span><span class="no">output</span>
+</span></span><span class="line"><span class="cl"><span class="err">%</span><span class="nf">meta</span> <span class="no">bmdef</span>	<span class="no">global</span> <span class="no">registersize</span><span class="p">:</span><span class="mi">8</span></span></span></code></pre></div>
+<p>INC example</p>
+
+  
+
+  
+
+  
+
+
+
+
+
+  <footer>
+    
+      
+    
+      
+        <ul class="Tags">
+          
+            <li class="Tags-item u-background">
+              <a class="Tags-link u-clickable" href="/tags/tools/" rel="tag">Tools</a>
+            </li>
+          
+            <li class="Tags-item u-background">
+              <a class="Tags-link u-clickable" href="/tags/basm/" rel="tag">Basm</a>
+            </li>
+          
+            <li class="Tags-item u-background">
+              <a class="Tags-link u-clickable" href="/tags/assembly/" rel="tag">Assembly</a>
+            </li>
+          
+            <li class="Tags-item u-background">
+              <a class="Tags-link u-clickable" href="/tags/reference/" rel="tag">Reference</a>
+            </li>
+          
+            <li class="Tags-item u-background">
+              <a class="Tags-link u-clickable" href="/tags/inc/" rel="tag">Inc</a>
+            </li>
+          
+            <li class="Tags-item u-background">
+              <a class="Tags-link u-clickable" href="/tags/instruction/" rel="tag">Instruction</a>
+            </li>
+          
+        </ul>
+      
+    
+  </footer>
+
+  
+  
+  
+
+
+
+      </div>
+    </div>
+  </main>
+  
+  <footer class="Footer">
+    <div class="u-wrapper">
+      <div class="u-padding u-noboosting">
+        The BondMachine Project - <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY-SA 4.0</a>.
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

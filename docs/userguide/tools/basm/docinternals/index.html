@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6ERRTFXF0G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6ERRTFXF0G');
+</script>
+
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+  integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+  crossorigin="anonymous" />
+
+
+  
+  <meta charset="utf-8">
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  
+    <meta name="description" content="Phases The assembling process in divided into phases. The first phase (phase 0) read assembly file/s and create a raw BasmInstance. Subsequent passes operate transformations on BasmInstances. Specific steps can be removed using the dedicated arguments from the command line. The table following shows all the phases along with their description.
+Phase short name Description TemplateResolver The templated code is found and expanded. New (untemplated) elements (section or fragment) are created DynamicalInstructions The dynamical instructions are found according the name convention.">
+  
+
+
+<meta name="color-scheme" content="light dark">
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.126.1">
+  <title>Basm Internals | BondMachine</title>
+  <link rel="canonical" href="https://bondmachinehq.github.io/docs/userguide/tools/basm/docinternals/">
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/css/base.min.8e67dbf71c26d0a6dbf4662f796d909952715e54bce477c632a31f634032185f.min.8e67dbf71c26d0a6dbf4662f796d909952715e54bce477c632a31f634032185f.css" integrity="sha256-jmfb9xwm0Kbb9GYveW2QmVJxXlS85HfGMqMfY0AyGF8=" crossorigin="anonymous">
+
+
+
+</head>
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="/">BondMachine</a>
+        <a class="Banner-link u-clickable" href="/tags"><i class="fa fa-tags"></i></a>
+        <a class="Banner-link u-clickable" href="https://github.com/BondMachineHQ" target="_blank"><i class="fab fa-github"></i></a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/intro/">Intro</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/posts/">News</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/docs/">Docs</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/prototypes/">Prototypes</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/examples/">Examples</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/media/">Media</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</nav>
+
+  
+<nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      
+        <li class="Banner-item Banner-item--title">
+          <a class="Banner-link u-clickable" href=".." style="color: red;">&crarr;basm</a>
+        </li>
+      
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable"></a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+  <header class="Heading">
+  <h1 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/docs/userguide/tools/basm/docinternals/" rel="bookmark">Basm Internals</a>
+  </h1>
+  
+</header>
+  
+    <hr>
+<p><img src="/img/wip.png" alt="WIP"></p>
+
+
+
+<h2 id="phases">
+  <a class="Heading-link u-clickable" href="/docs/userguide/tools/basm/docinternals/#phases">Phases</a>
+</h2>
+<p>The assembling process in divided into phases. The first phase (phase 0) read assembly file/s and create a raw BasmInstance. Subsequent passes operate transformations on BasmInstances. Specific steps can be removed using the dedicated arguments from the command line. The table following shows all the phases along with their description.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Phase short name</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">TemplateResolver</td>
+<td style="text-align:left">The templated code is found and expanded. New (untemplated) elements (section or fragment) are created</td>
+</tr>
+<tr>
+<td style="text-align:left">DynamicalInstructions</td>
+<td style="text-align:left">The dynamical instructions are found according the name convention. They are created and inserted into the instruction database</td>
+</tr>
+<tr>
+<td style="text-align:left">SymbolsTagger1</td>
+<td style="text-align:left">Map the sections and fragments symbols, creates the relative metadata within the instruction arguments</td>
+</tr>
+<tr>
+<td style="text-align:left">DataSections2Bytes</td>
+<td style="text-align:left">Compute the offsets of the data sections and convert the data into bytes</td>
+</tr>
+<tr>
+<td style="text-align:left">MetadataInfer1</td>
+<td style="text-align:left">Infer the metadata by looking at the code and matching the instructions with the instruction database</td>
+</tr>
+<tr>
+<td style="text-align:left">FragmentAnalyzer</td>
+<td style="text-align:left">Analyze the fragments resources and create the relative metadata</td>
+</tr>
+<tr>
+<td style="text-align:left">FragmentOptimizer</td>
+<td style="text-align:left">Apply several customizable optimizations to the fragments</td>
+</tr>
+<tr>
+<td style="text-align:left">FragmentPruner</td>
+<td style="text-align:left">Prune the fragments that are specified in the command line</td>
+</tr>
+<tr>
+<td style="text-align:left">FragmentComposer</td>
+<td style="text-align:left">Compose the fragments into the sections as specified in the command line</td>
+</tr>
+<tr>
+<td style="text-align:left">MetadataInfer2</td>
+<td style="text-align:left">Infer the metadata for the second time since news sections and fragments may have been created</td>
+</tr>
+<tr>
+<td style="text-align:left">EntryPoints</td>
+<td style="text-align:left">The programs entry points is detected for the sections where it is relevant</td>
+</tr>
+<tr>
+<td style="text-align:left">MatcherResolver</td>
+<td style="text-align:left">Resolv the pseudo-insructions and traslate the instructions into the real ones. If more than one instruction is matched, alternative sections are created to be evaluated in the next phases</td>
+</tr>
+<tr>
+<td style="text-align:left">SymbolsTagger2</td>
+<td style="text-align:left">Map the sections and fragments symbols, creates the relative metadata within the instruction arguments</td>
+</tr>
+<tr>
+<td style="text-align:left">MemComposer</td>
+<td style="text-align:left">Associate the memory to the sections according to the final disposition of the sections within the BondMachine. Only section relevant for the cps metadata are considered and the others are discarded</td>
+</tr>
+<tr>
+<td style="text-align:left">SectionCleaner</td>
+<td style="text-align:left">Remove the sections that are not relevant for the cps metadata</td>
+</tr>
+<tr>
+<td style="text-align:left">SymbolsTagger3</td>
+<td style="text-align:left">Map the sections and fragments symbols, creates the relative metadata within the instruction arguments</td>
+</tr>
+<tr>
+<td style="text-align:left">SymbolsResolver</td>
+<td style="text-align:left">Symbols are detected, removed from the actual code and written as locations</td>
+</tr>
+</tbody>
+</table>
+<p>After the last phase the BasmInstance is ready to be translated into a BondMachine or to a BCOF file. The structure of the BondMachine is defined by the SOs and CPs metas. While the code is processed, the assembler keeps track of the SOs and CPs that are used. At the end of the process, the assembler creates the BondMachine structure and fills it with the data collected during the process.</p>
+
+  
+
+  
+
+  
+
+
+
+
+
+  <footer>
+    
+      
+    
+      
+        <ul class="Tags">
+          
+            <li class="Tags-item u-background">
+              <a class="Tags-link u-clickable" href="/tags/tools/" rel="tag">Tools</a>
+            </li>
+          
+            <li class="Tags-item u-background">
+              <a class="Tags-link u-clickable" href="/tags/basm/" rel="tag">Basm</a>
+            </li>
+          
+        </ul>
+      
+    
+  </footer>
+
+  
+  
+  
+
+
+
+      </div>
+    </div>
+  </main>
+  
+  <footer class="Footer">
+    <div class="u-wrapper">
+      <div class="u-padding u-noboosting">
+        The BondMachine Project - <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY-SA 4.0</a>.
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
